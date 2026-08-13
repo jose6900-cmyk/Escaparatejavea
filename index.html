@@ -7,18 +7,14 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Apartamentos Jávea | Arenal, Montgó, Granadella y Portitxol</title>
+<title>Apartamentos Jávea | Arenal</title>
 
 <meta
 name="description"
-content="Apartamentos turísticos en Jávea, a 300-500 metros de la playa del Arenal. Montgó, Granadella y Portitxol."
+content="Apartamentos turísticos en Jávea, cerca de la playa del Arenal. Montgó, Granadella y Portitxol."
 >
 
 <style>
-
-/* =========================================================
-   GENERAL
-========================================================= */
 
 * {
     box-sizing: border-box;
@@ -51,7 +47,7 @@ body {
 
 .hero {
 
-    min-height: 85vh;
+    min-height: 82vh;
 
     background:
 
@@ -200,14 +196,14 @@ section {
 
     margin: auto;
 
-    padding: 75px 25px;
+    padding: 65px 25px;
 }
 
 .section-title {
 
     text-align: center;
 
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 }
 
 .section-title h2 {
@@ -217,7 +213,7 @@ section {
 
     line-height: 1.2;
 
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .section-title p {
@@ -225,105 +221,6 @@ section {
     color: #667;
 
     font-size: 17px;
-}
-
-
-/* =========================================================
-   BLOQUE ARENAL
-========================================================= */
-
-.arenal {
-
-    background: white;
-
-    max-width: none;
-
-    padding:
-        65px 25px;
-}
-
-.arenal-inner {
-
-    max-width: 1000px;
-
-    margin: auto;
-
-    text-align: center;
-}
-
-.arenal-icon {
-
-    font-size: 42px;
-
-    margin-bottom: 12px;
-}
-
-.arenal h2 {
-
-    font-size:
-        clamp(30px, 5vw, 44px);
-
-    margin-bottom: 18px;
-}
-
-.arenal-lead {
-
-    font-size: 21px;
-
-    font-weight: 600;
-
-    margin-bottom: 15px;
-}
-
-.arenal-text {
-
-    max-width: 800px;
-
-    margin: auto;
-
-    color: #5d686c;
-
-    font-size: 17px;
-}
-
-.arenal-highlight {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            3,
-            1fr
-        );
-
-    gap: 18px;
-
-    margin-top: 35px;
-}
-
-.arenal-box {
-
-    background: #f8f6f1;
-
-    border-radius: 15px;
-
-    padding: 22px 15px;
-}
-
-.arenal-box strong {
-
-    display: block;
-
-    font-size: 24px;
-
-    margin-bottom: 5px;
-}
-
-.arenal-box span {
-
-    color: #667;
-
-    font-size: 14px;
 }
 
 
@@ -355,6 +252,20 @@ section {
     box-shadow:
         0 8px 30px
         rgba(0,0,0,.08);
+
+    transition:
+        transform .2s,
+        box-shadow .2s;
+}
+
+.card:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,.11);
 }
 
 
@@ -368,11 +279,16 @@ section {
 
     width: 100%;
 
-    height: 310px;
+    /*
+       Altura adaptable.
+       La foto ocupa TODO el ancho.
+    */
+
+    aspect-ratio: 16 / 10;
 
     overflow: hidden;
 
-    background: #eeeeee;
+    background: #ddd;
 
     touch-action: pan-y;
 }
@@ -399,26 +315,15 @@ section {
 
     flex-shrink: 0;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: #eeeeee;
+    position: relative;
 
     overflow: hidden;
-
-    padding: 0;
 }
 
 
 /*
-   IMPORTANTE:
-
-   La imagen se muestra COMPLETA.
-   No se recorta.
-   No se deforma.
+   Las fotografías llenan completamente
+   el carrusel.
 */
 
 .carousel-slide img {
@@ -429,11 +334,9 @@ section {
 
     height: 100%;
 
-    object-fit: contain;
+    object-fit: cover;
 
     object-position: center;
-
-    background: #eeeeee;
 
 }
 
@@ -451,9 +354,9 @@ section {
     transform:
         translateY(-50%);
 
-    width: 43px;
+    width: 44px;
 
-    height: 43px;
+    height: 44px;
 
     border: none;
 
@@ -464,7 +367,7 @@ section {
 
     color: white;
 
-    font-size: 28px;
+    font-size: 30px;
 
     line-height: 1;
 
@@ -489,11 +392,15 @@ section {
 }
 
 .carousel-prev {
+
     left: 12px;
+
 }
 
 .carousel-next {
+
     right: 12px;
+
 }
 
 
@@ -536,9 +443,6 @@ section {
         rgba(255,255,255,.75);
 
     cursor: pointer;
-
-    transition:
-        transform .2s;
 }
 
 .carousel-dot.active {
@@ -603,7 +507,7 @@ section {
 
 
 /* =========================================================
-   DISTANCIA AL ARENAL
+   UBICACIÓN
 ========================================================= */
 
 .card-location {
@@ -987,7 +891,7 @@ section {
 
 
 /* =========================================================
-   EXPERIENCIA
+   BLOQUE FINAL
 ========================================================= */
 
 .experience {
@@ -995,15 +899,15 @@ section {
     background: #e9e3d7;
 
     max-width: none;
+
+    text-align: center;
 }
 
 .experience-inner {
 
-    max-width: 1000px;
+    max-width: 900px;
 
     margin: auto;
-
-    text-align: center;
 }
 
 .experience h2 {
@@ -1095,27 +999,7 @@ footer p {
     section {
 
         padding:
-            60px 20px;
-
-    }
-
-    .arenal {
-
-        padding:
-            55px 20px;
-
-    }
-
-    .arenal-lead {
-
-        font-size: 18px;
-
-    }
-
-    .arenal-highlight {
-
-        grid-template-columns:
-            1fr;
+            55px 15px;
 
     }
 
@@ -1126,19 +1010,32 @@ footer p {
 
     }
 
+    /*
+       En móvil la foto ocupa
+       prácticamente todo el ancho.
+    */
+
     .carousel {
 
-        height: 280px;
+        width: 100%;
+
+        aspect-ratio: 4 / 3;
 
     }
 
     .carousel-button {
 
-        width: 38px;
+        width: 40px;
 
-        height: 38px;
+        height: 40px;
 
-        font-size: 23px;
+        font-size: 25px;
+
+    }
+
+    .card-content {
+
+        padding: 22px;
 
     }
 
@@ -1154,24 +1051,18 @@ footer p {
 
     }
 
-    .calendar-legend {
-
-        gap: 10px;
-
-    }
-
 }
 
 
 /* =========================================================
-   MÓVIL MUY PEQUEÑO
+   MÓVIL PEQUEÑO
 ========================================================= */
 
 @media (max-width: 380px) {
 
     .carousel {
 
-        height: 250px;
+        aspect-ratio: 4 / 3;
 
     }
 
@@ -1179,37 +1070,17 @@ footer p {
 
 
 /* =========================================================
-   EVITAR IMÁGENES ROTAS
+   TABLET / ORDENADOR
 ========================================================= */
 
-.carousel-slide img {
+@media (min-width: 701px) {
 
-    min-width: 0;
+    .carousel {
 
-    min-height: 0;
+        aspect-ratio: 16 / 10;
 
-}
+    }
 
-
-/* =========================================================
-   ANIMACIÓN SUAVE
-========================================================= */
-
-.card {
-
-    transition:
-        transform .2s,
-        box-shadow .2s;
-}
-
-.card:hover {
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 12px 35px
-        rgba(0,0,0,.11);
 }
 
 </style>
@@ -1242,8 +1113,8 @@ la tranquilidad al volver a casa.
 <p class="hero-subtitle">
 
 Tres apartamentos turísticos en Jávea,
-situados entre 300 y 500 metros de la
-playa del Arenal.
+situados entre 300 y 500 metros
+de la playa del Arenal.
 
 </p>
 
@@ -1268,89 +1139,6 @@ target="_blank"
 </div>
 
 </header>
-
-
-
-<!-- =========================================================
-     ARENAL
-========================================================= -->
-
-<section class="arenal">
-
-<div class="arenal-inner">
-
-<div class="arenal-icon">
-🏖️
-</div>
-
-<h2>
-Todo lo que necesitas, cerca
-</h2>
-
-<p class="arenal-lead">
-
-La playa del Arenal está a solo unos minutos andando.
-
-</p>
-
-<p class="arenal-text">
-
-El Arenal es la playa de arena de referencia
-de Jávea, con su paseo marítimo, restaurantes,
-terrazas, tiendas y ambiente durante todo el año.
-Nuestros apartamentos están lo suficientemente
-cerca para disfrutarlo caminando, pero alejados
-del bullicio para que puedas descansar
-tranquilamente.
-
-</p>
-
-
-<div class="arenal-highlight">
-
-<div class="arenal-box">
-
-<strong>
-300 m
-</strong>
-
-<span>
-Apartamento Montgó
-</span>
-
-</div>
-
-
-<div class="arenal-box">
-
-<strong>
-500 m
-</strong>
-
-<span>
-Apartamento Granadella
-</span>
-
-</div>
-
-
-<div class="arenal-box">
-
-<strong>
-500 m
-</strong>
-
-<span>
-Apartamento Portitxol
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
 
 
 
@@ -1398,7 +1186,6 @@ id="track-montgo"
 <img
 src="photo_montgo.jpg"
 alt="Apartamento Montgó en Jávea"
-loading="lazy"
 >
 
 </div>
@@ -1408,7 +1195,6 @@ loading="lazy"
 <img
 src="photo_montgo2.jpg"
 alt="Apartamento Montgó en Jávea"
-loading="lazy"
 >
 
 </div>
@@ -1418,7 +1204,6 @@ loading="lazy"
 <img
 src="photo_montgo3.jpg"
 alt="Apartamento Montgó en Jávea"
-loading="lazy"
 >
 
 </div>
@@ -1428,7 +1213,6 @@ loading="lazy"
 <img
 src="photo_montgo4.jpg"
 alt="Apartamento Montgó en Jávea"
-loading="lazy"
 >
 
 </div>
@@ -1438,7 +1222,6 @@ loading="lazy"
 <img
 src="photo_montgo5.jpg"
 alt="Apartamento Montgó en Jávea"
-loading="lazy"
 >
 
 </div>
@@ -1487,10 +1270,9 @@ Montgó
 
 <p class="card-description">
 
-Acogedor apartamento con balcón,
-ideal para disfrutar de Jávea en pareja
-o en familia. Capacidad para hasta
-3 personas y plaza de parking.
+Apartamento con balcón, ideal para
+hasta 3 personas. Dispone de plaza
+de parking y WiFi.
 
 </p>
 
@@ -1502,8 +1284,8 @@ o en familia. Capacidad para hasta
 <br>
 
 <span>
-Playa, paseo marítimo, restaurantes
-y comercios a un paseo.
+Una ubicación cercana a la playa,
+pero en una zona tranquila.
 </span>
 
 </div>
@@ -1576,7 +1358,6 @@ id="track-granadella"
 <img
 src="photo_granadella.jpg"
 alt="Apartamento Granadella en Jávea"
-loading="lazy"
 >
 
 </div>
@@ -1586,7 +1367,6 @@ loading="lazy"
 <img
 src="photo_granadella2.jpg"
 alt="Apartamento Granadella en Jávea"
-loading="lazy"
 >
 
 </div>
@@ -1596,7 +1376,6 @@ loading="lazy"
 <img
 src="photo_granadella3.jpg"
 alt="Apartamento Granadella en Jávea"
-loading="lazy"
 >
 
 </div>
@@ -1606,7 +1385,6 @@ loading="lazy"
 <img
 src="photo_granadella4.jpg"
 alt="Apartamento Granadella en Jávea"
-loading="lazy"
 >
 
 </div>
@@ -1616,7 +1394,6 @@ loading="lazy"
 <img
 src="photo_granadella5.jpg"
 alt="Apartamento Granadella en Jávea"
-loading="lazy"
 >
 
 </div>
@@ -1665,10 +1442,10 @@ Granadella
 
 <p class="card-description">
 
-Apartamento perfecto para disfrutar
-de Jávea con tranquilidad. Capacidad
-para hasta 3 personas y plaza de
-parking.
+Apartamento para hasta 3 personas,
+con plaza de parking y WiFi.
+Una opción cómoda para disfrutar
+de Jávea.
 
 </p>
 
@@ -1680,8 +1457,8 @@ parking.
 <br>
 
 <span>
-Playa, paseo marítimo, restaurantes
-y comercios a un paseo.
+Una ubicación cercana a la playa,
+pero en una zona tranquila.
 </span>
 
 </div>
@@ -1699,10 +1476,6 @@ y comercios a un paseo.
 
 <span class="feature">
 🚗 Parking
-</span>
-
-<span class="feature">
-🏖️ Arenal
 </span>
 
 </div>
@@ -1754,7 +1527,6 @@ id="track-portitxol"
 <img
 src="photo_portitxol.jpg"
 alt="Apartamento Portitxol en Jávea"
-loading="lazy"
 >
 
 </div>
@@ -1764,7 +1536,6 @@ loading="lazy"
 <img
 src="photo_portitxol2.jpg"
 alt="Apartamento Portitxol en Jávea"
-loading="lazy"
 >
 
 </div>
@@ -1774,7 +1545,6 @@ loading="lazy"
 <img
 src="photo_portitxol3.jpg"
 alt="Apartamento Portitxol en Jávea"
-loading="lazy"
 >
 
 </div>
@@ -1784,7 +1554,6 @@ loading="lazy"
 <img
 src="photo_portitxol4.jpg"
 alt="Apartamento Portitxol en Jávea"
-loading="lazy"
 >
 
 </div>
@@ -1794,7 +1563,6 @@ loading="lazy"
 <img
 src="photo_portitxol5.jpg"
 alt="Apartamento Portitxol en Jávea"
-loading="lazy"
 >
 
 </div>
@@ -1843,10 +1611,10 @@ Portitxol
 
 <p class="card-description">
 
-Apartamento pensado especialmente
-para familias, con capacidad para
-4 personas: 2 adultos y 2 niños.
-Dispone de parking privado.
+Apartamento pensado para familias,
+con capacidad para 4 personas:
+2 adultos y 2 niños.
+Dispone de parking y WiFi.
 
 </p>
 
@@ -1858,8 +1626,8 @@ Dispone de parking privado.
 <br>
 
 <span>
-Playa, paseo marítimo, restaurantes
-y comercios a un paseo.
+Una ubicación cercana a la playa,
+pero en una zona tranquila.
 </span>
 
 </div>
@@ -1877,10 +1645,6 @@ y comercios a un paseo.
 
 <span class="feature">
 🚗 Parking
-</span>
-
-<span class="feature">
-🌊 Jávea
 </span>
 
 </div>
@@ -1917,7 +1681,7 @@ Cargando disponibilidad...
 
 
 <!-- =========================================================
-     EXPERIENCIA
+     BLOQUE FINAL
 ========================================================= -->
 
 <section class="experience">
@@ -1931,15 +1695,12 @@ Cerca de todo. Lejos del ruido.
 <p>
 
 Disfruta de la playa del Arenal,
-del paseo marítimo, de los restaurantes,
+del paseo marítimo, restaurantes,
 terrazas y comercios, y vuelve después
 a un alojamiento tranquilo donde descansar.
 
 Nuestros apartamentos combinan
-<strong>ubicación y tranquilidad</strong>:
-todo lo importante está cerca, pero
-no necesitas dormir en plena zona
-de actividad.
+<strong>ubicación y tranquilidad</strong>.
 
 </p>
 
@@ -1961,9 +1722,8 @@ de actividad.
 
 <p>
 
-Consulta las fechas disponibles en el
-calendario o escríbenos directamente
-por WhatsApp.
+Consulta las fechas disponibles
+o escríbenos directamente por WhatsApp.
 
 </p>
 
@@ -2161,7 +1921,7 @@ updateCarousel(
 
 
 /* =========================================================
-   DESLIZAR FOTOS EN MÓVIL
+   DESLIZAR EN MÓVIL
 ========================================================= */
 
 document
@@ -2269,7 +2029,7 @@ document
 
 
 /* =========================================================
-   WORKERS CLOUDFLARE
+   WORKERS
 ========================================================= */
 
 const CALENDARS = {
@@ -2446,39 +2206,6 @@ function isBooked(
 
                 dateString <
                 event.end
-
-            );
-
-        }
-    );
-
-}
-
-
-function isReservationStart(
-    apartment,
-    date
-) {
-
-    const state =
-        calendarStates[
-            apartment
-        ];
-
-
-    const dateString =
-        dateToString(
-            date
-        );
-
-
-    return state.events.some(
-        event => {
-
-            return (
-
-                dateString ===
-                event.start
 
             );
 
@@ -2674,7 +2401,7 @@ function monthName(
 
 
 /* =========================================================
-   RENDER CALENDARIO
+   CALENDARIO
 ========================================================= */
 
 function renderCalendar(
@@ -2839,13 +2566,6 @@ function renderCalendar(
             );
 
 
-        const reservationStart =
-            isReservationStart(
-                apartment,
-                date
-            );
-
-
         const past =
             date < today;
 
@@ -2859,11 +2579,15 @@ function renderCalendar(
 
         const possibleCheckout =
 
-            state.checkIn
+            calendarStates[
+                apartment
+            ].checkIn
 
             &&
 
-            !state.checkOut
+            !calendarStates[
+                apartment
+            ].checkOut
 
             &&
 
@@ -2883,18 +2607,6 @@ function renderCalendar(
 
             classes +=
                 " booked";
-
-        }
-
-
-        if (
-            reservationStart
-            &&
-            possibleCheckout
-        ) {
-
-            classes +=
-                " checkout-available";
 
         }
 
@@ -2920,22 +2632,34 @@ function renderCalendar(
 
 
         if (
+            possibleCheckout
+        ) {
 
-            state.checkIn
+            classes +=
+                " checkout-available";
 
-            &&
+        }
 
-            state.checkOut
+
+        if (
+
+            calendarStates[
+                apartment
+            ].checkOut
 
             &&
 
             date >
-            state.checkIn
+            calendarStates[
+                apartment
+            ].checkIn
 
             &&
 
             date <
-            state.checkOut
+            calendarStates[
+                apartment
+            ].checkOut
 
         ) {
 
@@ -2947,7 +2671,9 @@ function renderCalendar(
 
         if (
 
-            state.checkOut
+            calendarStates[
+                apartment
+            ].checkOut
 
             &&
 
@@ -2956,7 +2682,9 @@ function renderCalendar(
             )
             ===
             dateToString(
-                state.checkOut
+                calendarStates[
+                    apartment
+                ].checkOut
             )
 
         ) {
@@ -2982,15 +2710,23 @@ function renderCalendar(
 
         else if (
 
-            state.checkIn
+            calendarStates[
+                apartment
+            ].checkIn
+
             &&
-            !state.checkOut
+
+            !calendarStates[
+                apartment
+            ].checkOut
 
         ) {
 
             if (
                 date <=
-                state.checkIn
+                calendarStates[
+                    apartment
+                ].checkIn
             ) {
 
                 disabled =
@@ -3290,7 +3026,7 @@ function resetSelection(
 
 
 /* =========================================================
-   SELECCIÓN + WHATSAPP
+   WHATSAPP
 ========================================================= */
 
 function updateSelection(
@@ -3502,7 +3238,7 @@ function updateSelection(
 
 
 /* =========================================================
-   CARGAR WORKERS
+   CARGAR CALENDARIOS
 ========================================================= */
 
 async function loadCalendar(
@@ -3640,7 +3376,7 @@ async function loadCalendar(
 
 
 /* =========================================================
-   INICIAR CALENDARIOS
+   INICIAR
 ========================================================= */
 
 loadCalendar(
