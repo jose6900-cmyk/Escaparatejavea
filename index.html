@@ -14,6 +14,11 @@
         Apartamentos turísticos en Jávea | Reserva directa
     </title>
 
+    <meta
+        name="description"
+        content="Apartamentos turísticos en Jávea: Montgó, Granadella y Portixol. Consulta disponibilidad y reserva directamente por WhatsApp."
+    >
+
 
     <style>
 
@@ -317,14 +322,16 @@
 
             font-size: 17px;
 
+            text-transform: capitalize;
+
         }
 
 
         .calendar-nav {
 
-            width: 34px;
+            width: 36px;
 
-            height: 34px;
+            height: 36px;
 
             border: none;
 
@@ -334,11 +341,18 @@
 
             cursor: pointer;
 
-            font-size: 20px;
+            font-size: 22px;
 
             box-shadow:
                 0 2px 8px
                 rgba(0,0,0,.08);
+
+        }
+
+
+        .calendar-nav:active {
+
+            transform: scale(.95);
 
         }
 
@@ -379,6 +393,8 @@
 
 
         .calendar-day {
+
+            position: relative;
 
             aspect-ratio: 1 / 1;
 
@@ -437,6 +453,25 @@
         }
 
 
+        /*
+         * Fecha que es entrada de una reserva.
+         *
+         * Puede utilizarse como fecha de salida
+         * de la reserva que estamos seleccionando.
+         */
+
+        .calendar-day.checkout-available {
+
+            background: #fff;
+
+            color: #243238;
+
+            border:
+                2px solid #25D366;
+
+        }
+
+
         .calendar-day.selected {
 
             background: #25D366;
@@ -455,10 +490,13 @@
         }
 
 
-        .calendar-day.checkout {
+        .calendar-day.range-end {
 
-            border:
-                2px solid #25D366;
+            background: #25D366;
+
+            color: white;
+
+            font-weight: bold;
 
         }
 
@@ -469,7 +507,9 @@
 
             justify-content: center;
 
-            gap: 18px;
+            flex-wrap: wrap;
+
+            gap: 15px;
 
             margin-top: 15px;
 
@@ -514,9 +554,12 @@
         }
 
 
-        .legend-box.available {
+        .legend-box.checkout {
 
             background: white;
+
+            border:
+                2px solid #25D366;
 
         }
 
@@ -568,6 +611,25 @@
             text-align: center;
 
             font-size: 15px;
+
+        }
+
+
+        .selection-reset {
+
+            display: block;
+
+            margin-top: 10px;
+
+            text-align: center;
+
+            color: #777;
+
+            font-size: 13px;
+
+            text-decoration: underline;
+
+            cursor: pointer;
 
         }
 
@@ -782,7 +844,8 @@
             <a
                 class="button"
                 href="https://wa.me/34634357303?text=Hola,%20estoy%20interesado%20en%20reservar%20uno%20de%20vuestros%20apartamentos.%0A%0AFechas:%20%0AN%C3%BAmero%20de%20hu%C3%A9spedes:%20"
-                target="_blank">
+                target="_blank"
+            >
 
                 💬 Reservar por WhatsApp
 
@@ -851,7 +914,8 @@
                     <a
                         class="button"
                         href="https://wa.me/34634357303?text=Hola,%20me%20interesa%20el%20apartamento%20Montg%C3%B3.%0A%0AFechas:%20%0AN%C3%BAmero%20de%20hu%C3%A9spedes:%20%0A%0A%C2%BFPodr%C3%ADais%20indicarme%20disponibilidad%20y%20precio%3F"
-                        target="_blank">
+                        target="_blank"
+                    >
 
                         Consultar disponibilidad
 
@@ -960,7 +1024,8 @@
                     <a
                         class="button"
                         href="https://wa.me/34634357303?text=Hola,%20me%20interesa%20el%20apartamento%20Portixol.%0A%0AFechas:%20%0AN%C3%BAmero%20de%20hu%C3%A9spedes:%20%0A%0A%C2%BFPodr%C3%ADais%20indicarme%20disponibilidad%20y%20precio%3F"
-                        target="_blank">
+                        target="_blank"
+                    >
 
                         Consultar disponibilidad
 
@@ -1036,7 +1101,8 @@
         <a
             class="button"
             href="https://wa.me/34634357303?text=Hola,%20quiero%20consultar%20disponibilidad%20de%20vuestros%20apartamentos.%0A%0AFechas:%20%0AN%C3%BAmero%20de%20hu%C3%A9spedes:%20"
-            target="_blank">
+            target="_blank"
+        >
 
             💬 Hablar por WhatsApp
 
@@ -1080,6 +1146,7 @@
 
         let events = [];
 
+
         let currentMonth =
             new Date(
                 new Date().getFullYear(),
@@ -1096,13 +1163,16 @@
 
         /*
          * Convierte YYYY-MM-DD
-         * en objeto Date local.
+         * en fecha local.
          */
 
-        function parseDate(dateString) {
+        function parseDate(
+            dateString
+        ) {
 
             const parts =
                 dateString.split("-");
+
 
             return new Date(
                 Number(parts[0]),
@@ -1115,77 +1185,125 @@
 
 
         /*
-         * Convierte Date a YYYY-MM-DD
+         * Convierte Date a YYYY-MM-DD.
          */
 
-        function dateToString(date) {
+        function dateToString(
+            date
+        ) {
 
             const year =
                 date.getFullYear();
+
 
             const month =
                 String(
                     date.getMonth() + 1
                 ).padStart(2, "0");
 
+
             const day =
                 String(
                     date.getDate()
                 ).padStart(2, "0");
 
-            return `${year}-${month}-${day}`;
+
+            return (
+                year +
+                "-" +
+                month +
+                "-" +
+                day
+            );
 
         }
 
 
 
         /*
-         * Comprueba si una fecha está ocupada.
+         * Comprueba si una fecha está dentro
+         * de una reserva.
          *
-         * IMPORTANTE:
-         * end es el día de salida,
-         * por lo que NO se bloquea.
+         * start = primera noche ocupada
+         * end   = día de salida
+         *
+         * Por eso end NO está ocupado.
          */
 
-        function isBooked(date) {
+        function isBooked(
+            date
+        ) {
 
             const dateString =
                 dateToString(date);
 
 
-            return events.some(event => {
+            return events.some(
+                event => {
 
-                return (
-                    dateString >= event.start &&
-                    dateString < event.end
-                );
+                    return (
+                        dateString >= event.start &&
+                        dateString < event.end
+                    );
 
-            });
+                }
+            );
 
         }
 
 
 
         /*
-         * Comprueba si una fecha está en el intervalo
-         * seleccionado.
+         * Comprueba si la fecha es exactamente
+         * el día de entrada de una reserva.
+         *
+         * Esa fecha está disponible como salida
+         * de nuestra reserva.
          */
 
-        function isInSelectedRange(date) {
+        function isReservationStart(
+            date
+        ) {
+
+            const dateString =
+                dateToString(date);
+
+
+            return events.some(
+                event => {
+
+                    return (
+                        dateString ===
+                        event.start
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /*
+         * Comprueba si la fecha está dentro
+         * del intervalo seleccionado.
+         */
+
+        function isInSelectedRange(
+            date
+        ) {
 
             if (!checkIn) {
+
                 return false;
+
             }
-
-
-            const dateString =
-                dateToString(date);
 
 
             if (!checkOut) {
 
                 return (
-                    dateString ===
+                    dateToString(date) ===
                     dateToString(checkIn)
                 );
 
@@ -1193,11 +1311,8 @@
 
 
             return (
-                dateString >=
-                dateToString(checkIn)
-                &&
-                dateString <=
-                dateToString(checkOut)
+                date >= checkIn &&
+                date <= checkOut
             );
 
         }
@@ -1207,6 +1322,9 @@
         /*
          * Comprueba que todas las noches
          * entre entrada y salida están libres.
+         *
+         * La fecha de salida NO se comprueba
+         * como noche ocupada.
          */
 
         function rangeIsAvailable(
@@ -1218,9 +1336,15 @@
                 new Date(start);
 
 
+            current.setHours(
+                0, 0, 0, 0
+            );
+
+
             while (
                 current < end
             ) {
+
 
                 if (
                     isBooked(current)
@@ -1229,6 +1353,7 @@
                     return false;
 
                 }
+
 
                 current.setDate(
                     current.getDate() + 1
@@ -1244,7 +1369,7 @@
 
 
         /*
-         * Formato de fechas para WhatsApp
+         * Formato español.
          */
 
         function formatSpanishDate(
@@ -1268,7 +1393,9 @@
          * Nombre del mes.
          */
 
-        function monthName(date) {
+        function monthName(
+            date
+        ) {
 
             return date.toLocaleDateString(
                 "es-ES",
@@ -1283,7 +1410,43 @@
 
 
         /*
-         * Renderiza el calendario.
+         * Comprueba si una fecha puede utilizarse
+         * como fecha de salida.
+         */
+
+        function canUseAsCheckout(
+            date
+        ) {
+
+            if (!checkIn) {
+
+                return false;
+
+            }
+
+
+            if (date <= checkIn) {
+
+                return false;
+
+            }
+
+
+            /*
+             * El intervalo entero debe estar libre.
+             */
+
+            return rangeIsAvailable(
+                checkIn,
+                date
+            );
+
+        }
+
+
+
+        /*
+         * Renderizar calendario.
          */
 
         function renderCalendar() {
@@ -1314,11 +1477,8 @@
 
 
             /*
-             * JavaScript empieza la semana
-             * en domingo.
-             *
-             * Lo convertimos para que
-             * lunes sea el primer día.
+             * Lunes = 0
+             * Domingo = 6
              */
 
             let startingDay =
@@ -1374,11 +1534,13 @@
 
 
                 <div class="calendar-days">
+
             `;
 
 
+
             /*
-             * Espacios antes del día 1.
+             * Huecos antes del primer día.
              */
 
             for (
@@ -1388,10 +1550,12 @@
             ) {
 
                 html += `
+
                     <button
                         class="calendar-day empty"
                         disabled
                     ></button>
+
                 `;
 
             }
@@ -1399,7 +1563,7 @@
 
 
             /*
-             * Días del mes.
+             * Crear días.
              */
 
             for (
@@ -1417,6 +1581,11 @@
                     );
 
 
+                date.setHours(
+                    0, 0, 0, 0
+                );
+
+
                 const today =
                     new Date();
 
@@ -1430,6 +1599,12 @@
                     isBooked(date);
 
 
+                const reservationStart =
+                    isReservationStart(
+                        date
+                    );
+
+
                 const past =
                     date < today;
 
@@ -1440,9 +1615,21 @@
                     );
 
 
+                const possibleCheckout =
+                    checkIn &&
+                    !checkOut &&
+                    canUseAsCheckout(
+                        date
+                    );
+
+
                 let classes =
                     "calendar-day";
 
+
+                /*
+                 * Reserva normal.
+                 */
 
                 if (booked) {
 
@@ -1452,6 +1639,26 @@
                 }
 
 
+                /*
+                 * Día de entrada de una reserva:
+                 * disponible como salida.
+                 */
+
+                if (
+                    reservationStart &&
+                    possibleCheckout
+                ) {
+
+                    classes +=
+                        " checkout-available";
+
+                }
+
+
+                /*
+                 * Pasado.
+                 */
+
                 if (past) {
 
                     classes +=
@@ -1460,6 +1667,10 @@
                 }
 
 
+                /*
+                 * Seleccionado.
+                 */
+
                 if (selected) {
 
                     classes +=
@@ -1467,6 +1678,10 @@
 
                 }
 
+
+                /*
+                 * Dentro del intervalo.
+                 */
 
                 if (
                     checkIn &&
@@ -1481,6 +1696,10 @@
                 }
 
 
+                /*
+                 * Final del intervalo.
+                 */
+
                 if (
                     checkOut &&
                     dateToString(date) ===
@@ -1488,13 +1707,73 @@
                 ) {
 
                     classes +=
-                        " checkout";
+                        " range-end";
 
                 }
 
 
-                const disabled =
-                    booked || past
+
+                /*
+                 * Decidir si el botón está desactivado.
+                 *
+                 * Si estamos seleccionando salida:
+                 *
+                 * - Una fecha de entrada de otra reserva
+                 *   puede seleccionarse como salida.
+                 *
+                 * - Una fecha ocupada normal NO.
+                 */
+
+                let disabled = false;
+
+
+                if (past) {
+
+                    disabled = true;
+
+                }
+
+
+                else if (
+                    checkIn &&
+                    !checkOut
+                ) {
+
+
+                    if (
+                        date <= checkIn
+                    ) {
+
+                        disabled = true;
+
+                    }
+
+
+                    else if (
+                        !canUseAsCheckout(
+                            date
+                        )
+                    ) {
+
+                        disabled = true;
+
+                    }
+
+                }
+
+
+                else if (
+                    booked
+                ) {
+
+                    disabled = true;
+
+                }
+
+
+
+                const disabledAttribute =
+                    disabled
                         ? "disabled"
                         : "";
 
@@ -1503,7 +1782,7 @@
 
                     <button
                         class="${classes}"
-                        ${disabled}
+                        ${disabledAttribute}
                         onclick="selectDate(
                             '${dateToString(date)}'
                         )"
@@ -1541,6 +1820,17 @@
                         ></span>
 
                         Reservado
+
+                    </div>
+
+
+                    <div class="legend-item">
+
+                        <span
+                            class="legend-box checkout"
+                        ></span>
+
+                        Salida disponible
 
                     </div>
 
@@ -1589,7 +1879,7 @@
 
 
         /*
-         * Seleccionar entrada/salida.
+         * Seleccionar fecha.
          */
 
         function selectDate(
@@ -1598,12 +1888,19 @@
 
 
             const selectedDate =
-                parseDate(dateString);
+                parseDate(
+                    dateString
+                );
+
+
+            selectedDate.setHours(
+                0, 0, 0, 0
+            );
 
 
             /*
              * Primera selección:
-             * fecha de entrada.
+             * entrada.
              */
 
             if (
@@ -1626,9 +1923,8 @@
 
 
             /*
-             * Si seleccionan una fecha
-             * anterior a la entrada,
-             * la convertimos en nueva entrada.
+             * No permitir salida igual
+             * o anterior a entrada.
              */
 
             if (
@@ -1650,8 +1946,7 @@
 
 
             /*
-             * Segunda selección:
-             * fecha de salida.
+             * Comprobar intervalo completo.
              */
 
             if (
@@ -1662,13 +1957,17 @@
             ) {
 
                 alert(
-                    "Hay una reserva dentro de esas fechas. Selecciona otro intervalo."
+                    "No puedes seleccionar ese intervalo porque hay una reserva dentro de esas fechas."
                 );
 
                 return;
 
             }
 
+
+            /*
+             * Todo correcto.
+             */
 
             checkOut =
                 selectedDate;
@@ -1681,7 +1980,25 @@
 
 
         /*
-         * Actualiza la caja de selección.
+         * Reiniciar selección.
+         */
+
+        function resetSelection() {
+
+            checkIn =
+                null;
+
+            checkOut =
+                null;
+
+            renderCalendar();
+
+        }
+
+
+
+        /*
+         * Actualizar información de selección.
          */
 
         function updateSelection() {
@@ -1694,7 +2011,9 @@
 
 
             if (!box) {
+
                 return;
+
             }
 
 
@@ -1709,10 +2028,16 @@
             }
 
 
+
+            /*
+             * Solo entrada seleccionada.
+             */
+
             if (
                 checkIn &&
                 !checkOut
             ) {
+
 
                 box.classList.add(
                     "visible"
@@ -1722,6 +2047,7 @@
                 box.innerHTML = `
 
                     <p>
+
                         <strong>
                             Entrada:
                         </strong>
@@ -1729,14 +2055,29 @@
                         ${formatSpanishDate(
                             checkIn
                         )}
+
                     </p>
+
 
                     <p>
-                        Selecciona ahora
+
+                        Ahora selecciona
                         la fecha de salida.
+
                     </p>
 
+
+                    <span
+                        class="selection-reset"
+                        onclick="resetSelection()"
+                    >
+
+                        Cambiar fecha
+
+                    </span>
+
                 `;
+
 
                 return;
 
@@ -1745,7 +2086,7 @@
 
 
             /*
-             * Tenemos entrada y salida.
+             * Entrada y salida.
              */
 
             box.classList.add(
@@ -1754,35 +2095,37 @@
 
 
             const message =
-                "Hola, estoy interesado en reservar el apartamento Granadella.%0A%0A"
+
+                "Hola, estoy interesado en reservar el apartamento Granadella."
+                +
+                "\n\n"
                 +
                 "Entrada: "
                 +
-                encodeURIComponent(
-                    formatSpanishDate(
-                        checkIn
-                    )
+                formatSpanishDate(
+                    checkIn
                 )
                 +
-                "%0A"
+                "\n"
                 +
                 "Salida: "
                 +
-                encodeURIComponent(
-                    formatSpanishDate(
-                        checkOut
-                    )
+                formatSpanishDate(
+                    checkOut
                 )
                 +
-                "%0A%0A"
+                "\n\n"
                 +
                 "¿Podéis confirmarme disponibilidad y precio?";
 
 
             const whatsappUrl =
+
                 "https://wa.me/34634357303?text="
                 +
-                message;
+                encodeURIComponent(
+                    message
+                );
 
 
             box.innerHTML = `
@@ -1798,6 +2141,7 @@
                     )}
 
                     <br>
+
 
                     <strong>
                         Salida:
@@ -1820,6 +2164,16 @@
 
                 </a>
 
+
+                <span
+                    class="selection-reset"
+                    onclick="resetSelection()"
+                >
+
+                    Cambiar fechas
+
+                </span>
+
             `;
 
         }
@@ -1827,7 +2181,7 @@
 
 
         /*
-         * Cargar los datos del Worker.
+         * Cargar calendarios desde Cloudflare.
          */
 
         async function loadCalendar() {
@@ -1878,7 +2232,12 @@
                 renderCalendar();
 
 
-            } catch (error) {
+            }
+
+
+            catch (
+                error
+            ) {
 
 
                 console.error(
@@ -1897,10 +2256,6 @@
 
                         <br><br>
 
-                        Puedes consultar
-                        directamente por WhatsApp.
-
-                        <br><br>
 
                         <a
                             class="button"
@@ -1923,7 +2278,7 @@
 
 
         /*
-         * Iniciar.
+         * Iniciar calendario.
          */
 
         loadCalendar();
