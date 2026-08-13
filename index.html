@@ -11,12 +11,12 @@
     >
 
     <title>
-        Apartamentos Jávea | Montgó, Granadella y Portixol
+        Apartamentos Jávea | Montgó, Granadella y Portitxol
     </title>
 
     <meta
         name="description"
-        content="Apartamentos turísticos en Jávea. Montgó, Granadella y Portixol. Consulta disponibilidad y reserva directamente por WhatsApp."
+        content="Apartamentos turísticos en Jávea. Montgó, Granadella y Portitxol. Consulta disponibilidad y reserva directamente por WhatsApp."
     >
 
     <style>
@@ -25,6 +25,10 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -200,17 +204,191 @@
         }
 
 
-        .card img {
+        /* =========================
+           CARRUSEL
+        ========================= */
+
+        .carousel {
+
+            position: relative;
 
             width: 100%;
 
-            height: 280px;
+            height: 300px;
+
+            overflow: hidden;
+
+            background: #ddd;
+
+            touch-action: pan-y;
+        }
+
+
+        .carousel-track {
+
+            display: flex;
+
+            width: 100%;
+
+            height: 100%;
+
+            transition:
+                transform .35s ease;
+        }
+
+
+        .carousel-slide {
+
+            min-width: 100%;
+
+            height: 100%;
+
+            flex-shrink: 0;
+        }
+
+
+        .carousel-slide img {
+
+            width: 100%;
+
+            height: 100%;
 
             object-fit: cover;
 
             display: block;
         }
 
+
+        .carousel-button {
+
+            position: absolute;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            width: 42px;
+
+            height: 42px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background:
+                rgba(0,0,0,.45);
+
+            color: white;
+
+            font-size: 27px;
+
+            line-height: 1;
+
+            cursor: pointer;
+
+            z-index: 5;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .carousel-button:hover {
+
+            background:
+                rgba(0,0,0,.65);
+        }
+
+
+        .carousel-prev {
+
+            left: 12px;
+        }
+
+
+        .carousel-next {
+
+            right: 12px;
+        }
+
+
+        .carousel-dots {
+
+            position: absolute;
+
+            bottom: 12px;
+
+            left: 0;
+
+            right: 0;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            z-index: 5;
+        }
+
+
+        .carousel-dot {
+
+            width: 8px;
+
+            height: 8px;
+
+            border-radius: 50%;
+
+            border: none;
+
+            padding: 0;
+
+            background:
+                rgba(255,255,255,.65);
+
+            cursor: pointer;
+        }
+
+
+        .carousel-dot.active {
+
+            background: white;
+
+            transform: scale(1.25);
+        }
+
+
+        .photo-counter {
+
+            position: absolute;
+
+            top: 12px;
+
+            right: 12px;
+
+            background:
+                rgba(0,0,0,.5);
+
+            color: white;
+
+            padding: 4px 9px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+
+            z-index: 5;
+        }
+
+
+        /* =========================
+           CONTENIDO TARJETA
+        ========================= */
 
         .card-content {
 
@@ -230,7 +408,37 @@
 
             color: #667;
 
-            margin-bottom: 20px;
+            margin-bottom: 18px;
+        }
+
+
+        /* =========================
+           CARACTERÍSTICAS
+        ========================= */
+
+        .features {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-bottom: 22px;
+        }
+
+
+        .feature {
+
+            background: #f3f1eb;
+
+            border-radius: 20px;
+
+            padding: 7px 11px;
+
+            font-size: 13px;
+
+            color: #4c5b60;
         }
 
 
@@ -286,6 +494,8 @@
             font-size: 17px;
 
             text-transform: capitalize;
+
+            text-align: center;
         }
 
 
@@ -583,32 +793,6 @@
 
 
         /* =========================
-           BOTÓN AIRBNB
-        ========================= */
-
-        .airbnb-button {
-
-            display: block;
-
-            text-align: center;
-
-            margin-top: 12px;
-
-            color: #555;
-
-            font-size: 14px;
-
-            text-decoration: none;
-        }
-
-
-        .airbnb-button:hover {
-
-            text-decoration: underline;
-        }
-
-
-        /* =========================
            EXPERIENCIA
         ========================= */
 
@@ -726,9 +910,19 @@
             }
 
 
-            .card img {
+            .carousel {
 
-                height: 240px;
+                height: 250px;
+            }
+
+
+            .carousel-button {
+
+                width: 38px;
+
+                height: 38px;
+
+                font-size: 23px;
             }
 
 
@@ -827,10 +1021,87 @@
             <article class="card">
 
 
-                <img
-                    src="photo_montgo.jpg"
-                    alt="Apartamento Montgó"
+                <div
+                    class="carousel"
+                    data-carousel="montgo"
                 >
+
+                    <div
+                        class="carousel-track"
+                        id="track-montgo"
+                    >
+
+                        <div class="carousel-slide">
+                            <img
+                                src="photo_montgo.jpg"
+                                alt="Apartamento Montgó"
+                            >
+                        </div>
+
+                        <div class="carousel-slide">
+                            <img
+                                src="photo_montgo2.jpg"
+                                alt="Apartamento Montgó"
+                            >
+                        </div>
+
+                        <div class="carousel-slide">
+                            <img
+                                src="photo_montgo3.jpg"
+                                alt="Apartamento Montgó"
+                            >
+                        </div>
+
+                        <div class="carousel-slide">
+                            <img
+                                src="photo_montgo4.jpg"
+                                alt="Apartamento Montgó"
+                            >
+                        </div>
+
+                        <div class="carousel-slide">
+                            <img
+                                src="photo_montgo5.jpg"
+                                alt="Apartamento Montgó"
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="carousel-button carousel-prev"
+                        onclick="moveCarousel('montgo', -1)"
+                        aria-label="Foto anterior"
+                    >
+                        ‹
+                    </button>
+
+
+                    <button
+                        class="carousel-button carousel-next"
+                        onclick="moveCarousel('montgo', 1)"
+                        aria-label="Foto siguiente"
+                    >
+                        ›
+                    </button>
+
+
+                    <div
+                        class="carousel-dots"
+                        id="dots-montgo"
+                    ></div>
+
+
+                    <div
+                        class="photo-counter"
+                        id="counter-montgo"
+                    >
+                        1 / 5
+                    </div>
+
+                </div>
+
 
 
                 <div class="card-content">
@@ -842,10 +1113,35 @@
 
 
                     <p class="card-description">
-                        Un alojamiento ideal para disfrutar
-                        de Jávea, el mar y el entorno natural
-                        del Montgó.
+
+                        Acogedor apartamento con balcón,
+                        perfecto para disfrutar de Jávea
+                        y de su entorno. Tiene capacidad
+                        para hasta 3 personas y plaza de
+                        parking privada.
+
                     </p>
+
+
+                    <div class="features">
+
+                        <span class="feature">
+                            👨‍👩‍👧 Hasta 3 personas
+                        </span>
+
+                        <span class="feature">
+                            🌐 WiFi
+                        </span>
+
+                        <span class="feature">
+                            🚗 Parking
+                        </span>
+
+                        <span class="feature">
+                            ☀️ Balcón
+                        </span>
+
+                    </div>
 
 
                     <div class="availability">
@@ -886,10 +1182,87 @@
             <article class="card">
 
 
-                <img
-                    src="photo_granadella.jpg"
-                    alt="Apartamento Granadella"
+                <div
+                    class="carousel"
+                    data-carousel="granadella"
                 >
+
+                    <div
+                        class="carousel-track"
+                        id="track-granadella"
+                    >
+
+                        <div class="carousel-slide">
+                            <img
+                                src="photo_granadella.jpg"
+                                alt="Apartamento Granadella"
+                            >
+                        </div>
+
+                        <div class="carousel-slide">
+                            <img
+                                src="photo_granadella2.jpg"
+                                alt="Apartamento Granadella"
+                            >
+                        </div>
+
+                        <div class="carousel-slide">
+                            <img
+                                src="photo_granadella3.jpg"
+                                alt="Apartamento Granadella"
+                            >
+                        </div>
+
+                        <div class="carousel-slide">
+                            <img
+                                src="photo_granadella4.jpg"
+                                alt="Apartamento Granadella"
+                            >
+                        </div>
+
+                        <div class="carousel-slide">
+                            <img
+                                src="photo_granadella5.jpg"
+                                alt="Apartamento Granadella"
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="carousel-button carousel-prev"
+                        onclick="moveCarousel('granadella', -1)"
+                        aria-label="Foto anterior"
+                    >
+                        ‹
+                    </button>
+
+
+                    <button
+                        class="carousel-button carousel-next"
+                        onclick="moveCarousel('granadella', 1)"
+                        aria-label="Foto siguiente"
+                    >
+                        ›
+                    </button>
+
+
+                    <div
+                        class="carousel-dots"
+                        id="dots-granadella"
+                    ></div>
+
+
+                    <div
+                        class="photo-counter"
+                        id="counter-granadella"
+                    >
+                        1 / 5
+                    </div>
+
+                </div>
+
 
 
                 <div class="card-content">
@@ -901,9 +1274,35 @@
 
 
                     <p class="card-description">
-                        Disfruta de una de las zonas más
-                        espectaculares de Jávea.
+
+                        Disfruta de una estancia tranquila
+                        cerca de una de las zonas más
+                        espectaculares de Jávea. Capacidad
+                        para hasta 3 personas y plaza de
+                        parking.
+
                     </p>
+
+
+                    <div class="features">
+
+                        <span class="feature">
+                            👨‍👩‍👧 Hasta 3 personas
+                        </span>
+
+                        <span class="feature">
+                            🌐 WiFi
+                        </span>
+
+                        <span class="feature">
+                            🚗 Parking
+                        </span>
+
+                        <span class="feature">
+                            🏖️ Jávea
+                        </span>
+
+                    </div>
 
 
                     <div class="availability">
@@ -938,43 +1337,146 @@
 
 
             <!-- =========================
-                 PORTIXOL
+                 PORTITXOL
             ========================= -->
 
             <article class="card">
 
 
-                <img
-                    src="photo_portixol.jpg"
-                    alt="Apartamento Portixol"
+                <div
+                    class="carousel"
+                    data-carousel="portitxol"
                 >
+
+                    <div
+                        class="carousel-track"
+                        id="track-portitxol"
+                    >
+
+                        <div class="carousel-slide">
+                            <img
+                                src="photo_portitxol.jpg"
+                                alt="Apartamento Portitxol"
+                            >
+                        </div>
+
+                        <div class="carousel-slide">
+                            <img
+                                src="photo_portitxol2.jpg"
+                                alt="Apartamento Portitxol"
+                            >
+                        </div>
+
+                        <div class="carousel-slide">
+                            <img
+                                src="photo_portitxol3.jpg"
+                                alt="Apartamento Portitxol"
+                            >
+                        </div>
+
+                        <div class="carousel-slide">
+                            <img
+                                src="photo_portitxol4.jpg"
+                                alt="Apartamento Portitxol"
+                            >
+                        </div>
+
+                        <div class="carousel-slide">
+                            <img
+                                src="photo_portitxol5.jpg"
+                                alt="Apartamento Portitxol"
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="carousel-button carousel-prev"
+                        onclick="moveCarousel('portitxol', -1)"
+                        aria-label="Foto anterior"
+                    >
+                        ‹
+                    </button>
+
+
+                    <button
+                        class="carousel-button carousel-next"
+                        onclick="moveCarousel('portitxol', 1)"
+                        aria-label="Foto siguiente"
+                    >
+                        ›
+                    </button>
+
+
+                    <div
+                        class="carousel-dots"
+                        id="dots-portitxol"
+                    ></div>
+
+
+                    <div
+                        class="photo-counter"
+                        id="counter-portitxol"
+                    >
+                        1 / 5
+                    </div>
+
+                </div>
+
 
 
                 <div class="card-content">
 
 
                     <h3>
-                        Portixol
+                        Portitxol
                     </h3>
 
 
                     <p class="card-description">
-                        Un apartamento pensado para disfrutar
-                        del Mediterráneo y las calas de Jávea.
+
+                        Apartamento ideal para familias,
+                        con capacidad para 4 personas:
+                        2 adultos y 2 niños. Dispone de
+                        parking privado y todo lo necesario
+                        para disfrutar de Jávea.
+
                     </p>
+
+
+                    <div class="features">
+
+                        <span class="feature">
+                            👨‍👩‍👧‍👦 2 adultos + 2 niños
+                        </span>
+
+                        <span class="feature">
+                            🌐 WiFi
+                        </span>
+
+                        <span class="feature">
+                            🚗 Parking
+                        </span>
+
+                        <span class="feature">
+                            🌊 Portitxol
+                        </span>
+
+                    </div>
 
 
                     <div class="availability">
 
                         <div class="availability-title">
 
-                            📅 Disponibilidad Portixol
+                            📅 Disponibilidad Portitxol
 
                         </div>
 
 
                         <div
-                            id="calendarPortixol"
+                            id="calendarPortitxol"
                             class="calendar"
                         >
 
@@ -1090,10 +1592,295 @@
     <script>
 
 
+        /* =========================
+           CARRUSELES
+        ========================= */
+
+        const carouselStates = {
+
+            montgo: 0,
+
+            granadella: 0,
+
+            portitxol: 0
+
+        };
+
+
+        function updateCarousel(
+            apartment
+        ) {
+
+            const index =
+                carouselStates[
+                    apartment
+                ];
+
+
+            const track =
+                document.getElementById(
+                    "track-" +
+                    apartment
+                );
+
+
+            const dots =
+                document.getElementById(
+                    "dots-" +
+                    apartment
+                );
+
+
+            const counter =
+                document.getElementById(
+                    "counter-" +
+                    apartment
+                );
+
+
+            track.style.transform =
+                "translateX(-" +
+                (index * 100) +
+                "%)";
+
+
+            dots.innerHTML = "";
+
+
+            for (
+                let i = 0;
+                i < 5;
+                i++
+            ) {
+
+                const dot =
+                    document.createElement(
+                        "button"
+                    );
+
+
+                dot.className =
+                    "carousel-dot" +
+                    (
+                        i === index
+                            ? " active"
+                            : ""
+                    );
+
+
+                dot.setAttribute(
+                    "aria-label",
+                    "Ir a foto " +
+                    (i + 1)
+                );
+
+
+                dot.onclick =
+                    function () {
+
+                        carouselStates[
+                            apartment
+                        ] = i;
+
+                        updateCarousel(
+                            apartment
+                        );
+
+                    };
+
+
+                dots.appendChild(
+                    dot
+                );
+
+            }
+
+
+            counter.textContent =
+                (index + 1) +
+                " / 5";
+
+        }
+
+
+
+        function moveCarousel(
+            apartment,
+            direction
+        ) {
+
+            let index =
+                carouselStates[
+                    apartment
+                ];
+
+
+            index += direction;
+
+
+            if (index < 0) {
+
+                index = 4;
+
+            }
+
+
+            if (index > 4) {
+
+                index = 0;
+
+            }
+
+
+            carouselStates[
+                apartment
+            ] = index;
+
+
+            updateCarousel(
+                apartment
+            );
+
+        }
+
+
+
         /*
-         * ========================================
-         * WORKERS DE LOS TRES APARTAMENTOS
-         * ========================================
+         * Inicializar carruseles
+         */
+
+        updateCarousel(
+            "montgo"
+        );
+
+
+        updateCarousel(
+            "granadella"
+        );
+
+
+        updateCarousel(
+            "portitxol"
+        );
+
+
+
+        /*
+         * =========================
+         * DESLIZAR CON EL DEDO
+         * =========================
+         */
+
+        document
+            .querySelectorAll(".carousel")
+            .forEach(
+                carousel => {
+
+                    let startX = 0;
+
+                    let startY = 0;
+
+
+                    carousel.addEventListener(
+                        "touchstart",
+                        function(event) {
+
+                            startX =
+                                event.touches[0]
+                                    .clientX;
+
+                            startY =
+                                event.touches[0]
+                                    .clientY;
+
+                        },
+                        {
+                            passive: true
+                        }
+                    );
+
+
+                    carousel.addEventListener(
+                        "touchend",
+                        function(event) {
+
+                            const endX =
+                                event.changedTouches[0]
+                                    .clientX;
+
+                            const endY =
+                                event.changedTouches[0]
+                                    .clientY;
+
+
+                            const differenceX =
+                                endX - startX;
+
+
+                            const differenceY =
+                                endY - startY;
+
+
+                            /*
+                             * Solo consideramos
+                             * un desplazamiento
+                             * horizontal.
+                             */
+
+                            if (
+                                Math.abs(
+                                    differenceX
+                                ) > 50 &&
+                                Math.abs(
+                                    differenceX
+                                ) >
+                                Math.abs(
+                                    differenceY
+                                )
+                            ) {
+
+
+                                const apartment =
+                                    carousel.dataset
+                                        .carousel;
+
+
+                                if (
+                                    differenceX < 0
+                                ) {
+
+                                    moveCarousel(
+                                        apartment,
+                                        1
+                                    );
+
+                                }
+                                else {
+
+                                    moveCarousel(
+                                        apartment,
+                                        -1
+                                    );
+
+                                }
+
+                            }
+
+                        },
+                        {
+                            passive: true
+                        }
+                    );
+
+                }
+            );
+
+
+
+        /*
+         * =========================
+         * WORKERS
+         * =========================
          */
 
         const CALENDARS = {
@@ -1121,13 +1908,13 @@
             },
 
 
-            Portixol: {
+            Portitxol: {
 
                 url:
                     "https://calendario-portichol.jose6900.workers.dev/",
 
                 element:
-                    "calendarPortixol"
+                    "calendarPortitxol"
 
             }
 
@@ -1136,9 +1923,9 @@
 
 
         /*
-         * ========================================
-         * ESTADO DE LOS CALENDARIOS
-         * ========================================
+         * =========================
+         * ESTADO CALENDARIOS
+         * =========================
          */
 
         const calendarStates = {};
@@ -1177,9 +1964,9 @@
 
 
         /*
-         * ========================================
+         * =========================
          * FECHAS
-         * ========================================
+         * =========================
          */
 
         function parseDate(
@@ -1233,28 +2020,27 @@
 
 
         /*
-         * ========================================
+         * =========================
          * RESERVAS
-         * ========================================
+         * =========================
          *
-         * IMPORTANTE:
+         * END no se considera ocupado.
          *
-         * start = entrada
-         * end   = salida
+         * Por ejemplo:
          *
-         * La fecha END NO está ocupada.
+         * Entrada 13
+         * Salida 17
          *
-         * Por eso si una reserva termina
-         * el día 17, podemos seleccionar
-         * el día 17 como salida.
+         * Ocupa 13,14,15,16.
          *
+         * El 17 queda disponible
+         * como salida/entrada.
          */
 
         function isBooked(
             apartment,
             date
         ) {
-
 
             const state =
                 calendarStates[
@@ -1281,17 +2067,10 @@
 
 
 
-        /*
-         * ========================================
-         * ENTRADA DE OTRA RESERVA
-         * ========================================
-         */
-
         function isReservationStart(
             apartment,
             date
         ) {
-
 
             const state =
                 calendarStates[
@@ -1319,9 +2098,9 @@
 
 
         /*
-         * ========================================
-         * DISPONIBILIDAD DE UN INTERVALO
-         * ========================================
+         * =========================
+         * INTERVALO DISPONIBLE
+         * =========================
          */
 
         function rangeIsAvailable(
@@ -1329,7 +2108,6 @@
             start,
             end
         ) {
-
 
             const current =
                 new Date(start);
@@ -1343,7 +2121,6 @@
             while (
                 current < end
             ) {
-
 
                 if (
                     isBooked(
@@ -1371,16 +2148,15 @@
 
 
         /*
-         * ========================================
-         * FECHA DE SALIDA POSIBLE
-         * ========================================
+         * =========================
+         * SALIDA POSIBLE
+         * =========================
          */
 
         function canUseAsCheckout(
             apartment,
             date
         ) {
-
 
             const state =
                 calendarStates[
@@ -1415,16 +2191,15 @@
 
 
         /*
-         * ========================================
-         * RANGO SELECCIONADO
-         * ========================================
+         * =========================
+         * RANGO
+         * =========================
          */
 
         function isInSelectedRange(
             apartment,
             date
         ) {
-
 
             const state =
                 calendarStates[
@@ -1461,9 +2236,9 @@
 
 
         /*
-         * ========================================
-         * FORMATO DE FECHA
-         * ========================================
+         * =========================
+         * FORMATO FECHA
+         * =========================
          */
 
         function formatSpanishDate(
@@ -1483,12 +2258,6 @@
 
 
 
-        /*
-         * ========================================
-         * NOMBRE DEL MES
-         * ========================================
-         */
-
         function monthName(
             date
         ) {
@@ -1506,15 +2275,14 @@
 
 
         /*
-         * ========================================
-         * RENDERIZAR CALENDARIO
-         * ========================================
+         * =========================
+         * RENDER CALENDARIO
+         * =========================
          */
 
         function renderCalendar(
             apartment
         ) {
-
 
             const config =
                 CALENDARS[
@@ -1559,11 +2327,6 @@
                     0
                 );
 
-
-            /*
-             * Lunes = 0
-             * Domingo = 6
-             */
 
             let startingDay =
                 firstDay.getDay();
@@ -1624,11 +2387,6 @@
             `;
 
 
-
-            /*
-             * Huecos antes del día 1
-             */
-
             for (
                 let i = 0;
                 i < startingDay;
@@ -1647,10 +2405,6 @@
             }
 
 
-
-            /*
-             * DÍAS
-             */
 
             for (
                 let day = 1;
@@ -1719,10 +2473,6 @@
                     "calendar-day";
 
 
-                /*
-                 * RESERVADO
-                 */
-
                 if (booked) {
 
                     classes +=
@@ -1730,10 +2480,6 @@
 
                 }
 
-
-                /*
-                 * SALIDA DISPONIBLE
-                 */
 
                 if (
                     reservationStart &&
@@ -1746,10 +2492,6 @@
                 }
 
 
-                /*
-                 * PASADO
-                 */
-
                 if (past) {
 
                     classes +=
@@ -1758,10 +2500,6 @@
                 }
 
 
-                /*
-                 * SELECCIONADO
-                 */
-
                 if (selected) {
 
                     classes +=
@@ -1769,10 +2507,6 @@
 
                 }
 
-
-                /*
-                 * DENTRO DEL RANGO
-                 */
 
                 if (
                     state.checkIn &&
@@ -1787,10 +2521,6 @@
                 }
 
 
-                /*
-                 * FINAL DEL RANGO
-                 */
-
                 if (
                     state.checkOut &&
                     dateToString(date) ===
@@ -1804,11 +2534,6 @@
 
                 }
 
-
-
-                /*
-                 * DESHABILITAR FECHAS
-                 */
 
                 let disabled =
                     false;
@@ -1827,7 +2552,6 @@
                     !state.checkOut
                 ) {
 
-
                     if (
                         date <= state.checkIn
                     ) {
@@ -1836,7 +2560,6 @@
                             true;
 
                     }
-
 
                     else if (
                         !canUseAsCheckout(
@@ -1861,7 +2584,6 @@
                         true;
 
                 }
-
 
 
                 const disabledAttribute =
@@ -1951,16 +2673,15 @@
 
 
         /*
-         * ========================================
+         * =========================
          * CAMBIAR MES
-         * ========================================
+         * =========================
          */
 
         function changeMonth(
             apartment,
             direction
         ) {
-
 
             const state =
                 calendarStates[
@@ -1990,16 +2711,15 @@
 
 
         /*
-         * ========================================
+         * =========================
          * SELECCIONAR FECHA
-         * ========================================
+         * =========================
          */
 
         function selectDate(
             apartment,
             dateString
         ) {
-
 
             const state =
                 calendarStates[
@@ -2017,12 +2737,6 @@
                 0, 0, 0, 0
             );
 
-
-            /*
-             * PRIMERA FECHA
-             *
-             * Entrada
-             */
 
             if (
                 !state.checkIn ||
@@ -2044,11 +2758,6 @@
             }
 
 
-
-            /*
-             * FECHA ANTERIOR
-             */
-
             if (
                 selectedDate <=
                 state.checkIn
@@ -2069,11 +2778,6 @@
             }
 
 
-
-            /*
-             * COMPROBAR DISPONIBILIDAD
-             */
-
             if (
                 !rangeIsAvailable(
                     apartment,
@@ -2091,10 +2795,6 @@
             }
 
 
-            /*
-             * SALIDA
-             */
-
             state.checkOut =
                 selectedDate;
 
@@ -2108,15 +2808,14 @@
 
 
         /*
-         * ========================================
+         * =========================
          * REINICIAR
-         * ========================================
+         * =========================
          */
 
         function resetSelection(
             apartment
         ) {
-
 
             const state =
                 calendarStates[
@@ -2141,15 +2840,14 @@
 
 
         /*
-         * ========================================
+         * =========================
          * MOSTRAR SELECCIÓN
-         * ========================================
+         * =========================
          */
 
         function updateSelection(
             apartment
         ) {
-
 
             const state =
                 calendarStates[
@@ -2182,16 +2880,10 @@
             }
 
 
-
-            /*
-             * SOLO ENTRADA
-             */
-
             if (
                 state.checkIn &&
                 !state.checkOut
             ) {
-
 
                 box.classList.add(
                     "visible"
@@ -2237,11 +2929,6 @@
 
             }
 
-
-
-            /*
-             * ENTRADA + SALIDA
-             */
 
             box.classList.add(
                 "visible"
@@ -2339,15 +3026,14 @@
 
 
         /*
-         * ========================================
+         * =========================
          * CARGAR WORKER
-         * ========================================
+         * =========================
          */
 
         async function loadCalendar(
             apartment
         ) {
-
 
             const config =
                 CALENDARS[
@@ -2469,9 +3155,9 @@
 
 
         /*
-         * ========================================
-         * INICIAR LOS TRES CALENDARIOS
-         * ========================================
+         * =========================
+         * INICIAR CALENDARIOS
+         * =========================
          */
 
         loadCalendar(
@@ -2485,7 +3171,7 @@
 
 
         loadCalendar(
-            "Portixol"
+            "Portitxol"
         );
 
 
