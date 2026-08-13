@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Apartamentos turísticos en Jávea | Reserva directa</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Apartamentos turísticos en Jávea | Reserva directa
+    </title>
+
 
     <style>
 
@@ -14,30 +23,45 @@
             padding: 0;
         }
 
+
         body {
-            font-family: Arial, sans-serif;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             color: #243238;
+
             background: #f8f6f1;
+
             line-height: 1.6;
+
         }
+
 
         /* =========================
            HERO
         ========================= */
 
         .hero {
+
             min-height: 85vh;
 
             background:
+
                 linear-gradient(
                     rgba(0,0,0,.35),
                     rgba(0,0,0,.35)
                 ),
+
                 url("photo_montgo.jpg")
-                center/cover;
+                center / cover;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             text-align: center;
@@ -45,28 +69,44 @@
             color: white;
 
             padding: 30px;
+
         }
+
 
         .hero-content {
+
             max-width: 800px;
+
         }
+
 
         .hero h1 {
-            font-size: clamp(42px, 7vw, 78px);
+
+            font-size:
+                clamp(42px, 7vw, 78px);
+
             margin-bottom: 20px;
+
             font-weight: 700;
+
         }
 
+
         .hero p {
+
             font-size: 22px;
+
             margin-bottom: 35px;
+
         }
+
 
         /* =========================
            BOTONES
         ========================= */
 
         .button {
+
             display: inline-block;
 
             background: #25D366;
@@ -84,39 +124,61 @@
             font-size: 18px;
 
             transition: .2s;
+
+            border: none;
+
+            cursor: pointer;
+
         }
 
+
         .button:hover {
-            transform: translateY(-2px);
+
+            transform:
+                translateY(-2px);
+
         }
+
 
         /* =========================
            SECCIONES
         ========================= */
 
         section {
+
             max-width: 1200px;
 
             margin: auto;
 
             padding: 80px 25px;
+
         }
 
+
         .section-title {
+
             text-align: center;
 
             margin-bottom: 50px;
+
         }
 
+
         .section-title h2 {
+
             font-size: 40px;
 
             margin-bottom: 10px;
+
         }
 
+
         .section-title p {
+
             color: #667;
+
         }
+
 
         /* =========================
            APARTAMENTOS
@@ -133,7 +195,9 @@
                 );
 
             gap: 30px;
+
         }
+
 
         .card {
 
@@ -146,7 +210,9 @@
             box-shadow:
                 0 8px 30px
                 rgba(0,0,0,.08);
+
         }
+
 
         .card img {
 
@@ -157,33 +223,374 @@
             object-fit: cover;
 
             display: block;
+
         }
+
 
         .card-content {
 
             padding: 25px;
+
         }
+
 
         .card h3 {
 
             font-size: 28px;
 
             margin-bottom: 10px;
+
         }
+
 
         .card p {
 
             color: #667;
 
             margin-bottom: 20px;
+
         }
+
 
         .card .button {
 
             font-size: 15px;
 
-            padding: 12px 20px;
+            padding:
+                12px 20px;
+
         }
+
+
+        /* =========================
+           CALENDARIO
+        ========================= */
+
+        .availability {
+
+            margin-top: 25px;
+
+            padding-top: 25px;
+
+            border-top:
+                1px solid #eee;
+
+        }
+
+
+        .availability-title {
+
+            font-size: 19px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .calendar {
+
+            background: #f8f6f1;
+
+            border-radius: 14px;
+
+            padding: 15px;
+
+        }
+
+
+        .calendar-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .calendar-header strong {
+
+            font-size: 17px;
+
+        }
+
+
+        .calendar-nav {
+
+            width: 34px;
+
+            height: 34px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: white;
+
+            cursor: pointer;
+
+            font-size: 20px;
+
+            box-shadow:
+                0 2px 8px
+                rgba(0,0,0,.08);
+
+        }
+
+
+        .calendar-weekdays,
+        .calendar-days {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(7, 1fr);
+
+            gap: 4px;
+
+        }
+
+
+        .calendar-weekdays {
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .calendar-weekdays div {
+
+            text-align: center;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            color: #777;
+
+            padding: 5px 0;
+
+        }
+
+
+        .calendar-day {
+
+            aspect-ratio: 1 / 1;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: white;
+
+            cursor: pointer;
+
+            font-size: 13px;
+
+            color: #243238;
+
+        }
+
+
+        .calendar-day:hover {
+
+            background: #dff5e7;
+
+        }
+
+
+        .calendar-day.empty {
+
+            background: transparent;
+
+            cursor: default;
+
+        }
+
+
+        .calendar-day.past {
+
+            color: #bbb;
+
+            background: #eee;
+
+            cursor: not-allowed;
+
+        }
+
+
+        .calendar-day.booked {
+
+            background: #ddd;
+
+            color: #999;
+
+            text-decoration: line-through;
+
+            cursor: not-allowed;
+
+        }
+
+
+        .calendar-day.selected {
+
+            background: #25D366;
+
+            color: white;
+
+            font-weight: bold;
+
+        }
+
+
+        .calendar-day.in-range {
+
+            background: #d9f5e4;
+
+        }
+
+
+        .calendar-day.checkout {
+
+            border:
+                2px solid #25D366;
+
+        }
+
+
+        .calendar-legend {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 18px;
+
+            margin-top: 15px;
+
+            font-size: 12px;
+
+            color: #666;
+
+        }
+
+
+        .legend-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+        }
+
+
+        .legend-box {
+
+            width: 13px;
+
+            height: 13px;
+
+            border-radius: 4px;
+
+            background: white;
+
+            border:
+                1px solid #ddd;
+
+        }
+
+
+        .legend-box.booked {
+
+            background: #ddd;
+
+        }
+
+
+        .legend-box.available {
+
+            background: white;
+
+        }
+
+
+        .selection {
+
+            margin-top: 15px;
+
+            padding: 15px;
+
+            background: white;
+
+            border-radius: 12px;
+
+            display: none;
+
+        }
+
+
+        .selection.visible {
+
+            display: block;
+
+        }
+
+
+        .selection p {
+
+            margin: 0 0 12px;
+
+            color: #555;
+
+            font-size: 14px;
+
+        }
+
+
+        .selection strong {
+
+            color: #243238;
+
+        }
+
+
+        .selection .button {
+
+            width: 100%;
+
+            text-align: center;
+
+            font-size: 15px;
+
+        }
+
+
+        .calendar-status {
+
+            text-align: center;
+
+            padding: 20px;
+
+            color: #777;
+
+            font-size: 14px;
+
+        }
+
+
+        .calendar-error {
+
+            color: #a33;
+
+        }
+
 
         /* =========================
            EXPERIENCIA
@@ -194,7 +601,9 @@
             background: #e9e3d7;
 
             max-width: none;
+
         }
+
 
         .experience-inner {
 
@@ -203,14 +612,18 @@
             margin: auto;
 
             text-align: center;
+
         }
+
 
         .experience h2 {
 
             font-size: 40px;
 
             margin-bottom: 20px;
+
         }
+
 
         .experience p {
 
@@ -219,7 +632,9 @@
             margin: auto;
 
             font-size: 18px;
+
         }
+
 
         /* =========================
            CONTACTO
@@ -228,19 +643,25 @@
         .contact {
 
             text-align: center;
+
         }
+
 
         .contact h2 {
 
             font-size: 40px;
 
             margin-bottom: 15px;
+
         }
+
 
         .contact p {
 
             margin-bottom: 30px;
+
         }
+
 
         /* =========================
            FOOTER
@@ -255,12 +676,16 @@
             text-align: center;
 
             padding: 30px 20px;
+
         }
+
 
         footer p {
 
             opacity: .8;
+
         }
+
 
         /* =========================
            MÓVIL
@@ -271,29 +696,60 @@
             .hero {
 
                 min-height: 75vh;
+
             }
+
 
             .hero p {
 
                 font-size: 18px;
+
             }
+
 
             section {
 
                 padding: 60px 20px;
+
             }
+
 
             .section-title h2,
             .experience h2,
             .contact h2 {
 
                 font-size: 32px;
+
             }
+
 
             .card img {
 
                 height: 240px;
+
             }
+
+
+            .calendar {
+
+                padding: 10px;
+
+            }
+
+
+            .calendar-day {
+
+                font-size: 12px;
+
+            }
+
+
+            .calendar-legend {
+
+                gap: 10px;
+
+            }
+
         }
 
     </style>
@@ -312,7 +768,10 @@
 
         <div class="hero-content">
 
-            <h1>Jávea, Mediterráneo</h1>
+            <h1>
+                Jávea, Mediterráneo
+            </h1>
+
 
             <p>
                 Apartamentos turísticos para disfrutar
@@ -344,11 +803,14 @@
 
         <div class="section-title">
 
-            <h2>Nuestros apartamentos</h2>
+            <h2>
+                Nuestros apartamentos
+            </h2>
+
 
             <p>
-                Elige el alojamiento perfecto para
-                disfrutar de Jávea.
+                Elige el alojamiento perfecto
+                para disfrutar de Jávea.
             </p>
 
         </div>
@@ -367,21 +829,22 @@
 
                 <img
                     src="photo_montgo.jpg"
-                    alt="Apartamento Montgó">
+                    alt="Apartamento Montgó"
+                >
 
 
                 <div class="card-content">
 
 
-                    <h3>Montgó</h3>
+                    <h3>
+                        Montgó
+                    </h3>
 
 
                     <p>
-
                         Un alojamiento ideal para disfrutar
                         de Jávea, el mar y el entorno natural
                         del Montgó.
-
                     </p>
 
 
@@ -405,36 +868,60 @@
                  GRANADELLA
             ========================= -->
 
-            <article class="card">
+            <article
+                class="card"
+                id="granadella"
+            >
 
 
                 <img
                     src="photo_granadella.jpg"
-                    alt="Apartamento Granadella">
+                    alt="Apartamento Granadella"
+                >
 
 
                 <div class="card-content">
 
 
-                    <h3>Granadella</h3>
+                    <h3>
+                        Granadella
+                    </h3>
 
 
                     <p>
-
                         Disfruta de una de las zonas más
                         espectaculares de Jávea.
-
                     </p>
 
 
-                    <a
-                        class="button"
-                        href="https://wa.me/34634357303?text=Hola,%20me%20interesa%20el%20apartamento%20Granadella.%0A%0AFechas:%20%0AN%C3%BAmero%20de%20hu%C3%A9spedes:%20%0A%0A%C2%BFPodr%C3%ADais%20indicarme%20disponibilidad%20y%20precio%3F"
-                        target="_blank">
 
-                        Consultar disponibilidad
+                    <!-- CALENDARIO -->
 
-                    </a>
+                    <div class="availability">
+
+
+                        <div class="availability-title">
+
+                            📅 Disponibilidad Granadella
+
+                        </div>
+
+
+                        <div
+                            id="calendarGranadella"
+                            class="calendar"
+                        >
+
+                            <div class="calendar-status">
+
+                                Cargando disponibilidad...
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
 
 
                 </div>
@@ -452,20 +939,21 @@
 
                 <img
                     src="photo_portixol.jpg"
-                    alt="Apartamento Portixol">
+                    alt="Apartamento Portixol"
+                >
 
 
                 <div class="card-content">
 
 
-                    <h3>Portixol</h3>
+                    <h3>
+                        Portixol
+                    </h3>
 
 
                     <p>
-
                         Un apartamento pensado para disfrutar
                         del Mediterráneo y las calas de Jávea.
-
                     </p>
 
 
@@ -500,7 +988,9 @@
         <div class="experience-inner">
 
 
-            <h2>Descubre Jávea</h2>
+            <h2>
+                Descubre Jávea
+            </h2>
 
 
             <p>
@@ -529,7 +1019,9 @@
     <section class="contact">
 
 
-        <h2>¿Quieres reservar?</h2>
+        <h2>
+            ¿Quieres reservar?
+        </h2>
 
 
         <p>
@@ -562,12 +1054,882 @@
     <footer>
 
         <p>
-
             © 2026 Apartamentos en Jávea
-
         </p>
 
     </footer>
+
+
+
+    <!-- =========================
+         CALENDARIO JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+
+        const CALENDAR_URL =
+            "https://calendario-granadella.jose6900.workers.dev/";
+
+
+        const calendarContainer =
+            document.getElementById(
+                "calendarGranadella"
+            );
+
+
+        let events = [];
+
+        let currentMonth =
+            new Date(
+                new Date().getFullYear(),
+                new Date().getMonth(),
+                1
+            );
+
+
+        let checkIn = null;
+
+        let checkOut = null;
+
+
+
+        /*
+         * Convierte YYYY-MM-DD
+         * en objeto Date local.
+         */
+
+        function parseDate(dateString) {
+
+            const parts =
+                dateString.split("-");
+
+            return new Date(
+                Number(parts[0]),
+                Number(parts[1]) - 1,
+                Number(parts[2])
+            );
+
+        }
+
+
+
+        /*
+         * Convierte Date a YYYY-MM-DD
+         */
+
+        function dateToString(date) {
+
+            const year =
+                date.getFullYear();
+
+            const month =
+                String(
+                    date.getMonth() + 1
+                ).padStart(2, "0");
+
+            const day =
+                String(
+                    date.getDate()
+                ).padStart(2, "0");
+
+            return `${year}-${month}-${day}`;
+
+        }
+
+
+
+        /*
+         * Comprueba si una fecha está ocupada.
+         *
+         * IMPORTANTE:
+         * end es el día de salida,
+         * por lo que NO se bloquea.
+         */
+
+        function isBooked(date) {
+
+            const dateString =
+                dateToString(date);
+
+
+            return events.some(event => {
+
+                return (
+                    dateString >= event.start &&
+                    dateString < event.end
+                );
+
+            });
+
+        }
+
+
+
+        /*
+         * Comprueba si una fecha está en el intervalo
+         * seleccionado.
+         */
+
+        function isInSelectedRange(date) {
+
+            if (!checkIn) {
+                return false;
+            }
+
+
+            const dateString =
+                dateToString(date);
+
+
+            if (!checkOut) {
+
+                return (
+                    dateString ===
+                    dateToString(checkIn)
+                );
+
+            }
+
+
+            return (
+                dateString >=
+                dateToString(checkIn)
+                &&
+                dateString <=
+                dateToString(checkOut)
+            );
+
+        }
+
+
+
+        /*
+         * Comprueba que todas las noches
+         * entre entrada y salida están libres.
+         */
+
+        function rangeIsAvailable(
+            start,
+            end
+        ) {
+
+            const current =
+                new Date(start);
+
+
+            while (
+                current < end
+            ) {
+
+                if (
+                    isBooked(current)
+                ) {
+
+                    return false;
+
+                }
+
+                current.setDate(
+                    current.getDate() + 1
+                );
+
+            }
+
+
+            return true;
+
+        }
+
+
+
+        /*
+         * Formato de fechas para WhatsApp
+         */
+
+        function formatSpanishDate(
+            date
+        ) {
+
+            return date.toLocaleDateString(
+                "es-ES",
+                {
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric"
+                }
+            );
+
+        }
+
+
+
+        /*
+         * Nombre del mes.
+         */
+
+        function monthName(date) {
+
+            return date.toLocaleDateString(
+                "es-ES",
+                {
+                    month: "long",
+                    year: "numeric"
+                }
+            );
+
+        }
+
+
+
+        /*
+         * Renderiza el calendario.
+         */
+
+        function renderCalendar() {
+
+
+            const year =
+                currentMonth.getFullYear();
+
+
+            const month =
+                currentMonth.getMonth();
+
+
+            const firstDay =
+                new Date(
+                    year,
+                    month,
+                    1
+                );
+
+
+            const lastDay =
+                new Date(
+                    year,
+                    month + 1,
+                    0
+                );
+
+
+            /*
+             * JavaScript empieza la semana
+             * en domingo.
+             *
+             * Lo convertimos para que
+             * lunes sea el primer día.
+             */
+
+            let startingDay =
+                firstDay.getDay();
+
+
+            startingDay =
+                startingDay === 0
+                    ? 6
+                    : startingDay - 1;
+
+
+            let html = `
+
+                <div class="calendar-header">
+
+                    <button
+                        class="calendar-nav"
+                        onclick="changeMonth(-1)"
+                        aria-label="Mes anterior"
+                    >
+                        ‹
+                    </button>
+
+
+                    <strong>
+                        ${monthName(currentMonth)}
+                    </strong>
+
+
+                    <button
+                        class="calendar-nav"
+                        onclick="changeMonth(1)"
+                        aria-label="Mes siguiente"
+                    >
+                        ›
+                    </button>
+
+                </div>
+
+
+                <div class="calendar-weekdays">
+
+                    <div>L</div>
+                    <div>M</div>
+                    <div>X</div>
+                    <div>J</div>
+                    <div>V</div>
+                    <div>S</div>
+                    <div>D</div>
+
+                </div>
+
+
+                <div class="calendar-days">
+            `;
+
+
+            /*
+             * Espacios antes del día 1.
+             */
+
+            for (
+                let i = 0;
+                i < startingDay;
+                i++
+            ) {
+
+                html += `
+                    <button
+                        class="calendar-day empty"
+                        disabled
+                    ></button>
+                `;
+
+            }
+
+
+
+            /*
+             * Días del mes.
+             */
+
+            for (
+                let day = 1;
+                day <= lastDay.getDate();
+                day++
+            ) {
+
+
+                const date =
+                    new Date(
+                        year,
+                        month,
+                        day
+                    );
+
+
+                const today =
+                    new Date();
+
+
+                today.setHours(
+                    0, 0, 0, 0
+                );
+
+
+                const booked =
+                    isBooked(date);
+
+
+                const past =
+                    date < today;
+
+
+                const selected =
+                    isInSelectedRange(
+                        date
+                    );
+
+
+                let classes =
+                    "calendar-day";
+
+
+                if (booked) {
+
+                    classes +=
+                        " booked";
+
+                }
+
+
+                if (past) {
+
+                    classes +=
+                        " past";
+
+                }
+
+
+                if (selected) {
+
+                    classes +=
+                        " selected";
+
+                }
+
+
+                if (
+                    checkIn &&
+                    checkOut &&
+                    date > checkIn &&
+                    date < checkOut
+                ) {
+
+                    classes +=
+                        " in-range";
+
+                }
+
+
+                if (
+                    checkOut &&
+                    dateToString(date) ===
+                    dateToString(checkOut)
+                ) {
+
+                    classes +=
+                        " checkout";
+
+                }
+
+
+                const disabled =
+                    booked || past
+                        ? "disabled"
+                        : "";
+
+
+                html += `
+
+                    <button
+                        class="${classes}"
+                        ${disabled}
+                        onclick="selectDate(
+                            '${dateToString(date)}'
+                        )"
+                    >
+                        ${day}
+                    </button>
+
+                `;
+
+            }
+
+
+            html += `
+
+                </div>
+
+
+                <div class="calendar-legend">
+
+                    <div class="legend-item">
+
+                        <span
+                            class="legend-box available"
+                        ></span>
+
+                        Disponible
+
+                    </div>
+
+
+                    <div class="legend-item">
+
+                        <span
+                            class="legend-box booked"
+                        ></span>
+
+                        Reservado
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="selectionBox"
+                    class="selection"
+                ></div>
+
+            `;
+
+
+            calendarContainer.innerHTML =
+                html;
+
+
+            updateSelection();
+
+        }
+
+
+
+        /*
+         * Cambiar de mes.
+         */
+
+        function changeMonth(
+            direction
+        ) {
+
+            currentMonth =
+                new Date(
+                    currentMonth.getFullYear(),
+                    currentMonth.getMonth()
+                        + direction,
+                    1
+                );
+
+
+            renderCalendar();
+
+        }
+
+
+
+        /*
+         * Seleccionar entrada/salida.
+         */
+
+        function selectDate(
+            dateString
+        ) {
+
+
+            const selectedDate =
+                parseDate(dateString);
+
+
+            /*
+             * Primera selección:
+             * fecha de entrada.
+             */
+
+            if (
+                !checkIn ||
+                checkOut
+            ) {
+
+                checkIn =
+                    selectedDate;
+
+                checkOut =
+                    null;
+
+                renderCalendar();
+
+                return;
+
+            }
+
+
+
+            /*
+             * Si seleccionan una fecha
+             * anterior a la entrada,
+             * la convertimos en nueva entrada.
+             */
+
+            if (
+                selectedDate <= checkIn
+            ) {
+
+                checkIn =
+                    selectedDate;
+
+                checkOut =
+                    null;
+
+                renderCalendar();
+
+                return;
+
+            }
+
+
+
+            /*
+             * Segunda selección:
+             * fecha de salida.
+             */
+
+            if (
+                !rangeIsAvailable(
+                    checkIn,
+                    selectedDate
+                )
+            ) {
+
+                alert(
+                    "Hay una reserva dentro de esas fechas. Selecciona otro intervalo."
+                );
+
+                return;
+
+            }
+
+
+            checkOut =
+                selectedDate;
+
+
+            renderCalendar();
+
+        }
+
+
+
+        /*
+         * Actualiza la caja de selección.
+         */
+
+        function updateSelection() {
+
+
+            const box =
+                document.getElementById(
+                    "selectionBox"
+                );
+
+
+            if (!box) {
+                return;
+            }
+
+
+            if (!checkIn) {
+
+                box.classList.remove(
+                    "visible"
+                );
+
+                return;
+
+            }
+
+
+            if (
+                checkIn &&
+                !checkOut
+            ) {
+
+                box.classList.add(
+                    "visible"
+                );
+
+
+                box.innerHTML = `
+
+                    <p>
+                        <strong>
+                            Entrada:
+                        </strong>
+
+                        ${formatSpanishDate(
+                            checkIn
+                        )}
+                    </p>
+
+                    <p>
+                        Selecciona ahora
+                        la fecha de salida.
+                    </p>
+
+                `;
+
+                return;
+
+            }
+
+
+
+            /*
+             * Tenemos entrada y salida.
+             */
+
+            box.classList.add(
+                "visible"
+            );
+
+
+            const message =
+                "Hola, estoy interesado en reservar el apartamento Granadella.%0A%0A"
+                +
+                "Entrada: "
+                +
+                encodeURIComponent(
+                    formatSpanishDate(
+                        checkIn
+                    )
+                )
+                +
+                "%0A"
+                +
+                "Salida: "
+                +
+                encodeURIComponent(
+                    formatSpanishDate(
+                        checkOut
+                    )
+                )
+                +
+                "%0A%0A"
+                +
+                "¿Podéis confirmarme disponibilidad y precio?";
+
+
+            const whatsappUrl =
+                "https://wa.me/34634357303?text="
+                +
+                message;
+
+
+            box.innerHTML = `
+
+                <p>
+
+                    <strong>
+                        Entrada:
+                    </strong>
+
+                    ${formatSpanishDate(
+                        checkIn
+                    )}
+
+                    <br>
+
+                    <strong>
+                        Salida:
+                    </strong>
+
+                    ${formatSpanishDate(
+                        checkOut
+                    )}
+
+                </p>
+
+
+                <a
+                    class="button"
+                    href="${whatsappUrl}"
+                    target="_blank"
+                >
+
+                    💬 Consultar estas fechas
+
+                </a>
+
+            `;
+
+        }
+
+
+
+        /*
+         * Cargar los datos del Worker.
+         */
+
+        async function loadCalendar() {
+
+
+            try {
+
+
+                const response =
+                    await fetch(
+                        CALENDAR_URL
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "No se ha podido consultar la disponibilidad."
+                    );
+
+                }
+
+
+                const data =
+                    await response.json();
+
+
+                if (
+                    data.error
+                ) {
+
+                    throw new Error(
+                        data.message ||
+                        "Error en el calendario."
+                    );
+
+                }
+
+
+                events =
+                    Array.isArray(
+                        data.events
+                    )
+                        ? data.events
+                        : [];
+
+
+                renderCalendar();
+
+
+            } catch (error) {
+
+
+                console.error(
+                    error
+                );
+
+
+                calendarContainer.innerHTML = `
+
+                    <div
+                        class="calendar-status calendar-error"
+                    >
+
+                        No se ha podido cargar
+                        la disponibilidad.
+
+                        <br><br>
+
+                        Puedes consultar
+                        directamente por WhatsApp.
+
+                        <br><br>
+
+                        <a
+                            class="button"
+                            href="https://wa.me/34634357303?text=Hola,%20quiero%20consultar%20la%20disponibilidad%20del%20apartamento%20Granadella."
+                            target="_blank"
+                        >
+
+                            💬 Consultar por WhatsApp
+
+                        </a>
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+
+
+        /*
+         * Iniciar.
+         */
+
+        loadCalendar();
+
+
+    </script>
 
 
 </body>
