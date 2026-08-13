@@ -3,949 +3,896 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>
-        Apartamentos Jávea | Montgó, Granadella y Portitxol
-    </title>
+<title>Apartamentos Jávea | Montgó, Granadella y Portitxol</title>
 
-    <meta
-        name="description"
-        content="Apartamentos turísticos en Jávea. Montgó, Granadella y Portitxol. Consulta disponibilidad y reserva directamente por WhatsApp."
-    >
+<meta
+name="description"
+content="Apartamentos turísticos en Jávea. Montgó, Granadella y Portitxol. Consulta disponibilidad y reserva directamente por WhatsApp."
+>
 
-    <style>
+<style>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        body {
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #243238;
+    background: #f8f6f1;
+    line-height: 1.6;
+}
 
-            color: #243238;
 
-            background: #f8f6f1;
+/* =========================
+   HERO
+========================= */
 
-            line-height: 1.6;
-        }
+.hero {
 
+    min-height: 85vh;
 
-        /* =========================
-           HERO
-        ========================= */
+    background:
+        linear-gradient(
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.35)
+        ),
+        url("photo_javea.jpg")
+        center / cover;
 
-        .hero {
+    display: flex;
 
-            min-height: 85vh;
+    align-items: center;
 
-            background:
-                linear-gradient(
-                    rgba(0,0,0,.35),
-                    rgba(0,0,0,.35)
-                ),
-                url("photo_montgo.jpg")
-                center / cover;
+    justify-content: center;
 
-            display: flex;
+    text-align: center;
 
-            align-items: center;
+    color: white;
 
-            justify-content: center;
+    padding: 30px;
+}
 
-            text-align: center;
+.hero-content {
+    max-width: 800px;
+}
 
-            color: white;
+.hero h1 {
 
-            padding: 30px;
-        }
+    font-size:
+        clamp(42px, 7vw, 78px);
 
+    margin-bottom: 20px;
 
-        .hero-content {
-            max-width: 800px;
-        }
+    font-weight: 700;
+}
 
+.hero p {
 
-        .hero h1 {
+    font-size: 22px;
 
-            font-size:
-                clamp(42px, 7vw, 78px);
+    margin-bottom: 12px;
+}
 
-            margin-bottom: 20px;
+.hero-subtitle {
 
-            font-weight: 700;
-        }
+    font-size: 17px !important;
 
+    margin-bottom: 35px !important;
 
-        .hero p {
+    opacity: .95;
+}
 
-            font-size: 22px;
 
-            margin-bottom: 35px;
-        }
+/* =========================
+   BOTONES
+========================= */
 
+.button {
 
-        /* =========================
-           BOTONES
-        ========================= */
+    display: inline-block;
 
-        .button {
+    background: #25D366;
 
-            display: inline-block;
+    color: white;
 
-            background: #25D366;
+    padding: 15px 28px;
 
-            color: white;
+    border-radius: 50px;
 
-            padding: 15px 28px;
+    text-decoration: none;
 
-            border-radius: 50px;
+    font-weight: bold;
 
-            text-decoration: none;
+    font-size: 18px;
 
-            font-weight: bold;
+    transition: .2s;
 
-            font-size: 18px;
+    border: none;
 
-            transition: .2s;
+    cursor: pointer;
+}
 
-            border: none;
+.button:hover {
+    transform: translateY(-2px);
+}
 
-            cursor: pointer;
-        }
 
+/* =========================
+   SECCIONES
+========================= */
 
-        .button:hover {
+section {
 
-            transform:
-                translateY(-2px);
-        }
+    max-width: 1200px;
 
+    margin: auto;
 
-        /* =========================
-           SECCIONES
-        ========================= */
+    padding: 80px 25px;
+}
 
-        section {
+.section-title {
 
-            max-width: 1200px;
+    text-align: center;
 
-            margin: auto;
+    margin-bottom: 50px;
+}
 
-            padding: 80px 25px;
-        }
+.section-title h2 {
 
+    font-size: 40px;
 
-        .section-title {
+    margin-bottom: 10px;
+}
 
-            text-align: center;
+.section-title p {
+    color: #667;
+}
 
-            margin-bottom: 50px;
-        }
 
+/* =========================
+   APARTAMENTOS
+========================= */
 
-        .section-title h2 {
+.apartments {
 
-            font-size: 40px;
+    display: grid;
 
-            margin-bottom: 10px;
-        }
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px, 1fr)
+        );
 
+    gap: 30px;
+}
 
-        .section-title p {
+.card {
 
-            color: #667;
-        }
+    background: white;
 
+    border-radius: 18px;
 
-        /* =========================
-           APARTAMENTOS
-        ========================= */
+    overflow: hidden;
 
-        .apartments {
+    box-shadow:
+        0 8px 30px
+        rgba(0,0,0,.08);
+}
 
-            display: grid;
 
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(280px, 1fr)
-                );
+/* =========================
+   CARRUSEL
+========================= */
 
-            gap: 30px;
-        }
+.carousel {
 
+    position: relative;
 
-        .card {
+    width: 100%;
 
-            background: white;
+    height: 300px;
 
-            border-radius: 18px;
+    overflow: hidden;
 
-            overflow: hidden;
+    background: #eeeeee;
 
-            box-shadow:
-                0 8px 30px
-                rgba(0,0,0,.08);
-        }
+    touch-action: pan-y;
+}
 
+.carousel-track {
 
-        /* =========================
-           CARRUSEL
-        ========================= */
+    display: flex;
 
-        .carousel {
+    width: 100%;
 
-            position: relative;
+    height: 100%;
 
-            width: 100%;
+    transition:
+        transform .35s ease;
+}
 
-            height: 300px;
+.carousel-slide {
 
-            overflow: hidden;
+    min-width: 100%;
 
-            background: #ddd;
+    height: 100%;
 
-            touch-action: pan-y;
-        }
+    flex-shrink: 0;
 
+    display: flex;
 
-        .carousel-track {
+    align-items: center;
 
-            display: flex;
+    justify-content: center;
 
-            width: 100%;
+    background: #eeeeee;
 
-            height: 100%;
+    overflow: hidden;
+}
 
-            transition:
-                transform .35s ease;
-        }
+.carousel-slide img {
 
+    width: 100%;
 
-        .carousel-slide {
+    height: 100%;
 
-            min-width: 100%;
+    object-fit: contain;
 
-            height: 100%;
+    object-position: center;
 
-            flex-shrink: 0;
-        }
+    display: block;
 
+    background: #eeeeee;
+}
 
-        .carousel-slide img {
 
-            width: 100%;
+/* =========================
+   BOTONES CARRUSEL
+========================= */
 
-            height: 100%;
+.carousel-button {
 
-            object-fit: cover;
+    position: absolute;
 
-            display: block;
-        }
+    top: 50%;
 
+    transform:
+        translateY(-50%);
 
-        .carousel-button {
+    width: 42px;
 
-            position: absolute;
+    height: 42px;
 
-            top: 50%;
+    border: none;
 
-            transform:
-                translateY(-50%);
+    border-radius: 50%;
 
-            width: 42px;
+    background:
+        rgba(0,0,0,.45);
 
-            height: 42px;
+    color: white;
 
-            border: none;
+    font-size: 27px;
 
-            border-radius: 50%;
+    line-height: 1;
 
-            background:
-                rgba(0,0,0,.45);
+    cursor: pointer;
 
-            color: white;
+    z-index: 5;
 
-            font-size: 27px;
+    display: flex;
 
-            line-height: 1;
+    align-items: center;
 
-            cursor: pointer;
+    justify-content: center;
+}
 
-            z-index: 5;
+.carousel-button:hover {
+    background: rgba(0,0,0,.65);
+}
 
-            display: flex;
+.carousel-prev {
+    left: 12px;
+}
 
-            align-items: center;
+.carousel-next {
+    right: 12px;
+}
 
-            justify-content: center;
-        }
 
+/* =========================
+   PUNTOS
+========================= */
 
-        .carousel-button:hover {
+.carousel-dots {
 
-            background:
-                rgba(0,0,0,.65);
-        }
+    position: absolute;
 
+    bottom: 12px;
 
-        .carousel-prev {
+    left: 0;
 
-            left: 12px;
-        }
+    right: 0;
 
+    display: flex;
 
-        .carousel-next {
+    justify-content: center;
 
-            right: 12px;
-        }
+    gap: 7px;
 
+    z-index: 5;
+}
 
-        .carousel-dots {
+.carousel-dot {
 
-            position: absolute;
+    width: 8px;
 
-            bottom: 12px;
+    height: 8px;
 
-            left: 0;
+    border-radius: 50%;
 
-            right: 0;
+    border: none;
 
-            display: flex;
+    padding: 0;
 
-            justify-content: center;
+    background:
+        rgba(255,255,255,.75);
 
-            gap: 7px;
+    cursor: pointer;
+}
 
-            z-index: 5;
-        }
+.carousel-dot.active {
 
+    background: white;
 
-        .carousel-dot {
+    transform:
+        scale(1.25);
+}
 
-            width: 8px;
 
-            height: 8px;
+/* =========================
+   CONTADOR
+========================= */
 
-            border-radius: 50%;
+.photo-counter {
 
-            border: none;
+    position: absolute;
 
-            padding: 0;
+    top: 12px;
 
-            background:
-                rgba(255,255,255,.65);
+    right: 12px;
 
-            cursor: pointer;
-        }
+    background:
+        rgba(0,0,0,.5);
 
+    color: white;
 
-        .carousel-dot.active {
+    padding: 4px 9px;
 
-            background: white;
+    border-radius: 20px;
 
-            transform: scale(1.25);
-        }
+    font-size: 12px;
 
+    z-index: 5;
+}
 
-        .photo-counter {
 
-            position: absolute;
+/* =========================
+   CONTENIDO TARJETA
+========================= */
 
-            top: 12px;
+.card-content {
+    padding: 25px;
+}
 
-            right: 12px;
+.card h3 {
 
-            background:
-                rgba(0,0,0,.5);
+    font-size: 28px;
 
-            color: white;
+    margin-bottom: 10px;
+}
 
-            padding: 4px 9px;
+.card-description {
 
-            border-radius: 20px;
+    color: #667;
 
-            font-size: 12px;
+    margin-bottom: 18px;
+}
 
-            z-index: 5;
-        }
 
+/* =========================
+   CARACTERÍSTICAS
+========================= */
 
-        /* =========================
-           CONTENIDO TARJETA
-        ========================= */
+.features {
 
-        .card-content {
+    display: flex;
 
-            padding: 25px;
-        }
+    flex-wrap: wrap;
 
+    gap: 8px;
 
-        .card h3 {
+    margin-bottom: 22px;
+}
 
-            font-size: 28px;
+.feature {
 
-            margin-bottom: 10px;
-        }
+    background: #f3f1eb;
 
+    border-radius: 20px;
 
-        .card-description {
+    padding: 7px 11px;
 
-            color: #667;
+    font-size: 13px;
 
-            margin-bottom: 18px;
-        }
+    color: #4c5b60;
+}
 
 
-        /* =========================
-           CARACTERÍSTICAS
-        ========================= */
+/* =========================
+   CALENDARIO
+========================= */
 
-        .features {
+.availability {
 
-            display: flex;
+    margin-top: 25px;
 
-            flex-wrap: wrap;
+    padding-top: 25px;
 
-            gap: 8px;
+    border-top:
+        1px solid #eee;
+}
 
-            margin-bottom: 22px;
-        }
+.availability-title {
 
+    font-size: 19px;
 
-        .feature {
+    font-weight: bold;
 
-            background: #f3f1eb;
+    margin-bottom: 15px;
+}
 
-            border-radius: 20px;
+.calendar {
 
-            padding: 7px 11px;
+    background: #f8f6f1;
 
-            font-size: 13px;
+    border-radius: 14px;
 
-            color: #4c5b60;
-        }
+    padding: 15px;
+}
 
+.calendar-header {
 
-        /* =========================
-           CALENDARIO
-        ========================= */
+    display: flex;
 
-        .availability {
+    align-items: center;
 
-            margin-top: 25px;
+    justify-content: space-between;
 
-            padding-top: 25px;
+    margin-bottom: 15px;
+}
 
-            border-top:
-                1px solid #eee;
-        }
+.calendar-header strong {
 
+    font-size: 17px;
 
-        .availability-title {
+    text-transform: capitalize;
 
-            font-size: 19px;
+    text-align: center;
+}
 
-            font-weight: bold;
+.calendar-nav {
 
-            margin-bottom: 15px;
-        }
+    width: 36px;
 
+    height: 36px;
 
-        .calendar {
+    border: none;
 
-            background: #f8f6f1;
+    border-radius: 50%;
 
-            border-radius: 14px;
+    background: white;
 
-            padding: 15px;
-        }
+    cursor: pointer;
 
+    font-size: 22px;
 
-        .calendar-header {
+    box-shadow:
+        0 2px 8px
+        rgba(0,0,0,.08);
+}
 
-            display: flex;
+.calendar-nav:active {
+    transform: scale(.95);
+}
 
-            align-items: center;
+.calendar-weekdays,
+.calendar-days {
 
-            justify-content: space-between;
+    display: grid;
 
-            margin-bottom: 15px;
-        }
+    grid-template-columns:
+        repeat(7, 1fr);
 
+    gap: 4px;
+}
 
-        .calendar-header strong {
+.calendar-weekdays {
+    margin-bottom: 5px;
+}
 
-            font-size: 17px;
+.calendar-weekdays div {
 
-            text-transform: capitalize;
+    text-align: center;
 
-            text-align: center;
-        }
+    font-size: 12px;
 
+    font-weight: bold;
 
-        .calendar-nav {
+    color: #777;
 
-            width: 36px;
+    padding: 5px 0;
+}
 
-            height: 36px;
+.calendar-day {
 
-            border: none;
+    position: relative;
 
-            border-radius: 50%;
+    aspect-ratio: 1 / 1;
 
-            background: white;
+    border: none;
 
-            cursor: pointer;
+    border-radius: 8px;
 
-            font-size: 22px;
+    background: white;
 
-            box-shadow:
-                0 2px 8px
-                rgba(0,0,0,.08);
-        }
+    cursor: pointer;
 
+    font-size: 13px;
 
-        .calendar-nav:active {
+    color: #243238;
+}
 
-            transform: scale(.95);
-        }
+.calendar-day:hover {
+    background: #dff5e7;
+}
 
+.calendar-day.empty {
 
-        .calendar-weekdays,
-        .calendar-days {
+    background: transparent;
 
-            display: grid;
+    cursor: default;
+}
 
-            grid-template-columns:
-                repeat(7, 1fr);
+.calendar-day.past {
 
-            gap: 4px;
-        }
+    color: #bbb;
 
+    background: #eee;
 
-        .calendar-weekdays {
+    cursor: not-allowed;
+}
 
-            margin-bottom: 5px;
-        }
+.calendar-day.booked {
 
+    background: #ddd;
 
-        .calendar-weekdays div {
+    color: #999;
 
-            text-align: center;
+    text-decoration: line-through;
 
-            font-size: 12px;
+    cursor: not-allowed;
+}
 
-            font-weight: bold;
+.calendar-day.checkout-available {
 
-            color: #777;
+    background: white;
 
-            padding: 5px 0;
-        }
+    color: #243238;
 
+    border:
+        2px solid #25D366;
+}
 
-        .calendar-day {
+.calendar-day.selected {
 
-            position: relative;
+    background: #25D366;
 
-            aspect-ratio: 1 / 1;
+    color: white;
 
-            border: none;
+    font-weight: bold;
+}
 
-            border-radius: 8px;
+.calendar-day.in-range {
+    background: #d9f5e4;
+}
 
-            background: white;
+.calendar-day.range-end {
 
-            cursor: pointer;
+    background: #25D366;
 
-            font-size: 13px;
+    color: white;
 
-            color: #243238;
-        }
+    font-weight: bold;
+}
 
+.calendar-legend {
 
-        .calendar-day:hover {
+    display: flex;
 
-            background: #dff5e7;
-        }
+    justify-content: center;
 
+    flex-wrap: wrap;
 
-        .calendar-day.empty {
+    gap: 15px;
 
-            background: transparent;
+    margin-top: 15px;
 
-            cursor: default;
-        }
+    font-size: 12px;
 
+    color: #666;
+}
 
-        .calendar-day.past {
+.legend-item {
 
-            color: #bbb;
+    display: flex;
 
-            background: #eee;
+    align-items: center;
 
-            cursor: not-allowed;
-        }
+    gap: 5px;
+}
 
+.legend-box {
 
-        .calendar-day.booked {
+    width: 13px;
 
-            background: #ddd;
+    height: 13px;
 
-            color: #999;
+    border-radius: 4px;
 
-            text-decoration: line-through;
+    background: white;
 
-            cursor: not-allowed;
-        }
+    border:
+        1px solid #ddd;
+}
 
+.legend-box.booked {
+    background: #ddd;
+}
 
-        .calendar-day.checkout-available {
+.legend-box.checkout {
 
-            background: white;
+    background: white;
 
-            color: #243238;
+    border:
+        2px solid #25D366;
+}
 
-            border:
-                2px solid #25D366;
-        }
+.selection {
 
+    margin-top: 15px;
 
-        .calendar-day.selected {
+    padding: 15px;
 
-            background: #25D366;
+    background: white;
 
-            color: white;
+    border-radius: 12px;
 
-            font-weight: bold;
-        }
+    display: none;
+}
 
+.selection.visible {
+    display: block;
+}
 
-        .calendar-day.in-range {
+.selection p {
 
-            background: #d9f5e4;
-        }
+    margin: 0 0 12px;
 
+    color: #555;
 
-        .calendar-day.range-end {
+    font-size: 14px;
+}
 
-            background: #25D366;
+.selection strong {
+    color: #243238;
+}
 
-            color: white;
+.selection .button {
 
-            font-weight: bold;
-        }
+    width: 100%;
 
+    text-align: center;
 
-        .calendar-legend {
+    font-size: 15px;
+}
 
-            display: flex;
+.selection-reset {
 
-            justify-content: center;
+    display: block;
 
-            flex-wrap: wrap;
+    margin-top: 10px;
 
-            gap: 15px;
+    text-align: center;
 
-            margin-top: 15px;
+    color: #777;
 
-            font-size: 12px;
+    font-size: 13px;
 
-            color: #666;
-        }
+    text-decoration: underline;
 
+    cursor: pointer;
+}
 
-        .legend-item {
+.calendar-status {
 
-            display: flex;
+    text-align: center;
 
-            align-items: center;
+    padding: 20px;
 
-            gap: 5px;
-        }
+    color: #777;
 
+    font-size: 14px;
+}
 
-        .legend-box {
+.calendar-error {
+    color: #a33;
+}
 
-            width: 13px;
 
-            height: 13px;
+/* =========================
+   EXPERIENCIA
+========================= */
 
-            border-radius: 4px;
+.experience {
 
-            background: white;
+    background: #e9e3d7;
 
-            border:
-                1px solid #ddd;
-        }
+    max-width: none;
+}
 
+.experience-inner {
 
-        .legend-box.booked {
+    max-width: 1100px;
 
-            background: #ddd;
-        }
+    margin: auto;
 
+    text-align: center;
+}
 
-        .legend-box.checkout {
+.experience h2 {
 
-            background: white;
+    font-size: 40px;
 
-            border:
-                2px solid #25D366;
-        }
+    margin-bottom: 20px;
+}
 
+.experience p {
 
-        .selection {
+    max-width: 750px;
 
-            margin-top: 15px;
+    margin: auto;
 
-            padding: 15px;
+    font-size: 18px;
+}
 
-            background: white;
 
-            border-radius: 12px;
+/* =========================
+   CONTACTO
+========================= */
 
-            display: none;
-        }
+.contact {
+    text-align: center;
+}
 
+.contact h2 {
 
-        .selection.visible {
+    font-size: 40px;
 
-            display: block;
-        }
+    margin-bottom: 15px;
+}
 
+.contact p {
+    margin-bottom: 30px;
+}
 
-        .selection p {
 
-            margin: 0 0 12px;
+/* =========================
+   FOOTER
+========================= */
 
-            color: #555;
+footer {
 
-            font-size: 14px;
-        }
+    background: #243238;
 
+    color: white;
 
-        .selection strong {
+    text-align: center;
 
-            color: #243238;
-        }
+    padding: 30px 20px;
+}
 
+footer p {
+    opacity: .8;
+}
 
-        .selection .button {
 
-            width: 100%;
+/* =========================
+   MÓVIL
+========================= */
 
-            text-align: center;
+@media (max-width: 600px) {
 
-            font-size: 15px;
-        }
+    .hero {
+        min-height: 75vh;
+    }
 
+    .hero p {
+        font-size: 18px;
+    }
 
-        .selection-reset {
+    .hero-subtitle {
+        font-size: 15px !important;
+    }
 
-            display: block;
+    section {
+        padding: 60px 20px;
+    }
 
-            margin-top: 10px;
+    .section-title h2,
+    .experience h2,
+    .contact h2 {
+        font-size: 32px;
+    }
 
-            text-align: center;
+    .carousel {
+        height: 280px;
+    }
 
-            color: #777;
+    .carousel-button {
 
-            font-size: 13px;
+        width: 38px;
 
-            text-decoration: underline;
+        height: 38px;
 
-            cursor: pointer;
-        }
+        font-size: 23px;
+    }
 
+    .calendar {
+        padding: 10px;
+    }
 
-        .calendar-status {
+    .calendar-day {
+        font-size: 12px;
+    }
 
-            text-align: center;
+    .calendar-legend {
+        gap: 10px;
+    }
 
-            padding: 20px;
+    .carousel-slide img {
 
-            color: #777;
+        max-width: 100%;
 
-            font-size: 14px;
-        }
+        max-height: 100%;
 
+        object-fit: contain;
+    }
 
-        .calendar-error {
+}
 
-            color: #a33;
-        }
-
-
-        /* =========================
-           EXPERIENCIA
-        ========================= */
-
-        .experience {
-
-            background: #e9e3d7;
-
-            max-width: none;
-        }
-
-
-        .experience-inner {
-
-            max-width: 1100px;
-
-            margin: auto;
-
-            text-align: center;
-        }
-
-
-        .experience h2 {
-
-            font-size: 40px;
-
-            margin-bottom: 20px;
-        }
-
-
-        .experience p {
-
-            max-width: 750px;
-
-            margin: auto;
-
-            font-size: 18px;
-        }
-
-
-        /* =========================
-           CONTACTO
-        ========================= */
-
-        .contact {
-
-            text-align: center;
-        }
-
-
-        .contact h2 {
-
-            font-size: 40px;
-
-            margin-bottom: 15px;
-        }
-
-
-        .contact p {
-
-            margin-bottom: 30px;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-
-            background: #243238;
-
-            color: white;
-
-            text-align: center;
-
-            padding: 30px 20px;
-        }
-
-
-        footer p {
-
-            opacity: .8;
-        }
-
-
-        /* =========================
-           MÓVIL
-        ========================= */
-
-        @media (max-width: 600px) {
-
-            .hero {
-
-                min-height: 75vh;
-            }
-
-
-            .hero p {
-
-                font-size: 18px;
-            }
-
-
-            section {
-
-                padding: 60px 20px;
-            }
-
-
-            .section-title h2,
-            .experience h2,
-            .contact h2 {
-
-                font-size: 32px;
-            }
-
-
-            .carousel {
-
-                height: 250px;
-            }
-
-
-            .carousel-button {
-
-                width: 38px;
-
-                height: 38px;
-
-                font-size: 23px;
-            }
-
-
-            .calendar {
-
-                padding: 10px;
-            }
-
-
-            .calendar-day {
-
-                font-size: 12px;
-            }
-
-
-            .calendar-legend {
-
-                gap: 10px;
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -953,2229 +900,1916 @@
 <body>
 
 
-    <!-- =========================
-         PORTADA
-    ========================= -->
+<!-- =========================
+     PORTADA
+========================= -->
 
-    <header class="hero">
+<header class="hero">
 
-        <div class="hero-content">
+<div class="hero-content">
 
-            <h1>
-                Jávea, Mediterráneo
-            </h1>
+<h1>
+Apartamentos Jávea
+</h1>
+
+<p>
+Montgó · Granadella · Portitxol
+</p>
+
+<p class="hero-subtitle">
+Disfruta de Jávea y de la Costa Blanca
+en nuestros apartamentos turísticos.
+</p>
+
+<a
+class="button"
+href="https://wa.me/34634357303?text=Hola,%20estoy%20interesado%20en%20reservar%20uno%20de%20vuestros%20apartamentos.%0A%0AFechas:%20%0AN%C3%BAmero%20de%20hu%C3%A9spedes:%20"
+target="_blank"
+>
+
+💬 Reservar por WhatsApp
+
+</a>
+
+</div>
+
+</header>
 
 
-            <p>
-                Apartamentos turísticos para disfrutar
-                de la Costa Blanca
-            </p>
+
+<!-- =========================
+     APARTAMENTOS
+========================= -->
+
+<section>
+
+<div class="section-title">
+
+<h2>
+Nuestros apartamentos
+</h2>
+
+<p>
+Elige el alojamiento perfecto
+para disfrutar de Jávea.
+</p>
+
+</div>
 
 
-            <a
-                class="button"
-                href="https://wa.me/34634357303?text=Hola,%20estoy%20interesado%20en%20reservar%20uno%20de%20vuestros%20apartamentos.%0A%0AFechas:%20%0AN%C3%BAmero%20de%20hu%C3%A9spedes:%20"
-                target="_blank"
+<div class="apartments">
+
+
+<!-- =========================
+     MONTGÓ
+========================= -->
+
+<article class="card">
+
+<div
+class="carousel"
+data-carousel="montgo"
+>
+
+<div
+class="carousel-track"
+id="track-montgo"
+>
+
+<div class="carousel-slide">
+<img
+src="photo_montgo.jpg"
+alt="Apartamento Montgó"
+>
+</div>
+
+<div class="carousel-slide">
+<img
+src="photo_montgo2.jpg"
+alt="Apartamento Montgó"
+>
+</div>
+
+<div class="carousel-slide">
+<img
+src="photo_montgo3.jpg"
+alt="Apartamento Montgó"
+>
+</div>
+
+<div class="carousel-slide">
+<img
+src="photo_montgo4.jpg"
+alt="Apartamento Montgó"
+>
+</div>
+
+<div class="carousel-slide">
+<img
+src="photo_montgo5.jpg"
+alt="Apartamento Montgó"
+>
+</div>
+
+</div>
+
+
+<button
+class="carousel-button carousel-prev"
+onclick="moveCarousel('montgo', -1)"
+aria-label="Foto anterior"
+>
+‹
+</button>
+
+<button
+class="carousel-button carousel-next"
+onclick="moveCarousel('montgo', 1)"
+aria-label="Foto siguiente"
+>
+›
+</button>
+
+
+<div
+class="carousel-dots"
+id="dots-montgo"
+></div>
+
+<div
+class="photo-counter"
+id="counter-montgo"
+>
+1 / 5
+</div>
+
+</div>
+
+
+<div class="card-content">
+
+<h3>
+Montgó
+</h3>
+
+<p class="card-description">
+
+Acogedor apartamento con balcón,
+perfecto para disfrutar de Jávea
+y de su entorno. Tiene capacidad
+para hasta 3 personas y plaza de
+parking privada.
+
+</p>
+
+
+<div class="features">
+
+<span class="feature">
+👨‍👩‍👧 Hasta 3 personas
+</span>
+
+<span class="feature">
+🌐 WiFi
+</span>
+
+<span class="feature">
+🚗 Parking
+</span>
+
+<span class="feature">
+☀️ Balcón
+</span>
+
+</div>
+
+
+<div class="availability">
+
+<div class="availability-title">
+📅 Disponibilidad Montgó
+</div>
+
+<div
+id="calendarMontgo"
+class="calendar"
+>
+
+<div class="calendar-status">
+Cargando disponibilidad...
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- =========================
+     GRANADELLA
+========================= -->
+
+<article class="card">
+
+<div
+class="carousel"
+data-carousel="granadella"
+>
+
+<div
+class="carousel-track"
+id="track-granadella"
+>
+
+<div class="carousel-slide">
+<img
+src="photo_granadella.jpg"
+alt="Apartamento Granadella"
+>
+</div>
+
+<div class="carousel-slide">
+<img
+src="photo_granadella2.jpg"
+alt="Apartamento Granadella"
+>
+</div>
+
+<div class="carousel-slide">
+<img
+src="photo_granadella3.jpg"
+alt="Apartamento Granadella"
+>
+</div>
+
+<div class="carousel-slide">
+<img
+src="photo_granadella4.jpg"
+alt="Apartamento Granadella"
+>
+</div>
+
+<div class="carousel-slide">
+<img
+src="photo_granadella5.jpg"
+alt="Apartamento Granadella"
+>
+</div>
+
+</div>
+
+
+<button
+class="carousel-button carousel-prev"
+onclick="moveCarousel('granadella', -1)"
+aria-label="Foto anterior"
+>
+‹
+</button>
+
+<button
+class="carousel-button carousel-next"
+onclick="moveCarousel('granadella', 1)"
+aria-label="Foto siguiente"
+>
+›
+</button>
+
+
+<div
+class="carousel-dots"
+id="dots-granadella"
+></div>
+
+<div
+class="photo-counter"
+id="counter-granadella"
+>
+1 / 5
+</div>
+
+</div>
+
+
+<div class="card-content">
+
+<h3>
+Granadella
+</h3>
+
+<p class="card-description">
+
+Disfruta de una estancia tranquila
+cerca de una de las zonas más
+espectaculares de Jávea. Capacidad
+para hasta 3 personas y plaza de
+parking.
+
+</p>
+
+
+<div class="features">
+
+<span class="feature">
+👨‍👩‍👧 Hasta 3 personas
+</span>
+
+<span class="feature">
+🌐 WiFi
+</span>
+
+<span class="feature">
+🚗 Parking
+</span>
+
+<span class="feature">
+🏖️ Jávea
+</span>
+
+</div>
+
+
+<div class="availability">
+
+<div class="availability-title">
+📅 Disponibilidad Granadella
+</div>
+
+<div
+id="calendarGranadella"
+class="calendar"
+>
+
+<div class="calendar-status">
+Cargando disponibilidad...
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- =========================
+     PORTITXOL
+========================= -->
+
+<article class="card">
+
+<div
+class="carousel"
+data-carousel="portitxol"
+>
+
+<div
+class="carousel-track"
+id="track-portitxol"
+>
+
+<div class="carousel-slide">
+<img
+src="photo_portitxol.jpg"
+alt="Apartamento Portitxol"
+>
+</div>
+
+<div class="carousel-slide">
+<img
+src="photo_portitxol2.jpg"
+alt="Apartamento Portitxol"
+>
+</div>
+
+<div class="carousel-slide">
+<img
+src="photo_portitxol3.jpg"
+alt="Apartamento Portitxol"
+>
+</div>
+
+<div class="carousel-slide">
+<img
+src="photo_portitxol4.jpg"
+alt="Apartamento Portitxol"
+>
+</div>
+
+<div class="carousel-slide">
+<img
+src="photo_portitxol5.jpg"
+alt="Apartamento Portitxol"
+>
+</div>
+
+</div>
+
+
+<button
+class="carousel-button carousel-prev"
+onclick="moveCarousel('portitxol', -1)"
+aria-label="Foto anterior"
+>
+‹
+</button>
+
+<button
+class="carousel-button carousel-next"
+onclick="moveCarousel('portitxol', 1)"
+aria-label="Foto siguiente"
+>
+›
+</button>
+
+
+<div
+class="carousel-dots"
+id="dots-portitxol"
+></div>
+
+<div
+class="photo-counter"
+id="counter-portitxol"
+>
+1 / 5
+</div>
+
+</div>
+
+
+<div class="card-content">
+
+<h3>
+Portitxol
+</h3>
+
+<p class="card-description">
+
+Apartamento ideal para familias,
+con capacidad para 4 personas:
+2 adultos y 2 niños. Dispone de
+parking privado y todo lo necesario
+para disfrutar de Jávea.
+
+</p>
+
+
+<div class="features">
+
+<span class="feature">
+👨‍👩‍👧‍👦 2 adultos + 2 niños
+</span>
+
+<span class="feature">
+🌐 WiFi
+</span>
+
+<span class="feature">
+🚗 Parking
+</span>
+
+<span class="feature">
+🌊 Portitxol
+</span>
+
+</div>
+
+
+<div class="availability">
+
+<div class="availability-title">
+📅 Disponibilidad Portitxol
+</div>
+
+<div
+id="calendarPortitxol"
+class="calendar"
+>
+
+<div class="calendar-status">
+Cargando disponibilidad...
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</article>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     EXPERIENCIA
+========================= -->
+
+<section class="experience">
+
+<div class="experience-inner">
+
+<h2>
+Descubre Jávea
+</h2>
+
+<p>
+
+Playas, calas de aguas cristalinas,
+gastronomía, naturaleza y el auténtico
+ambiente mediterráneo.
+
+Encuentra tu alojamiento y empieza
+a disfrutar.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACTO
+========================= -->
+
+<section class="contact">
+
+<h2>
+¿Quieres reservar?
+</h2>
+
+<p>
+
+Selecciona tus fechas en el calendario
+o escríbenos directamente por WhatsApp.
+
+</p>
+
+<a
+class="button"
+href="https://wa.me/34634357303?text=Hola,%20quiero%20consultar%20disponibilidad%20de%20vuestros%20apartamentos.%0A%0AFechas:%20%0AN%C3%BAmero%20de%20hu%C3%A9spedes:%20"
+target="_blank"
+>
+
+💬 Hablar por WhatsApp
+
+</a>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<p>
+© 2026 Apartamentos Jávea
+</p>
+
+</footer>
+
+
+
+<script>
+
+/* =========================
+   CARRUSELES
+========================= */
+
+const carouselStates = {
+
+    montgo: 0,
+
+    granadella: 0,
+
+    portitxol: 0
+
+};
+
+
+function updateCarousel(apartment) {
+
+    const index =
+        carouselStates[apartment];
+
+    const track =
+        document.getElementById(
+            "track-" + apartment
+        );
+
+    const dots =
+        document.getElementById(
+            "dots-" + apartment
+        );
+
+    const counter =
+        document.getElementById(
+            "counter-" + apartment
+        );
+
+    track.style.transform =
+        "translateX(-" +
+        (index * 100) +
+        "%)";
+
+    dots.innerHTML = "";
+
+    for (
+        let i = 0;
+        i < 5;
+        i++
+    ) {
+
+        const dot =
+            document.createElement(
+                "button"
+            );
+
+        dot.className =
+            "carousel-dot" +
+            (
+                i === index
+                    ? " active"
+                    : ""
+            );
+
+        dot.setAttribute(
+            "aria-label",
+            "Ir a foto " + (i + 1)
+        );
+
+        dot.onclick =
+            function() {
+
+                carouselStates[
+                    apartment
+                ] = i;
+
+                updateCarousel(
+                    apartment
+                );
+
+            };
+
+        dots.appendChild(dot);
+
+    }
+
+    counter.textContent =
+        (index + 1) + " / 5";
+
+}
+
+
+function moveCarousel(
+    apartment,
+    direction
+) {
+
+    let index =
+        carouselStates[apartment];
+
+    index += direction;
+
+    if (index < 0) {
+        index = 4;
+    }
+
+    if (index > 4) {
+        index = 0;
+    }
+
+    carouselStates[
+        apartment
+    ] = index;
+
+    updateCarousel(
+        apartment
+    );
+
+}
+
+
+updateCarousel("montgo");
+
+updateCarousel("granadella");
+
+updateCarousel("portitxol");
+
+
+/* =========================
+   DESLIZAR CON EL DEDO
+========================= */
+
+document
+.querySelectorAll(".carousel")
+.forEach(
+    carousel => {
+
+        let startX = 0;
+
+        let startY = 0;
+
+        carousel.addEventListener(
+            "touchstart",
+            function(event) {
+
+                startX =
+                    event.touches[0]
+                    .clientX;
+
+                startY =
+                    event.touches[0]
+                    .clientY;
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        carousel.addEventListener(
+            "touchend",
+            function(event) {
+
+                const endX =
+                    event.changedTouches[0]
+                    .clientX;
+
+                const endY =
+                    event.changedTouches[0]
+                    .clientY;
+
+                const differenceX =
+                    endX - startX;
+
+                const differenceY =
+                    endY - startY;
+
+                if (
+                    Math.abs(
+                        differenceX
+                    ) > 50
+                    &&
+                    Math.abs(
+                        differenceX
+                    )
+                    >
+                    Math.abs(
+                        differenceY
+                    )
+                ) {
+
+                    const apartment =
+                        carousel.dataset
+                        .carousel;
+
+                    if (
+                        differenceX < 0
+                    ) {
+
+                        moveCarousel(
+                            apartment,
+                            1
+                        );
+
+                    }
+                    else {
+
+                        moveCarousel(
+                            apartment,
+                            -1
+                        );
+
+                    }
+
+                }
+
+            },
+            {
+                passive: true
+            }
+        );
+
+    }
+);
+
+
+/* =========================
+   CALENDARIOS
+========================= */
+
+const CALENDARS = {
+
+    Montgó: {
+
+        url:
+        "https://calendario-montgo.jose6900.workers.dev/",
+
+        element:
+        "calendarMontgo"
+
+    },
+
+
+    Granadella: {
+
+        url:
+        "https://calendario-granadella.jose6900.workers.dev/",
+
+        element:
+        "calendarGranadella"
+
+    },
+
+
+    Portitxol: {
+
+        url:
+        "https://calendario-portichol.jose6900.workers.dev/",
+
+        element:
+        "calendarPortitxol"
+
+    }
+
+};
+
+
+const calendarStates = {};
+
+
+Object.keys(
+    CALENDARS
+)
+.forEach(
+    apartment => {
+
+        calendarStates[
+            apartment
+        ] = {
+
+            events: [],
+
+            currentMonth:
+                new Date(
+                    new Date()
+                    .getFullYear(),
+
+                    new Date()
+                    .getMonth(),
+
+                    1
+                ),
+
+            checkIn: null,
+
+            checkOut: null
+
+        };
+
+    }
+);
+
+
+/* =========================
+   FECHAS
+========================= */
+
+function parseDate(
+    dateString
+) {
+
+    const parts =
+        dateString.split("-");
+
+    return new Date(
+        Number(parts[0]),
+        Number(parts[1]) - 1,
+        Number(parts[2])
+    );
+
+}
+
+
+function dateToString(
+    date
+) {
+
+    const year =
+        date.getFullYear();
+
+    const month =
+        String(
+            date.getMonth() + 1
+        )
+        .padStart(2, "0");
+
+    const day =
+        String(
+            date.getDate()
+        )
+        .padStart(2, "0");
+
+    return (
+        year +
+        "-" +
+        month +
+        "-" +
+        day
+    );
+
+}
+
+
+function isBooked(
+    apartment,
+    date
+) {
+
+    const state =
+        calendarStates[
+            apartment
+        ];
+
+    const dateString =
+        dateToString(date);
+
+    return state.events.some(
+        event => {
+
+            return (
+                dateString >= event.start
+                &&
+                dateString < event.end
+            );
+
+        }
+    );
+
+}
+
+
+function isReservationStart(
+    apartment,
+    date
+) {
+
+    const state =
+        calendarStates[
+            apartment
+        ];
+
+    const dateString =
+        dateToString(date);
+
+    return state.events.some(
+        event => {
+
+            return (
+                dateString ===
+                event.start
+            );
+
+        }
+    );
+
+}
+
+
+function rangeIsAvailable(
+    apartment,
+    start,
+    end
+) {
+
+    const current =
+        new Date(start);
+
+    current.setHours(
+        0,0,0,0
+    );
+
+    while (
+        current < end
+    ) {
+
+        if (
+            isBooked(
+                apartment,
+                current
+            )
+        ) {
+
+            return false;
+
+        }
+
+        current.setDate(
+            current.getDate() + 1
+        );
+
+    }
+
+    return true;
+
+}
+
+
+function canUseAsCheckout(
+    apartment,
+    date
+) {
+
+    const state =
+        calendarStates[
+            apartment
+        ];
+
+    if (!state.checkIn) {
+        return false;
+    }
+
+    if (
+        date <= state.checkIn
+    ) {
+        return false;
+    }
+
+    return rangeIsAvailable(
+        apartment,
+        state.checkIn,
+        date
+    );
+
+}
+
+
+function isInSelectedRange(
+    apartment,
+    date
+) {
+
+    const state =
+        calendarStates[
+            apartment
+        ];
+
+    if (!state.checkIn) {
+        return false;
+    }
+
+    if (!state.checkOut) {
+
+        return (
+            dateToString(date) ===
+            dateToString(
+                state.checkIn
+            )
+        );
+
+    }
+
+    return (
+        date >= state.checkIn
+        &&
+        date <= state.checkOut
+    );
+
+}
+
+
+function formatSpanishDate(
+    date
+) {
+
+    return date.toLocaleDateString(
+        "es-ES",
+        {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric"
+        }
+    );
+
+}
+
+
+function monthName(
+    date
+) {
+
+    return date.toLocaleDateString(
+        "es-ES",
+        {
+            month: "long",
+            year: "numeric"
+        }
+    );
+
+}
+
+
+/* =========================
+   RENDER CALENDARIO
+========================= */
+
+function renderCalendar(
+    apartment
+) {
+
+    const config =
+        CALENDARS[
+            apartment
+        ];
+
+    const state =
+        calendarStates[
+            apartment
+        ];
+
+    const container =
+        document.getElementById(
+            config.element
+        );
+
+    const year =
+        state.currentMonth
+        .getFullYear();
+
+    const month =
+        state.currentMonth
+        .getMonth();
+
+    const firstDay =
+        new Date(
+            year,
+            month,
+            1
+        );
+
+    const lastDay =
+        new Date(
+            year,
+            month + 1,
+            0
+        );
+
+    let startingDay =
+        firstDay.getDay();
+
+    startingDay =
+        startingDay === 0
+        ? 6
+        : startingDay - 1;
+
+    let html = `
+
+        <div class="calendar-header">
+
+            <button
+                class="calendar-nav"
+                onclick="changeMonth('${apartment}', -1)"
+            >
+                ‹
+            </button>
+
+            <strong>
+                ${monthName(
+                    state.currentMonth
+                )}
+            </strong>
+
+            <button
+                class="calendar-nav"
+                onclick="changeMonth('${apartment}', 1)"
+            >
+                ›
+            </button>
+
+        </div>
+
+        <div class="calendar-weekdays">
+
+            <div>L</div>
+            <div>M</div>
+            <div>X</div>
+            <div>J</div>
+            <div>V</div>
+            <div>S</div>
+            <div>D</div>
+
+        </div>
+
+        <div class="calendar-days">
+
+    `;
+
+
+    for (
+        let i = 0;
+        i < startingDay;
+        i++
+    ) {
+
+        html += `
+
+            <button
+                class="calendar-day empty"
+                disabled
+            ></button>
+
+        `;
+
+    }
+
+
+    for (
+        let day = 1;
+        day <= lastDay.getDate();
+        day++
+    ) {
+
+        const date =
+            new Date(
+                year,
+                month,
+                day
+            );
+
+        date.setHours(
+            0,0,0,0
+        );
+
+        const today =
+            new Date();
+
+        today.setHours(
+            0,0,0,0
+        );
+
+        const booked =
+            isBooked(
+                apartment,
+                date
+            );
+
+        const reservationStart =
+            isReservationStart(
+                apartment,
+                date
+            );
+
+        const past =
+            date < today;
+
+        const selected =
+            isInSelectedRange(
+                apartment,
+                date
+            );
+
+        const possibleCheckout =
+            state.checkIn
+            &&
+            !state.checkOut
+            &&
+            canUseAsCheckout(
+                apartment,
+                date
+            );
+
+        let classes =
+            "calendar-day";
+
+        if (booked) {
+            classes += " booked";
+        }
+
+        if (
+            reservationStart
+            &&
+            possibleCheckout
+        ) {
+
+            classes +=
+                " checkout-available";
+
+        }
+
+        if (past) {
+            classes += " past";
+        }
+
+        if (selected) {
+            classes += " selected";
+        }
+
+        if (
+            state.checkIn
+            &&
+            state.checkOut
+            &&
+            date > state.checkIn
+            &&
+            date < state.checkOut
+        ) {
+
+            classes += " in-range";
+
+        }
+
+        if (
+            state.checkOut
+            &&
+            dateToString(date) ===
+            dateToString(
+                state.checkOut
+            )
+        ) {
+
+            classes += " range-end";
+
+        }
+
+        let disabled = false;
+
+        if (past) {
+
+            disabled = true;
+
+        }
+        else if (
+            state.checkIn
+            &&
+            !state.checkOut
+        ) {
+
+            if (
+                date <= state.checkIn
+            ) {
+
+                disabled = true;
+
+            }
+            else if (
+                !canUseAsCheckout(
+                    apartment,
+                    date
+                )
+            ) {
+
+                disabled = true;
+
+            }
+
+        }
+        else if (booked) {
+
+            disabled = true;
+
+        }
+
+        html += `
+
+            <button
+                class="${classes}"
+                ${disabled ? "disabled" : ""}
+                onclick="selectDate(
+                    '${apartment}',
+                    '${dateToString(date)}'
+                )"
             >
 
-                💬 Reservar por WhatsApp
+                ${day}
 
-            </a>
+            </button>
 
-        </div>
+        `;
 
-    </header>
-
-
-
-    <!-- =========================
-         APARTAMENTOS
-    ========================= -->
-
-    <section>
+    }
 
 
-        <div class="section-title">
-
-            <h2>
-                Nuestros apartamentos
-            </h2>
-
-
-            <p>
-                Elige el alojamiento perfecto
-                para disfrutar de Jávea.
-            </p>
+    html += `
 
         </div>
 
+        <div class="calendar-legend">
 
+            <div class="legend-item">
 
-        <div class="apartments">
+                <span class="legend-box"></span>
 
+                Disponible
 
-            <!-- =========================
-                 MONTGÓ
-            ========================= -->
+            </div>
 
-            <article class="card">
+            <div class="legend-item">
 
+                <span class="legend-box booked"></span>
 
-                <div
-                    class="carousel"
-                    data-carousel="montgo"
-                >
+                Reservado
 
-                    <div
-                        class="carousel-track"
-                        id="track-montgo"
-                    >
+            </div>
 
-                        <div class="carousel-slide">
-                            <img
-                                src="photo_montgo.jpg"
-                                alt="Apartamento Montgó"
-                            >
-                        </div>
+            <div class="legend-item">
 
-                        <div class="carousel-slide">
-                            <img
-                                src="photo_montgo2.jpg"
-                                alt="Apartamento Montgó"
-                            >
-                        </div>
+                <span class="legend-box checkout"></span>
 
-                        <div class="carousel-slide">
-                            <img
-                                src="photo_montgo3.jpg"
-                                alt="Apartamento Montgó"
-                            >
-                        </div>
+                Salida disponible
 
-                        <div class="carousel-slide">
-                            <img
-                                src="photo_montgo4.jpg"
-                                alt="Apartamento Montgó"
-                            >
-                        </div>
-
-                        <div class="carousel-slide">
-                            <img
-                                src="photo_montgo5.jpg"
-                                alt="Apartamento Montgó"
-                            >
-                        </div>
-
-                    </div>
-
-
-                    <button
-                        class="carousel-button carousel-prev"
-                        onclick="moveCarousel('montgo', -1)"
-                        aria-label="Foto anterior"
-                    >
-                        ‹
-                    </button>
-
-
-                    <button
-                        class="carousel-button carousel-next"
-                        onclick="moveCarousel('montgo', 1)"
-                        aria-label="Foto siguiente"
-                    >
-                        ›
-                    </button>
-
-
-                    <div
-                        class="carousel-dots"
-                        id="dots-montgo"
-                    ></div>
-
-
-                    <div
-                        class="photo-counter"
-                        id="counter-montgo"
-                    >
-                        1 / 5
-                    </div>
-
-                </div>
-
-
-
-                <div class="card-content">
-
-
-                    <h3>
-                        Montgó
-                    </h3>
-
-
-                    <p class="card-description">
-
-                        Acogedor apartamento con balcón,
-                        perfecto para disfrutar de Jávea
-                        y de su entorno. Tiene capacidad
-                        para hasta 3 personas y plaza de
-                        parking privada.
-
-                    </p>
-
-
-                    <div class="features">
-
-                        <span class="feature">
-                            👨‍👩‍👧 Hasta 3 personas
-                        </span>
-
-                        <span class="feature">
-                            🌐 WiFi
-                        </span>
-
-                        <span class="feature">
-                            🚗 Parking
-                        </span>
-
-                        <span class="feature">
-                            ☀️ Balcón
-                        </span>
-
-                    </div>
-
-
-                    <div class="availability">
-
-                        <div class="availability-title">
-
-                            📅 Disponibilidad Montgó
-
-                        </div>
-
-
-                        <div
-                            id="calendarMontgo"
-                            class="calendar"
-                        >
-
-                            <div class="calendar-status">
-
-                                Cargando disponibilidad...
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </article>
-
-
-
-            <!-- =========================
-                 GRANADELLA
-            ========================= -->
-
-            <article class="card">
-
-
-                <div
-                    class="carousel"
-                    data-carousel="granadella"
-                >
-
-                    <div
-                        class="carousel-track"
-                        id="track-granadella"
-                    >
-
-                        <div class="carousel-slide">
-                            <img
-                                src="photo_granadella.jpg"
-                                alt="Apartamento Granadella"
-                            >
-                        </div>
-
-                        <div class="carousel-slide">
-                            <img
-                                src="photo_granadella2.jpg"
-                                alt="Apartamento Granadella"
-                            >
-                        </div>
-
-                        <div class="carousel-slide">
-                            <img
-                                src="photo_granadella3.jpg"
-                                alt="Apartamento Granadella"
-                            >
-                        </div>
-
-                        <div class="carousel-slide">
-                            <img
-                                src="photo_granadella4.jpg"
-                                alt="Apartamento Granadella"
-                            >
-                        </div>
-
-                        <div class="carousel-slide">
-                            <img
-                                src="photo_granadella5.jpg"
-                                alt="Apartamento Granadella"
-                            >
-                        </div>
-
-                    </div>
-
-
-                    <button
-                        class="carousel-button carousel-prev"
-                        onclick="moveCarousel('granadella', -1)"
-                        aria-label="Foto anterior"
-                    >
-                        ‹
-                    </button>
-
-
-                    <button
-                        class="carousel-button carousel-next"
-                        onclick="moveCarousel('granadella', 1)"
-                        aria-label="Foto siguiente"
-                    >
-                        ›
-                    </button>
-
-
-                    <div
-                        class="carousel-dots"
-                        id="dots-granadella"
-                    ></div>
-
-
-                    <div
-                        class="photo-counter"
-                        id="counter-granadella"
-                    >
-                        1 / 5
-                    </div>
-
-                </div>
-
-
-
-                <div class="card-content">
-
-
-                    <h3>
-                        Granadella
-                    </h3>
-
-
-                    <p class="card-description">
-
-                        Disfruta de una estancia tranquila
-                        cerca de una de las zonas más
-                        espectaculares de Jávea. Capacidad
-                        para hasta 3 personas y plaza de
-                        parking.
-
-                    </p>
-
-
-                    <div class="features">
-
-                        <span class="feature">
-                            👨‍👩‍👧 Hasta 3 personas
-                        </span>
-
-                        <span class="feature">
-                            🌐 WiFi
-                        </span>
-
-                        <span class="feature">
-                            🚗 Parking
-                        </span>
-
-                        <span class="feature">
-                            🏖️ Jávea
-                        </span>
-
-                    </div>
-
-
-                    <div class="availability">
-
-                        <div class="availability-title">
-
-                            📅 Disponibilidad Granadella
-
-                        </div>
-
-
-                        <div
-                            id="calendarGranadella"
-                            class="calendar"
-                        >
-
-                            <div class="calendar-status">
-
-                                Cargando disponibilidad...
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </article>
-
-
-
-            <!-- =========================
-                 PORTITXOL
-            ========================= -->
-
-            <article class="card">
-
-
-                <div
-                    class="carousel"
-                    data-carousel="portitxol"
-                >
-
-                    <div
-                        class="carousel-track"
-                        id="track-portitxol"
-                    >
-
-                        <div class="carousel-slide">
-                            <img
-                                src="photo_portitxol.jpg"
-                                alt="Apartamento Portitxol"
-                            >
-                        </div>
-
-                        <div class="carousel-slide">
-                            <img
-                                src="photo_portitxol2.jpg"
-                                alt="Apartamento Portitxol"
-                            >
-                        </div>
-
-                        <div class="carousel-slide">
-                            <img
-                                src="photo_portitxol3.jpg"
-                                alt="Apartamento Portitxol"
-                            >
-                        </div>
-
-                        <div class="carousel-slide">
-                            <img
-                                src="photo_portitxol4.jpg"
-                                alt="Apartamento Portitxol"
-                            >
-                        </div>
-
-                        <div class="carousel-slide">
-                            <img
-                                src="photo_portitxol5.jpg"
-                                alt="Apartamento Portitxol"
-                            >
-                        </div>
-
-                    </div>
-
-
-                    <button
-                        class="carousel-button carousel-prev"
-                        onclick="moveCarousel('portitxol', -1)"
-                        aria-label="Foto anterior"
-                    >
-                        ‹
-                    </button>
-
-
-                    <button
-                        class="carousel-button carousel-next"
-                        onclick="moveCarousel('portitxol', 1)"
-                        aria-label="Foto siguiente"
-                    >
-                        ›
-                    </button>
-
-
-                    <div
-                        class="carousel-dots"
-                        id="dots-portitxol"
-                    ></div>
-
-
-                    <div
-                        class="photo-counter"
-                        id="counter-portitxol"
-                    >
-                        1 / 5
-                    </div>
-
-                </div>
-
-
-
-                <div class="card-content">
-
-
-                    <h3>
-                        Portitxol
-                    </h3>
-
-
-                    <p class="card-description">
-
-                        Apartamento ideal para familias,
-                        con capacidad para 4 personas:
-                        2 adultos y 2 niños. Dispone de
-                        parking privado y todo lo necesario
-                        para disfrutar de Jávea.
-
-                    </p>
-
-
-                    <div class="features">
-
-                        <span class="feature">
-                            👨‍👩‍👧‍👦 2 adultos + 2 niños
-                        </span>
-
-                        <span class="feature">
-                            🌐 WiFi
-                        </span>
-
-                        <span class="feature">
-                            🚗 Parking
-                        </span>
-
-                        <span class="feature">
-                            🌊 Portitxol
-                        </span>
-
-                    </div>
-
-
-                    <div class="availability">
-
-                        <div class="availability-title">
-
-                            📅 Disponibilidad Portitxol
-
-                        </div>
-
-
-                        <div
-                            id="calendarPortitxol"
-                            class="calendar"
-                        >
-
-                            <div class="calendar-status">
-
-                                Cargando disponibilidad...
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </article>
-
+            </div>
 
         </div>
 
-    </section>
+        <div
+            id="selection-${apartment}"
+            class="selection"
+        ></div>
+
+    `;
 
 
+    container.innerHTML =
+        html;
 
-    <!-- =========================
-         EXPERIENCIA
-    ========================= -->
+    updateSelection(
+        apartment
+    );
 
-    <section class="experience">
-
-
-        <div class="experience-inner">
+}
 
 
-            <h2>
-                Descubre Jávea
-            </h2>
+/* =========================
+   CAMBIAR MES
+========================= */
 
+function changeMonth(
+    apartment,
+    direction
+) {
+
+    const state =
+        calendarStates[
+            apartment
+        ];
+
+    state.currentMonth =
+        new Date(
+            state.currentMonth
+            .getFullYear(),
+
+            state.currentMonth
+            .getMonth()
+            + direction,
+
+            1
+        );
+
+    renderCalendar(
+        apartment
+    );
+
+}
+
+
+/* =========================
+   SELECCIONAR FECHAS
+========================= */
+
+function selectDate(
+    apartment,
+    dateString
+) {
+
+    const state =
+        calendarStates[
+            apartment
+        ];
+
+    const selectedDate =
+        parseDate(
+            dateString
+        );
+
+    selectedDate.setHours(
+        0,0,0,0
+    );
+
+
+    if (
+        !state.checkIn
+        ||
+        state.checkOut
+    ) {
+
+        state.checkIn =
+            selectedDate;
+
+        state.checkOut =
+            null;
+
+        renderCalendar(
+            apartment
+        );
+
+        return;
+
+    }
+
+
+    if (
+        selectedDate <=
+        state.checkIn
+    ) {
+
+        state.checkIn =
+            selectedDate;
+
+        state.checkOut =
+            null;
+
+        renderCalendar(
+            apartment
+        );
+
+        return;
+
+    }
+
+
+    if (
+        !rangeIsAvailable(
+            apartment,
+            state.checkIn,
+            selectedDate
+        )
+    ) {
+
+        alert(
+            "No puedes seleccionar ese intervalo porque hay una reserva dentro de esas fechas."
+        );
+
+        return;
+
+    }
+
+
+    state.checkOut =
+        selectedDate;
+
+    renderCalendar(
+        apartment
+    );
+
+}
+
+
+/* =========================
+   REINICIAR SELECCIÓN
+========================= */
+
+function resetSelection(
+    apartment
+) {
+
+    const state =
+        calendarStates[
+            apartment
+        ];
+
+    state.checkIn = null;
+
+    state.checkOut = null;
+
+    renderCalendar(
+        apartment
+    );
+
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+function updateSelection(
+    apartment
+) {
+
+    const state =
+        calendarStates[
+            apartment
+        ];
+
+    const box =
+        document.getElementById(
+            "selection-" +
+            apartment
+        );
+
+    if (!box) {
+        return;
+    }
+
+
+    if (!state.checkIn) {
+
+        box.classList.remove(
+            "visible"
+        );
+
+        return;
+
+    }
+
+
+    if (
+        state.checkIn
+        &&
+        !state.checkOut
+    ) {
+
+        box.classList.add(
+            "visible"
+        );
+
+        box.innerHTML = `
 
             <p>
 
-                Playas, calas de aguas cristalinas,
-                gastronomía, naturaleza y el auténtico
-                ambiente mediterráneo.
+                <strong>
+                    Entrada:
+                </strong>
 
-                Encuentra tu alojamiento y empieza
-                a disfrutar.
+                ${formatSpanishDate(
+                    state.checkIn
+                )}
 
             </p>
 
+            <p>
 
-        </div>
+                Ahora selecciona
+                la fecha de salida.
+
+            </p>
+
+            <span
+                class="selection-reset"
+                onclick="resetSelection('${apartment}')"
+            >
+
+                Cambiar fecha
+
+            </span>
+
+        `;
+
+        return;
+
+    }
 
 
-    </section>
+    box.classList.add(
+        "visible"
+    );
 
 
+    const message =
 
-    <!-- =========================
-         CONTACTO
-    ========================= -->
+        "Hola, estoy interesado en reservar el apartamento "
+        +
+        apartment
+        +
+        "."
+        +
+        "\n\n"
+        +
+        "Entrada: "
+        +
+        formatSpanishDate(
+            state.checkIn
+        )
+        +
+        "\n"
+        +
+        "Salida: "
+        +
+        formatSpanishDate(
+            state.checkOut
+        )
+        +
+        "\n\n"
+        +
+        "¿Podéis confirmarme disponibilidad y precio?";
 
-    <section class="contact">
+
+    const whatsappUrl =
+
+        "https://wa.me/34634357303?text="
+        +
+        encodeURIComponent(
+            message
+        );
 
 
-        <h2>
-            ¿Quieres reservar?
-        </h2>
-
+    box.innerHTML = `
 
         <p>
 
-            Selecciona tus fechas en el calendario
-            o escríbenos directamente por WhatsApp.
+            <strong>
+                Entrada:
+            </strong>
+
+            ${formatSpanishDate(
+                state.checkIn
+            )}
+
+            <br>
+
+            <strong>
+                Salida:
+            </strong>
+
+            ${formatSpanishDate(
+                state.checkOut
+            )}
 
         </p>
 
 
         <a
             class="button"
-            href="https://wa.me/34634357303?text=Hola,%20quiero%20consultar%20disponibilidad%20de%20vuestros%20apartamentos.%0A%0AFechas:%20%0AN%C3%BAmero%20de%20hu%C3%A9spedes:%20"
+            href="${whatsappUrl}"
             target="_blank"
         >
 
-            💬 Hablar por WhatsApp
+            💬 Consultar estas fechas
 
         </a>
 
 
-    </section>
+        <span
+            class="selection-reset"
+            onclick="resetSelection('${apartment}')"
+        >
+
+            Cambiar fechas
+
+        </span>
+
+    `;
+
+}
 
 
+/* =========================
+   CARGAR WORKERS
+========================= */
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+async function loadCalendar(
+    apartment
+) {
 
-    <footer>
-
-        <p>
-            © 2026 Apartamentos Jávea
-        </p>
-
-    </footer>
-
-
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================= -->
-
-    <script>
-
-
-        /* =========================
-           CARRUSELES
-        ========================= */
-
-        const carouselStates = {
-
-            montgo: 0,
-
-            granadella: 0,
-
-            portitxol: 0
-
-        };
-
-
-        function updateCarousel(
+    const config =
+        CALENDARS[
             apartment
-        ) {
+        ];
 
-            const index =
-                carouselStates[
-                    apartment
-                ];
-
-
-            const track =
-                document.getElementById(
-                    "track-" +
-                    apartment
-                );
-
-
-            const dots =
-                document.getElementById(
-                    "dots-" +
-                    apartment
-                );
-
-
-            const counter =
-                document.getElementById(
-                    "counter-" +
-                    apartment
-                );
-
-
-            track.style.transform =
-                "translateX(-" +
-                (index * 100) +
-                "%)";
-
-
-            dots.innerHTML = "";
-
-
-            for (
-                let i = 0;
-                i < 5;
-                i++
-            ) {
-
-                const dot =
-                    document.createElement(
-                        "button"
-                    );
-
-
-                dot.className =
-                    "carousel-dot" +
-                    (
-                        i === index
-                            ? " active"
-                            : ""
-                    );
-
-
-                dot.setAttribute(
-                    "aria-label",
-                    "Ir a foto " +
-                    (i + 1)
-                );
-
-
-                dot.onclick =
-                    function () {
-
-                        carouselStates[
-                            apartment
-                        ] = i;
-
-                        updateCarousel(
-                            apartment
-                        );
-
-                    };
-
-
-                dots.appendChild(
-                    dot
-                );
-
-            }
-
-
-            counter.textContent =
-                (index + 1) +
-                " / 5";
-
-        }
-
-
-
-        function moveCarousel(
-            apartment,
-            direction
-        ) {
-
-            let index =
-                carouselStates[
-                    apartment
-                ];
-
-
-            index += direction;
-
-
-            if (index < 0) {
-
-                index = 4;
-
-            }
-
-
-            if (index > 4) {
-
-                index = 0;
-
-            }
-
-
-            carouselStates[
-                apartment
-            ] = index;
-
-
-            updateCarousel(
-                apartment
-            );
-
-        }
-
-
-
-        /*
-         * Inicializar carruseles
-         */
-
-        updateCarousel(
-            "montgo"
+    const container =
+        document.getElementById(
+            config.element
         );
 
 
-        updateCarousel(
-            "granadella"
+    try {
+
+        const response =
+            await fetch(
+                config.url
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "No se ha podido consultar la disponibilidad."
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        if (data.error) {
+
+            throw new Error(
+                data.message ||
+                "Error en el calendario."
+            );
+
+        }
+
+
+        calendarStates[
+            apartment
+        ].events =
+
+            Array.isArray(
+                data.events
+            )
+            ?
+            data.events
+            :
+            [];
+
+
+        renderCalendar(
+            apartment
         );
 
 
-        updateCarousel(
-            "portitxol"
+    }
+    catch(error) {
+
+        console.error(
+            apartment,
+            error
         );
 
 
+        const message =
 
-        /*
-         * =========================
-         * DESLIZAR CON EL DEDO
-         * =========================
-         */
-
-        document
-            .querySelectorAll(".carousel")
-            .forEach(
-                carousel => {
-
-                    let startX = 0;
-
-                    let startY = 0;
-
-
-                    carousel.addEventListener(
-                        "touchstart",
-                        function(event) {
-
-                            startX =
-                                event.touches[0]
-                                    .clientX;
-
-                            startY =
-                                event.touches[0]
-                                    .clientY;
-
-                        },
-                        {
-                            passive: true
-                        }
-                    );
-
-
-                    carousel.addEventListener(
-                        "touchend",
-                        function(event) {
-
-                            const endX =
-                                event.changedTouches[0]
-                                    .clientX;
-
-                            const endY =
-                                event.changedTouches[0]
-                                    .clientY;
-
-
-                            const differenceX =
-                                endX - startX;
-
-
-                            const differenceY =
-                                endY - startY;
-
-
-                            /*
-                             * Solo consideramos
-                             * un desplazamiento
-                             * horizontal.
-                             */
-
-                            if (
-                                Math.abs(
-                                    differenceX
-                                ) > 50 &&
-                                Math.abs(
-                                    differenceX
-                                ) >
-                                Math.abs(
-                                    differenceY
-                                )
-                            ) {
-
-
-                                const apartment =
-                                    carousel.dataset
-                                        .carousel;
-
-
-                                if (
-                                    differenceX < 0
-                                ) {
-
-                                    moveCarousel(
-                                        apartment,
-                                        1
-                                    );
-
-                                }
-                                else {
-
-                                    moveCarousel(
-                                        apartment,
-                                        -1
-                                    );
-
-                                }
-
-                            }
-
-                        },
-                        {
-                            passive: true
-                        }
-                    );
-
-                }
-            );
-
-
-
-        /*
-         * =========================
-         * WORKERS
-         * =========================
-         */
-
-        const CALENDARS = {
-
-
-            Montgó: {
-
-                url:
-                    "https://calendario-montgo.jose6900.workers.dev/",
-
-                element:
-                    "calendarMontgo"
-
-            },
-
-
-            Granadella: {
-
-                url:
-                    "https://calendario-granadella.jose6900.workers.dev/",
-
-                element:
-                    "calendarGranadella"
-
-            },
-
-
-            Portitxol: {
-
-                url:
-                    "https://calendario-portichol.jose6900.workers.dev/",
-
-                element:
-                    "calendarPortitxol"
-
-            }
-
-        };
-
-
-
-        /*
-         * =========================
-         * ESTADO CALENDARIOS
-         * =========================
-         */
-
-        const calendarStates = {};
-
-
-        Object.keys(
-            CALENDARS
-        ).forEach(
-            apartment => {
-
-
-                calendarStates[
-                    apartment
-                ] = {
-
-                    events: [],
-
-                    currentMonth:
-                        new Date(
-                            new Date().getFullYear(),
-                            new Date().getMonth(),
-                            1
-                        ),
-
-                    checkIn:
-                        null,
-
-                    checkOut:
-                        null
-
-                };
-
-            }
-        );
-
-
-
-        /*
-         * =========================
-         * FECHAS
-         * =========================
-         */
-
-        function parseDate(
-            dateString
-        ) {
-
-            const parts =
-                dateString.split("-");
-
-
-            return new Date(
-                Number(parts[0]),
-                Number(parts[1]) - 1,
-                Number(parts[2])
-            );
-
-        }
-
-
-
-        function dateToString(
-            date
-        ) {
-
-            const year =
-                date.getFullYear();
-
-
-            const month =
-                String(
-                    date.getMonth() + 1
-                ).padStart(2, "0");
-
-
-            const day =
-                String(
-                    date.getDate()
-                ).padStart(2, "0");
-
-
-            return (
-                year +
-                "-" +
-                month +
-                "-" +
-                day
-            );
-
-        }
-
-
-
-        /*
-         * =========================
-         * RESERVAS
-         * =========================
-         *
-         * END no se considera ocupado.
-         *
-         * Por ejemplo:
-         *
-         * Entrada 13
-         * Salida 17
-         *
-         * Ocupa 13,14,15,16.
-         *
-         * El 17 queda disponible
-         * como salida/entrada.
-         */
-
-        function isBooked(
-            apartment,
-            date
-        ) {
-
-            const state =
-                calendarStates[
-                    apartment
-                ];
-
-
-            const dateString =
-                dateToString(date);
-
-
-            return state.events.some(
-                event => {
-
-                    return (
-                        dateString >= event.start &&
-                        dateString < event.end
-                    );
-
-                }
-            );
-
-        }
-
-
-
-        function isReservationStart(
-            apartment,
-            date
-        ) {
-
-            const state =
-                calendarStates[
-                    apartment
-                ];
-
-
-            const dateString =
-                dateToString(date);
-
-
-            return state.events.some(
-                event => {
-
-                    return (
-                        dateString ===
-                        event.start
-                    );
-
-                }
-            );
-
-        }
-
-
-
-        /*
-         * =========================
-         * INTERVALO DISPONIBLE
-         * =========================
-         */
-
-        function rangeIsAvailable(
-            apartment,
-            start,
-            end
-        ) {
-
-            const current =
-                new Date(start);
-
-
-            current.setHours(
-                0, 0, 0, 0
-            );
-
-
-            while (
-                current < end
-            ) {
-
-                if (
-                    isBooked(
-                        apartment,
-                        current
-                    )
-                ) {
-
-                    return false;
-
-                }
-
-
-                current.setDate(
-                    current.getDate() + 1
-                );
-
-            }
-
-
-            return true;
-
-        }
-
-
-
-        /*
-         * =========================
-         * SALIDA POSIBLE
-         * =========================
-         */
-
-        function canUseAsCheckout(
-            apartment,
-            date
-        ) {
-
-            const state =
-                calendarStates[
-                    apartment
-                ];
-
-
-            if (!state.checkIn) {
-
-                return false;
-
-            }
-
-
-            if (
-                date <= state.checkIn
-            ) {
-
-                return false;
-
-            }
-
-
-            return rangeIsAvailable(
-                apartment,
-                state.checkIn,
-                date
-            );
-
-        }
-
-
-
-        /*
-         * =========================
-         * RANGO
-         * =========================
-         */
-
-        function isInSelectedRange(
-            apartment,
-            date
-        ) {
-
-            const state =
-                calendarStates[
-                    apartment
-                ];
-
-
-            if (!state.checkIn) {
-
-                return false;
-
-            }
-
-
-            if (!state.checkOut) {
-
-                return (
-                    dateToString(date) ===
-                    dateToString(
-                        state.checkIn
-                    )
-                );
-
-            }
-
-
-            return (
-                date >= state.checkIn &&
-                date <= state.checkOut
-            );
-
-        }
-
-
-
-        /*
-         * =========================
-         * FORMATO FECHA
-         * =========================
-         */
-
-        function formatSpanishDate(
-            date
-        ) {
-
-            return date.toLocaleDateString(
-                "es-ES",
-                {
-                    day: "2-digit",
-                    month: "2-digit",
-                    year: "numeric"
-                }
-            );
-
-        }
-
-
-
-        function monthName(
-            date
-        ) {
-
-            return date.toLocaleDateString(
-                "es-ES",
-                {
-                    month: "long",
-                    year: "numeric"
-                }
-            );
-
-        }
-
-
-
-        /*
-         * =========================
-         * RENDER CALENDARIO
-         * =========================
-         */
-
-        function renderCalendar(
+            "Hola, quiero consultar la disponibilidad del apartamento "
+            +
             apartment
-        ) {
+            +
+            ".";
 
-            const config =
-                CALENDARS[
-                    apartment
-                ];
 
+        container.innerHTML = `
 
-            const state =
-                calendarStates[
-                    apartment
-                ];
+            <div
+                class="calendar-status calendar-error"
+            >
 
+                No se ha podido cargar
+                la disponibilidad.
 
-            const container =
-                document.getElementById(
-                    config.element
-                );
-
-
-            const year =
-                state.currentMonth
-                    .getFullYear();
-
-
-            const month =
-                state.currentMonth
-                    .getMonth();
-
-
-            const firstDay =
-                new Date(
-                    year,
-                    month,
-                    1
-                );
-
-
-            const lastDay =
-                new Date(
-                    year,
-                    month + 1,
-                    0
-                );
-
-
-            let startingDay =
-                firstDay.getDay();
-
-
-            startingDay =
-                startingDay === 0
-                    ? 6
-                    : startingDay - 1;
-
-
-            let html = `
-
-                <div class="calendar-header">
-
-                    <button
-                        class="calendar-nav"
-                        onclick="changeMonth('${apartment}', -1)"
-                        aria-label="Mes anterior"
-                    >
-                        ‹
-                    </button>
-
-
-                    <strong>
-                        ${monthName(
-                            state.currentMonth
-                        )}
-                    </strong>
-
-
-                    <button
-                        class="calendar-nav"
-                        onclick="changeMonth('${apartment}', 1)"
-                        aria-label="Mes siguiente"
-                    >
-                        ›
-                    </button>
-
-                </div>
-
-
-                <div class="calendar-weekdays">
-
-                    <div>L</div>
-                    <div>M</div>
-                    <div>X</div>
-                    <div>J</div>
-                    <div>V</div>
-                    <div>S</div>
-                    <div>D</div>
-
-                </div>
-
-
-                <div class="calendar-days">
-
-            `;
-
-
-            for (
-                let i = 0;
-                i < startingDay;
-                i++
-            ) {
-
-                html += `
-
-                    <button
-                        class="calendar-day empty"
-                        disabled
-                    ></button>
-
-                `;
-
-            }
-
-
-
-            for (
-                let day = 1;
-                day <= lastDay.getDate();
-                day++
-            ) {
-
-
-                const date =
-                    new Date(
-                        year,
-                        month,
-                        day
-                    );
-
-
-                date.setHours(
-                    0, 0, 0, 0
-                );
-
-
-                const today =
-                    new Date();
-
-
-                today.setHours(
-                    0, 0, 0, 0
-                );
-
-
-                const booked =
-                    isBooked(
-                        apartment,
-                        date
-                    );
-
-
-                const reservationStart =
-                    isReservationStart(
-                        apartment,
-                        date
-                    );
-
-
-                const past =
-                    date < today;
-
-
-                const selected =
-                    isInSelectedRange(
-                        apartment,
-                        date
-                    );
-
-
-                const possibleCheckout =
-                    state.checkIn &&
-                    !state.checkOut &&
-                    canUseAsCheckout(
-                        apartment,
-                        date
-                    );
-
-
-                let classes =
-                    "calendar-day";
-
-
-                if (booked) {
-
-                    classes +=
-                        " booked";
-
-                }
-
-
-                if (
-                    reservationStart &&
-                    possibleCheckout
-                ) {
-
-                    classes +=
-                        " checkout-available";
-
-                }
-
-
-                if (past) {
-
-                    classes +=
-                        " past";
-
-                }
-
-
-                if (selected) {
-
-                    classes +=
-                        " selected";
-
-                }
-
-
-                if (
-                    state.checkIn &&
-                    state.checkOut &&
-                    date > state.checkIn &&
-                    date < state.checkOut
-                ) {
-
-                    classes +=
-                        " in-range";
-
-                }
-
-
-                if (
-                    state.checkOut &&
-                    dateToString(date) ===
-                    dateToString(
-                        state.checkOut
-                    )
-                ) {
-
-                    classes +=
-                        " range-end";
-
-                }
-
-
-                let disabled =
-                    false;
-
-
-                if (past) {
-
-                    disabled =
-                        true;
-
-                }
-
-
-                else if (
-                    state.checkIn &&
-                    !state.checkOut
-                ) {
-
-                    if (
-                        date <= state.checkIn
-                    ) {
-
-                        disabled =
-                            true;
-
-                    }
-
-                    else if (
-                        !canUseAsCheckout(
-                            apartment,
-                            date
-                        )
-                    ) {
-
-                        disabled =
-                            true;
-
-                    }
-
-                }
-
-
-                else if (
-                    booked
-                ) {
-
-                    disabled =
-                        true;
-
-                }
-
-
-                const disabledAttribute =
-                    disabled
-                        ? "disabled"
-                        : "";
-
-
-                html += `
-
-                    <button
-                        class="${classes}"
-                        ${disabledAttribute}
-                        onclick="selectDate(
-                            '${apartment}',
-                            '${dateToString(date)}'
-                        )"
-                    >
-                        ${day}
-                    </button>
-
-                `;
-
-            }
-
-
-            html += `
-
-                </div>
-
-
-                <div class="calendar-legend">
-
-                    <div class="legend-item">
-
-                        <span
-                            class="legend-box"
-                        ></span>
-
-                        Disponible
-
-                    </div>
-
-
-                    <div class="legend-item">
-
-                        <span
-                            class="legend-box booked"
-                        ></span>
-
-                        Reservado
-
-                    </div>
-
-
-                    <div class="legend-item">
-
-                        <span
-                            class="legend-box checkout"
-                        ></span>
-
-                        Salida disponible
-
-                    </div>
-
-                </div>
-
-
-                <div
-                    id="selection-${apartment}"
-                    class="selection"
-                ></div>
-
-            `;
-
-
-            container.innerHTML =
-                html;
-
-
-            updateSelection(
-                apartment
-            );
-
-        }
-
-
-
-        /*
-         * =========================
-         * CAMBIAR MES
-         * =========================
-         */
-
-        function changeMonth(
-            apartment,
-            direction
-        ) {
-
-            const state =
-                calendarStates[
-                    apartment
-                ];
-
-
-            state.currentMonth =
-                new Date(
-                    state.currentMonth
-                        .getFullYear(),
-
-                    state.currentMonth
-                        .getMonth()
-                        + direction,
-
-                    1
-                );
-
-
-            renderCalendar(
-                apartment
-            );
-
-        }
-
-
-
-        /*
-         * =========================
-         * SELECCIONAR FECHA
-         * =========================
-         */
-
-        function selectDate(
-            apartment,
-            dateString
-        ) {
-
-            const state =
-                calendarStates[
-                    apartment
-                ];
-
-
-            const selectedDate =
-                parseDate(
-                    dateString
-                );
-
-
-            selectedDate.setHours(
-                0, 0, 0, 0
-            );
-
-
-            if (
-                !state.checkIn ||
-                state.checkOut
-            ) {
-
-                state.checkIn =
-                    selectedDate;
-
-                state.checkOut =
-                    null;
-
-                renderCalendar(
-                    apartment
-                );
-
-                return;
-
-            }
-
-
-            if (
-                selectedDate <=
-                state.checkIn
-            ) {
-
-                state.checkIn =
-                    selectedDate;
-
-                state.checkOut =
-                    null;
-
-                renderCalendar(
-                    apartment
-                );
-
-                return;
-
-            }
-
-
-            if (
-                !rangeIsAvailable(
-                    apartment,
-                    state.checkIn,
-                    selectedDate
-                )
-            ) {
-
-                alert(
-                    "No puedes seleccionar ese intervalo porque hay una reserva dentro de esas fechas."
-                );
-
-                return;
-
-            }
-
-
-            state.checkOut =
-                selectedDate;
-
-
-            renderCalendar(
-                apartment
-            );
-
-        }
-
-
-
-        /*
-         * =========================
-         * REINICIAR
-         * =========================
-         */
-
-        function resetSelection(
-            apartment
-        ) {
-
-            const state =
-                calendarStates[
-                    apartment
-                ];
-
-
-            state.checkIn =
-                null;
-
-
-            state.checkOut =
-                null;
-
-
-            renderCalendar(
-                apartment
-            );
-
-        }
-
-
-
-        /*
-         * =========================
-         * MOSTRAR SELECCIÓN
-         * =========================
-         */
-
-        function updateSelection(
-            apartment
-        ) {
-
-            const state =
-                calendarStates[
-                    apartment
-                ];
-
-
-            const box =
-                document.getElementById(
-                    "selection-" +
-                    apartment
-                );
-
-
-            if (!box) {
-
-                return;
-
-            }
-
-
-            if (!state.checkIn) {
-
-                box.classList.remove(
-                    "visible"
-                );
-
-                return;
-
-            }
-
-
-            if (
-                state.checkIn &&
-                !state.checkOut
-            ) {
-
-                box.classList.add(
-                    "visible"
-                );
-
-
-                box.innerHTML = `
-
-                    <p>
-
-                        <strong>
-                            Entrada:
-                        </strong>
-
-                        ${formatSpanishDate(
-                            state.checkIn
-                        )}
-
-                    </p>
-
-
-                    <p>
-
-                        Ahora selecciona
-                        la fecha de salida.
-
-                    </p>
-
-
-                    <span
-                        class="selection-reset"
-                        onclick="resetSelection('${apartment}')"
-                    >
-
-                        Cambiar fecha
-
-                    </span>
-
-                `;
-
-
-                return;
-
-            }
-
-
-            box.classList.add(
-                "visible"
-            );
-
-
-            const message =
-
-                "Hola, estoy interesado en reservar el apartamento "
-                +
-                apartment
-                +
-                "."
-                +
-                "\n\n"
-                +
-                "Entrada: "
-                +
-                formatSpanishDate(
-                    state.checkIn
-                )
-                +
-                "\n"
-                +
-                "Salida: "
-                +
-                formatSpanishDate(
-                    state.checkOut
-                )
-                +
-                "\n\n"
-                +
-                "¿Podéis confirmarme disponibilidad y precio?";
-
-
-            const whatsappUrl =
-
-                "https://wa.me/34634357303?text="
-                +
-                encodeURIComponent(
-                    message
-                );
-
-
-            box.innerHTML = `
-
-                <p>
-
-                    <strong>
-                        Entrada:
-                    </strong>
-
-                    ${formatSpanishDate(
-                        state.checkIn
-                    )}
-
-                    <br>
-
-
-                    <strong>
-                        Salida:
-                    </strong>
-
-                    ${formatSpanishDate(
-                        state.checkOut
-                    )}
-
-                </p>
+                <br><br>
 
 
                 <a
                     class="button"
-                    href="${whatsappUrl}"
+                    href="https://wa.me/34634357303?text=${encodeURIComponent(
+                        message
+                    )}"
                     target="_blank"
                 >
 
-                    💬 Consultar estas fechas
+                    💬 Consultar por WhatsApp
 
                 </a>
 
+            </div>
 
-                <span
-                    class="selection-reset"
-                    onclick="resetSelection('${apartment}')"
-                >
+        `;
 
-                    Cambiar fechas
+    }
 
-                </span>
-
-            `;
-
-        }
+}
 
 
+/* =========================
+   INICIAR CALENDARIOS
+========================= */
 
-        /*
-         * =========================
-         * CARGAR WORKER
-         * =========================
-         */
+loadCalendar("Montgó");
 
-        async function loadCalendar(
-            apartment
-        ) {
+loadCalendar("Granadella");
 
-            const config =
-                CALENDARS[
-                    apartment
-                ];
+loadCalendar("Portitxol");
 
-
-            const container =
-                document.getElementById(
-                    config.element
-                );
-
-
-            try {
-
-
-                const response =
-                    await fetch(
-                        config.url
-                    );
-
-
-                if (!response.ok) {
-
-                    throw new Error(
-                        "No se ha podido consultar la disponibilidad."
-                    );
-
-                }
-
-
-                const data =
-                    await response.json();
-
-
-                if (
-                    data.error
-                ) {
-
-                    throw new Error(
-                        data.message ||
-                        "Error en el calendario."
-                    );
-
-                }
-
-
-                calendarStates[
-                    apartment
-                ].events =
-
-                    Array.isArray(
-                        data.events
-                    )
-                        ? data.events
-                        : [];
-
-
-                renderCalendar(
-                    apartment
-                );
-
-
-            }
-
-
-            catch (
-                error
-            ) {
-
-
-                console.error(
-                    apartment,
-                    error
-                );
-
-
-                const message =
-
-                    "Hola, quiero consultar la disponibilidad del apartamento "
-                    +
-                    apartment
-                    +
-                    ".";
-
-
-                container.innerHTML = `
-
-                    <div
-                        class="calendar-status calendar-error"
-                    >
-
-                        No se ha podido cargar
-                        la disponibilidad.
-
-                        <br><br>
-
-
-                        <a
-                            class="button"
-                            href="https://wa.me/34634357303?text=${encodeURIComponent(
-                                message
-                            )}"
-                            target="_blank"
-                        >
-
-                            💬 Consultar por WhatsApp
-
-                        </a>
-
-                    </div>
-
-                `;
-
-            }
-
-        }
-
-
-
-        /*
-         * =========================
-         * INICIAR CALENDARIOS
-         * =========================
-         */
-
-        loadCalendar(
-            "Montgó"
-        );
-
-
-        loadCalendar(
-            "Granadella"
-        );
-
-
-        loadCalendar(
-            "Portitxol"
-        );
-
-
-    </script>
+</script>
 
 
 </body>
