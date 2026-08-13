@@ -279,11 +279,6 @@ section {
 
     width: 100%;
 
-    /*
-       Altura adaptable.
-       La foto ocupa TODO el ancho.
-    */
-
     aspect-ratio: 16 / 10;
 
     overflow: hidden;
@@ -319,12 +314,6 @@ section {
 
     overflow: hidden;
 }
-
-
-/*
-   Las fotografías llenan completamente
-   el carrusel.
-*/
 
 .carousel-slide img {
 
@@ -671,11 +660,18 @@ section {
     padding: 5px 0;
 }
 
+
+/* =========================================================
+   DÍAS DEL CALENDARIO
+========================================================= */
+
 .calendar-day {
 
     position: relative;
 
     aspect-ratio: 1 / 1;
+
+    min-height: 45px;
 
     border: none;
 
@@ -688,6 +684,19 @@ section {
     font-size: 13px;
 
     color: #243238;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 1px;
+
+    padding: 3px;
+
 }
 
 .calendar-day:hover {
@@ -760,6 +769,50 @@ section {
     font-weight: bold;
 }
 
+
+/* =========================================================
+   PRECIO DENTRO DEL DÍA
+========================================================= */
+
+.day-number {
+
+    font-size: 14px;
+
+    line-height: 1.1;
+
+    font-weight: 600;
+}
+
+.day-price {
+
+    font-size: 10px;
+
+    line-height: 1;
+
+    color: #168a45;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+.calendar-day.selected .day-price,
+.calendar-day.range-end .day-price {
+
+    color: white;
+}
+
+.calendar-day.booked .day-price,
+.calendar-day.past .day-price {
+
+    display: none;
+}
+
+
+/* =========================================================
+   LEYENDA
+========================================================= */
+
 .calendar-legend {
 
     display: flex;
@@ -813,11 +866,16 @@ section {
         2px solid #25D366;
 }
 
+
+/* =========================================================
+   SELECCIÓN Y PRECIO
+========================================================= */
+
 .selection {
 
     margin-top: 15px;
 
-    padding: 15px;
+    padding: 17px;
 
     background: white;
 
@@ -834,7 +892,7 @@ section {
 .selection p {
 
     margin:
-        0 0 12px;
+        0 0 9px;
 
     color: #555;
 
@@ -844,6 +902,50 @@ section {
 .selection strong {
 
     color: #243238;
+}
+
+.price-summary {
+
+    margin:
+        14px 0;
+
+    padding-top: 12px;
+
+    border-top:
+        1px solid #eee;
+}
+
+.price-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    font-size: 14px;
+
+    margin-bottom: 6px;
+}
+
+.price-total {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 10px;
+
+    padding-top: 10px;
+
+    border-top:
+        2px solid #eee;
+
+    font-size: 19px;
+
+    font-weight: bold;
 }
 
 .selection .button {
@@ -1010,11 +1112,6 @@ footer p {
 
     }
 
-    /*
-       En móvil la foto ocupa
-       prácticamente todo el ancho.
-    */
-
     .carousel {
 
         width: 100%;
@@ -1047,7 +1144,21 @@ footer p {
 
     .calendar-day {
 
-        font-size: 12px;
+        min-height: 43px;
+
+        font-size: 11px;
+
+    }
+
+    .day-number {
+
+        font-size: 13px;
+
+    }
+
+    .day-price {
+
+        font-size: 9px;
 
     }
 
@@ -1063,6 +1174,18 @@ footer p {
     .carousel {
 
         aspect-ratio: 4 / 3;
+
+    }
+
+    .calendar-day {
+
+        min-height: 39px;
+
+    }
+
+    .day-price {
+
+        font-size: 8px;
 
     }
 
@@ -2069,6 +2192,131 @@ const CALENDARS = {
 };
 
 
+/* =========================================================
+   PRECIOS
+========================================================= */
+
+/*
+
+    IMPORTANTE:
+
+    Los precios corresponden a CADA NOCHE.
+
+    Viernes y sábado:
+        weekend
+
+    Domingo a jueves:
+        weekday
+
+    Los festivos tienen prioridad.
+
+    La fecha "end" de cada temporada
+    se considera INCLUIDA.
+
+*/
+
+const PRICING = {
+
+    Montgó: {
+
+        cleaning: 49,
+
+        default: {
+
+            weekday: 90,
+
+            weekend: 110
+
+        },
+
+        seasons: [
+
+            {
+
+                name:
+                    "Temporada media",
+
+                start:
+                    "2026-04-01",
+
+                end:
+                    "2026-06-30",
+
+                weekday:
+                    110,
+
+                weekend:
+                    130
+
+            },
+
+            {
+
+                name:
+                    "Temporada alta",
+
+                start:
+                    "2026-07-01",
+
+                end:
+                    "2026-08-31",
+
+                weekday:
+                    150,
+
+                weekend:
+                    170
+
+            },
+
+            {
+
+                name:
+                    "Temporada media",
+
+                start:
+                    "2026-09-01",
+
+                end:
+                    "2026-09-30",
+
+                weekday:
+                    110,
+
+                weekend:
+                    130
+
+            }
+
+        ],
+
+        holidays: {
+
+            "2026-04-03": 160,
+
+            "2026-04-04": 160,
+
+            "2026-08-15": 190,
+
+            "2026-10-09": 160
+
+        }
+
+    },
+
+
+    Granadella: null,
+
+
+    Portitxol: null
+
+};
+
+
+/* =========================================================
+   ESTADO DE LOS CALENDARIOS
+========================================================= */
+
 const calendarStates = {};
 
 
@@ -2395,6 +2643,316 @@ function monthName(
 
         }
 
+    );
+
+}
+
+
+/* =========================================================
+   PRECIO DE UNA NOCHE
+========================================================= */
+
+function getNightPrice(
+    apartment,
+    date
+) {
+
+    const pricing =
+        PRICING[
+            apartment
+        ];
+
+
+    if (
+        !pricing
+    ) {
+
+        return null;
+
+    }
+
+
+    const dateString =
+        dateToString(
+            date
+        );
+
+
+    /*
+       Primero comprobamos festivos.
+       El festivo siempre tiene prioridad.
+    */
+
+    if (
+        pricing.holidays
+        &&
+        pricing.holidays[
+            dateString
+        ] !== undefined
+    ) {
+
+        return pricing.holidays[
+            dateString
+        ];
+
+    }
+
+
+    let weekdayPrice =
+        pricing.default.weekday;
+
+
+    let weekendPrice =
+        pricing.default.weekend;
+
+
+    /*
+       Buscamos la temporada correspondiente.
+    */
+
+    for (
+        const season
+        of pricing.seasons
+    ) {
+
+        if (
+
+            dateString >=
+            season.start
+
+            &&
+
+            dateString <=
+            season.end
+
+        ) {
+
+            weekdayPrice =
+                season.weekday;
+
+            weekendPrice =
+                season.weekend;
+
+            break;
+
+        }
+
+    }
+
+
+    /*
+       JavaScript:
+
+       0 = domingo
+       1 = lunes
+       2 = martes
+       3 = miércoles
+       4 = jueves
+       5 = viernes
+       6 = sábado
+
+       Solo viernes y sábado
+       utilizan precio weekend.
+    */
+
+    const dayOfWeek =
+        date.getDay();
+
+
+    if (
+        dayOfWeek === 5
+        ||
+        dayOfWeek === 6
+    ) {
+
+        return weekendPrice;
+
+    }
+
+
+    return weekdayPrice;
+
+}
+
+
+/* =========================================================
+   CALCULAR NOCHES
+========================================================= */
+
+function getNights(
+    checkIn,
+    checkOut
+) {
+
+    const millisecondsPerDay =
+        1000 *
+        60 *
+        60 *
+        24;
+
+
+    return Math.round(
+
+        (
+            checkOut -
+            checkIn
+        )
+        /
+        millisecondsPerDay
+
+    );
+
+}
+
+
+/* =========================================================
+   CALCULAR PRECIO DE ESTANCIA
+========================================================= */
+
+function calculateStayPrice(
+    apartment,
+    checkIn,
+    checkOut
+) {
+
+    const pricing =
+        PRICING[
+            apartment
+        ];
+
+
+    if (
+        !pricing
+    ) {
+
+        return null;
+
+    }
+
+
+    let accommodationTotal =
+        0;
+
+
+    const dailyPrices = [];
+
+
+    const current =
+        new Date(
+            checkIn
+        );
+
+
+    current.setHours(
+        0,
+        0,
+        0,
+        0
+    );
+
+
+    while (
+        current < checkOut
+    ) {
+
+        const price =
+            getNightPrice(
+                apartment,
+                current
+            );
+
+
+        if (
+            price === null
+        ) {
+
+            return null;
+
+        }
+
+
+        accommodationTotal +=
+            price;
+
+
+        dailyPrices.push({
+
+            date:
+                new Date(
+                    current
+                ),
+
+            price:
+                price
+
+        });
+
+
+        current.setDate(
+            current.getDate() + 1
+        );
+
+    }
+
+
+    const nights =
+        dailyPrices.length;
+
+
+    const cleaning =
+        pricing.cleaning;
+
+
+    const total =
+        accommodationTotal +
+        cleaning;
+
+
+    return {
+
+        nights:
+            nights,
+
+        accommodation:
+            accommodationTotal,
+
+        cleaning:
+            cleaning,
+
+        total:
+            total,
+
+        dailyPrices:
+            dailyPrices
+
+    };
+
+}
+
+
+/* =========================================================
+   FORMATEAR EUROS
+========================================================= */
+
+function formatPrice(
+    amount
+) {
+
+    return new Intl.NumberFormat(
+        "es-ES",
+        {
+
+            style: "currency",
+
+            currency: "EUR",
+
+            minimumFractionDigits: 0,
+
+            maximumFractionDigits: 0
+
+        }
+    ).format(
+        amount
     );
 
 }
@@ -2758,6 +3316,52 @@ function renderCalendar(
         }
 
 
+        /*
+           Precio visible solamente
+           para días disponibles de
+           apartamentos con tarifas.
+        */
+
+        let priceHTML =
+            "";
+
+
+        if (
+            !booked
+            &&
+            !past
+            &&
+            PRICING[
+                apartment
+            ]
+        ) {
+
+            const nightPrice =
+                getNightPrice(
+                    apartment,
+                    date
+                );
+
+
+            if (
+                nightPrice !== null
+            ) {
+
+                priceHTML = `
+
+                    <span class="day-price">
+                        ${formatPrice(
+                            nightPrice
+                        )}
+                    </span>
+
+                `;
+
+            }
+
+        }
+
+
         html += `
 
             <button
@@ -2775,7 +3379,11 @@ function renderCalendar(
 
             >
 
-                ${day}
+                <span class="day-number">
+                    ${day}
+                </span>
+
+                ${priceHTML}
 
             </button>
 
@@ -3026,7 +3634,7 @@ function resetSelection(
 
 
 /* =========================================================
-   WHATSAPP
+   WHATSAPP + PRECIO
 ========================================================= */
 
 function updateSelection(
@@ -3127,6 +3735,121 @@ function updateSelection(
     );
 
 
+    const pricing =
+        calculateStayPrice(
+
+            apartment,
+
+            state.checkIn,
+
+            state.checkOut
+
+        );
+
+
+    let priceHTML =
+        "";
+
+
+    let totalText =
+        "";
+
+
+    if (
+        pricing
+    ) {
+
+        priceHTML = `
+
+            <div class="price-summary">
+
+                <div class="price-row">
+
+                    <span>
+                        ${pricing.nights}
+                        ${pricing.nights === 1
+                            ? "noche"
+                            : "noches"}
+                    </span>
+
+                    <strong>
+                        ${formatPrice(
+                            pricing.accommodation
+                        )}
+                    </strong>
+
+                </div>
+
+
+                <div class="price-row">
+
+                    <span>
+                        Limpieza
+                    </span>
+
+                    <strong>
+                        ${formatPrice(
+                            pricing.cleaning
+                        )}
+                    </strong>
+
+                </div>
+
+
+                <div class="price-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong>
+                        ${formatPrice(
+                            pricing.total
+                        )}
+                    </strong>
+
+                </div>
+
+            </div>
+
+        `;
+
+
+        totalText =
+
+            "\n" +
+
+            "Noches: " +
+
+            pricing.nights +
+
+            "\n" +
+
+            "Alojamiento: " +
+
+            formatPrice(
+                pricing.accommodation
+            ) +
+
+            "\n" +
+
+            "Limpieza: " +
+
+            formatPrice(
+                pricing.cleaning
+            ) +
+
+            "\n" +
+
+            "Total: " +
+
+            formatPrice(
+                pricing.total
+            );
+
+    }
+
+
     const message =
 
         "Hola, estoy interesado en reservar el apartamento "
@@ -3169,11 +3892,15 @@ function updateSelection(
 
         +
 
+        totalText
+
+        +
+
         "\n\n"
 
         +
 
-        "¿Podéis confirmarme disponibilidad y precio?";
+        "¿Podéis confirmarme la disponibilidad?";
 
 
     const whatsappUrl =
@@ -3210,6 +3937,9 @@ function updateSelection(
             )}
 
         </p>
+
+
+        ${priceHTML}
 
 
         <a
