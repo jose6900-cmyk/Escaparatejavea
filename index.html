@@ -1305,48 +1305,38 @@ id="track-montgo"
 >
 
 <div class="carousel-slide">
-
 <img
 src="photo_montgo.jpg"
 alt="Apartamento Montgó en Jávea"
 >
-
 </div>
 
 <div class="carousel-slide">
-
 <img
 src="photo_montgo2.jpg"
 alt="Apartamento Montgó en Jávea"
 >
-
 </div>
 
 <div class="carousel-slide">
-
 <img
 src="photo_montgo3.jpg"
 alt="Apartamento Montgó en Jávea"
 >
-
 </div>
 
 <div class="carousel-slide">
-
 <img
 src="photo_montgo4.jpg"
 alt="Apartamento Montgó en Jávea"
 >
-
 </div>
 
 <div class="carousel-slide">
-
 <img
 src="photo_montgo5.jpg"
 alt="Apartamento Montgó en Jávea"
 >
-
 </div>
 
 </div>
@@ -1477,48 +1467,38 @@ id="track-granadella"
 >
 
 <div class="carousel-slide">
-
 <img
 src="photo_granadella.jpg"
 alt="Apartamento Granadella en Jávea"
 >
-
 </div>
 
 <div class="carousel-slide">
-
 <img
 src="photo_granadella2.jpg"
 alt="Apartamento Granadella en Jávea"
 >
-
 </div>
 
 <div class="carousel-slide">
-
 <img
 src="photo_granadella3.jpg"
 alt="Apartamento Granadella en Jávea"
 >
-
 </div>
 
 <div class="carousel-slide">
-
 <img
 src="photo_granadella4.jpg"
 alt="Apartamento Granadella en Jávea"
 >
-
 </div>
 
 <div class="carousel-slide">
-
 <img
 src="photo_granadella5.jpg"
 alt="Apartamento Granadella en Jávea"
 >
-
 </div>
 
 </div>
@@ -1646,48 +1626,38 @@ id="track-portitxol"
 >
 
 <div class="carousel-slide">
-
 <img
 src="photo_portitxol.jpg"
 alt="Apartamento Portitxol en Jávea"
 >
-
 </div>
 
 <div class="carousel-slide">
-
 <img
 src="photo_portitxol2.jpg"
 alt="Apartamento Portitxol en Jávea"
 >
-
 </div>
 
 <div class="carousel-slide">
-
 <img
 src="photo_portitxol3.jpg"
 alt="Apartamento Portitxol en Jávea"
 >
-
 </div>
 
 <div class="carousel-slide">
-
 <img
 src="photo_portitxol4.jpg"
 alt="Apartamento Portitxol en Jávea"
 >
-
 </div>
 
 <div class="carousel-slide">
-
 <img
 src="photo_portitxol5.jpg"
 alt="Apartamento Portitxol en Jávea"
 >
-
 </div>
 
 </div>
@@ -2198,20 +2168,24 @@ const CALENDARS = {
 
 /*
 
-    IMPORTANTE:
+    PRECIOS POR NOCHE
 
-    Los precios corresponden a CADA NOCHE.
+    Montgó:
+        Normal: 90 €
+        Viernes/Sábado: 110 €
+        Media: 110/130 €
+        Alta: 150/170 €
 
-    Viernes y sábado:
-        weekend
+    Granadella:
+        5 € menos que Montgó.
 
-    Domingo a jueves:
-        weekday
+    Portitxol:
+        10 € más que Montgó.
+
+    Limpieza:
+        49 €.
 
     Los festivos tienen prioridad.
-
-    La fecha "end" de cada temporada
-    se considera INCLUIDA.
 
 */
 
@@ -2233,58 +2207,43 @@ const PRICING = {
 
             {
 
-                name:
-                    "Temporada media",
+                name: "Temporada media",
 
-                start:
-                    "2026-04-01",
+                start: "2026-04-01",
 
-                end:
-                    "2026-06-30",
+                end: "2026-06-30",
 
-                weekday:
-                    110,
+                weekday: 110,
 
-                weekend:
-                    130
+                weekend: 130
 
             },
 
             {
 
-                name:
-                    "Temporada alta",
+                name: "Temporada alta",
 
-                start:
-                    "2026-07-01",
+                start: "2026-07-01",
 
-                end:
-                    "2026-08-31",
+                end: "2026-08-31",
 
-                weekday:
-                    150,
+                weekday: 150,
 
-                weekend:
-                    170
+                weekend: 170
 
             },
 
             {
 
-                name:
-                    "Temporada media",
+                name: "Temporada media",
 
-                start:
-                    "2026-09-01",
+                start: "2026-09-01",
 
-                end:
-                    "2026-09-30",
+                end: "2026-09-30",
 
-                weekday:
-                    110,
+                weekday: 110,
 
-                weekend:
-                    130
+                weekend: 130
 
             }
 
@@ -2305,10 +2264,150 @@ const PRICING = {
     },
 
 
-    Granadella: null,
+    Granadella: {
+
+        cleaning: 49,
+
+        default: {
+
+            weekday: 85,
+
+            weekend: 105
+
+        },
+
+        seasons: [
+
+            {
+
+                name: "Temporada media",
+
+                start: "2026-04-01",
+
+                end: "2026-06-30",
+
+                weekday: 105,
+
+                weekend: 125
+
+            },
+
+            {
+
+                name: "Temporada alta",
+
+                start: "2026-07-01",
+
+                end: "2026-08-31",
+
+                weekday: 145,
+
+                weekend: 165
+
+            },
+
+            {
+
+                name: "Temporada media",
+
+                start: "2026-09-01",
+
+                end: "2026-09-30",
+
+                weekday: 105,
+
+                weekend: 125
+
+            }
+
+        ],
+
+        holidays: {
+
+            "2026-04-03": 155,
+
+            "2026-04-04": 155,
+
+            "2026-08-15": 185,
+
+            "2026-10-09": 155
+
+        }
+
+    },
 
 
-    Portitxol: null
+    Portitxol: {
+
+        cleaning: 49,
+
+        default: {
+
+            weekday: 100,
+
+            weekend: 120
+
+        },
+
+        seasons: [
+
+            {
+
+                name: "Temporada media",
+
+                start: "2026-04-01",
+
+                end: "2026-06-30",
+
+                weekday: 120,
+
+                weekend: 140
+
+            },
+
+            {
+
+                name: "Temporada alta",
+
+                start: "2026-07-01",
+
+                end: "2026-08-31",
+
+                weekday: 160,
+
+                weekend: 180
+
+            },
+
+            {
+
+                name: "Temporada media",
+
+                start: "2026-09-01",
+
+                end: "2026-09-30",
+
+                weekday: 120,
+
+                weekend: 140
+
+            }
+
+        ],
+
+        holidays: {
+
+            "2026-04-03": 170,
+
+            "2026-04-04": 170,
+
+            "2026-08-15": 200,
+
+            "2026-10-09": 170
+
+        }
+
+    }
 
 };
 
@@ -2678,10 +2777,7 @@ function getNightPrice(
         );
 
 
-    /*
-       Primero comprobamos festivos.
-       El festivo siempre tiene prioridad.
-    */
+    /* Festivos tienen prioridad */
 
     if (
         pricing.holidays
@@ -2706,9 +2802,7 @@ function getNightPrice(
         pricing.default.weekend;
 
 
-    /*
-       Buscamos la temporada correspondiente.
-    */
+    /* Buscar temporada */
 
     for (
         const season
@@ -2741,8 +2835,6 @@ function getNightPrice(
 
 
     /*
-       JavaScript:
-
        0 = domingo
        1 = lunes
        2 = martes
@@ -2750,9 +2842,6 @@ function getNightPrice(
        4 = jueves
        5 = viernes
        6 = sábado
-
-       Solo viernes y sábado
-       utilizan precio weekend.
     */
 
     const dayOfWeek =
@@ -2806,7 +2895,7 @@ function getNights(
 
 
 /* =========================================================
-   CALCULAR PRECIO DE ESTANCIA
+   CALCULAR PRECIO
 ========================================================= */
 
 function calculateStayPrice(
@@ -3315,12 +3404,6 @@ function renderCalendar(
 
         }
 
-
-        /*
-           Precio visible solamente
-           para días disponibles de
-           apartamentos con tarifas.
-        */
 
         let priceHTML =
             "";
