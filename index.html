@@ -7,14 +7,18 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Apartamentos Jávea | Montgó, Granadella y Portitxol</title>
+<title>Apartamentos Jávea | Arenal, Montgó, Granadella y Portitxol</title>
 
 <meta
 name="description"
-content="Apartamentos turísticos en Jávea. Montgó, Granadella y Portitxol. Consulta disponibilidad y reserva directamente por WhatsApp."
+content="Apartamentos turísticos en Jávea, a 300-500 metros de la playa del Arenal. Montgó, Granadella y Portitxol."
 >
 
 <style>
+
+/* =========================================================
+   GENERAL
+========================================================= */
 
 * {
     box-sizing: border-box;
@@ -27,28 +31,38 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
     color: #243238;
+
     background: #f8f6f1;
+
     line-height: 1.6;
 }
 
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero {
 
     min-height: 85vh;
 
     background:
+
         linear-gradient(
-            rgba(0,0,0,.35),
-            rgba(0,0,0,.35)
+            rgba(0,0,0,.34),
+            rgba(0,0,0,.34)
         ),
+
         url("photo_javea.jpg")
-        center / cover;
+        center center / cover
+        no-repeat;
 
     display: flex;
 
@@ -60,43 +74,83 @@ body {
 
     color: white;
 
-    padding: 30px;
+    padding: 30px 20px;
 }
 
 .hero-content {
-    max-width: 800px;
+
+    width: 100%;
+
+    max-width: 850px;
+
 }
 
 .hero h1 {
 
     font-size:
-        clamp(42px, 7vw, 78px);
+        clamp(42px, 8vw, 78px);
 
-    margin-bottom: 20px;
+    line-height: 1.05;
+
+    margin-bottom: 22px;
 
     font-weight: 700;
+
+    text-shadow:
+        0 2px 12px
+        rgba(0,0,0,.3);
 }
 
-.hero p {
+.hero-main {
 
-    font-size: 22px;
+    font-size:
+        clamp(21px, 4vw, 30px);
 
     margin-bottom: 12px;
+
+    font-weight: 600;
 }
 
 .hero-subtitle {
 
-    font-size: 17px !important;
+    font-size: 18px;
 
-    margin-bottom: 35px !important;
+    max-width: 700px;
 
-    opacity: .95;
+    margin: 0 auto 32px;
+
+    opacity: .96;
+}
+
+.hero-distance {
+
+    display: inline-block;
+
+    margin-bottom: 30px;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,.18);
+
+    border:
+        1px solid
+        rgba(255,255,255,.4);
+
+    backdrop-filter:
+        blur(5px);
+
+    font-size: 16px;
+
+    font-weight: 600;
 }
 
 
-/* =========================
+/* =========================================================
    BOTONES
-========================= */
+========================================================= */
 
 .button {
 
@@ -114,9 +168,11 @@ body {
 
     font-weight: bold;
 
-    font-size: 18px;
+    font-size: 17px;
 
-    transition: .2s;
+    transition:
+        transform .2s,
+        box-shadow .2s;
 
     border: none;
 
@@ -124,13 +180,19 @@ body {
 }
 
 .button:hover {
-    transform: translateY(-2px);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 6px 18px
+        rgba(0,0,0,.18);
 }
 
 
-/* =========================
+/* =========================================================
    SECCIONES
-========================= */
+========================================================= */
 
 section {
 
@@ -138,31 +200,136 @@ section {
 
     margin: auto;
 
-    padding: 80px 25px;
+    padding: 75px 25px;
 }
 
 .section-title {
 
     text-align: center;
 
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 .section-title h2 {
 
-    font-size: 40px;
+    font-size:
+        clamp(30px, 5vw, 42px);
 
-    margin-bottom: 10px;
+    line-height: 1.2;
+
+    margin-bottom: 12px;
 }
 
 .section-title p {
+
     color: #667;
+
+    font-size: 17px;
 }
 
 
-/* =========================
+/* =========================================================
+   BLOQUE ARENAL
+========================================================= */
+
+.arenal {
+
+    background: white;
+
+    max-width: none;
+
+    padding:
+        65px 25px;
+}
+
+.arenal-inner {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.arenal-icon {
+
+    font-size: 42px;
+
+    margin-bottom: 12px;
+}
+
+.arenal h2 {
+
+    font-size:
+        clamp(30px, 5vw, 44px);
+
+    margin-bottom: 18px;
+}
+
+.arenal-lead {
+
+    font-size: 21px;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+.arenal-text {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    color: #5d686c;
+
+    font-size: 17px;
+}
+
+.arenal-highlight {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 18px;
+
+    margin-top: 35px;
+}
+
+.arenal-box {
+
+    background: #f8f6f1;
+
+    border-radius: 15px;
+
+    padding: 22px 15px;
+}
+
+.arenal-box strong {
+
+    display: block;
+
+    font-size: 24px;
+
+    margin-bottom: 5px;
+}
+
+.arenal-box span {
+
+    color: #667;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
    APARTAMENTOS
-========================= */
+========================================================= */
 
 .apartments {
 
@@ -171,7 +338,7 @@ section {
     grid-template-columns:
         repeat(
             auto-fit,
-            minmax(280px, 1fr)
+            minmax(300px, 1fr)
         );
 
     gap: 30px;
@@ -191,9 +358,9 @@ section {
 }
 
 
-/* =========================
+/* =========================================================
    CARRUSEL
-========================= */
+========================================================= */
 
 .carousel {
 
@@ -201,7 +368,7 @@ section {
 
     width: 100%;
 
-    height: 300px;
+    height: 310px;
 
     overflow: hidden;
 
@@ -226,6 +393,8 @@ section {
 
     min-width: 100%;
 
+    width: 100%;
+
     height: 100%;
 
     flex-shrink: 0;
@@ -239,9 +408,22 @@ section {
     background: #eeeeee;
 
     overflow: hidden;
+
+    padding: 0;
 }
 
+
+/*
+   IMPORTANTE:
+
+   La imagen se muestra COMPLETA.
+   No se recorta.
+   No se deforma.
+*/
+
 .carousel-slide img {
+
+    display: block;
 
     width: 100%;
 
@@ -251,15 +433,14 @@ section {
 
     object-position: center;
 
-    display: block;
-
     background: #eeeeee;
+
 }
 
 
-/* =========================
-   BOTONES CARRUSEL
-========================= */
+/* =========================================================
+   FLECHAS
+========================================================= */
 
 .carousel-button {
 
@@ -270,9 +451,9 @@ section {
     transform:
         translateY(-50%);
 
-    width: 42px;
+    width: 43px;
 
-    height: 42px;
+    height: 43px;
 
     border: none;
 
@@ -283,7 +464,7 @@ section {
 
     color: white;
 
-    font-size: 27px;
+    font-size: 28px;
 
     line-height: 1;
 
@@ -296,10 +477,15 @@ section {
     align-items: center;
 
     justify-content: center;
+
+    -webkit-tap-highlight-color:
+        transparent;
 }
 
 .carousel-button:hover {
-    background: rgba(0,0,0,.65);
+
+    background:
+        rgba(0,0,0,.65);
 }
 
 .carousel-prev {
@@ -311,9 +497,9 @@ section {
 }
 
 
-/* =========================
+/* =========================================================
    PUNTOS
-========================= */
+========================================================= */
 
 .carousel-dots {
 
@@ -350,6 +536,9 @@ section {
         rgba(255,255,255,.75);
 
     cursor: pointer;
+
+    transition:
+        transform .2s;
 }
 
 .carousel-dot.active {
@@ -357,13 +546,13 @@ section {
     background: white;
 
     transform:
-        scale(1.25);
+        scale(1.3);
 }
 
 
-/* =========================
+/* =========================================================
    CONTADOR
-========================= */
+========================================================= */
 
 .photo-counter {
 
@@ -378,7 +567,8 @@ section {
 
     color: white;
 
-    padding: 4px 9px;
+    padding:
+        4px 9px;
 
     border-radius: 20px;
 
@@ -388,17 +578,18 @@ section {
 }
 
 
-/* =========================
+/* =========================================================
    CONTENIDO TARJETA
-========================= */
+========================================================= */
 
 .card-content {
+
     padding: 25px;
 }
 
 .card h3 {
 
-    font-size: 28px;
+    font-size: 29px;
 
     margin-bottom: 10px;
 }
@@ -411,9 +602,36 @@ section {
 }
 
 
-/* =========================
+/* =========================================================
+   DISTANCIA AL ARENAL
+========================================================= */
+
+.card-location {
+
+    background: #f1eee7;
+
+    border-radius: 12px;
+
+    padding: 12px 14px;
+
+    margin-bottom: 18px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.card-location span {
+
+    font-weight: normal;
+
+    color: #667;
+}
+
+
+/* =========================================================
    CARACTERÍSTICAS
-========================= */
+========================================================= */
 
 .features {
 
@@ -432,7 +650,8 @@ section {
 
     border-radius: 20px;
 
-    padding: 7px 11px;
+    padding:
+        7px 11px;
 
     font-size: 13px;
 
@@ -440,9 +659,9 @@ section {
 }
 
 
-/* =========================
+/* =========================================================
    CALENDARIO
-========================= */
+========================================================= */
 
 .availability {
 
@@ -514,7 +733,9 @@ section {
 }
 
 .calendar-nav:active {
-    transform: scale(.95);
+
+    transform:
+        scale(.95);
 }
 
 .calendar-weekdays,
@@ -529,6 +750,7 @@ section {
 }
 
 .calendar-weekdays {
+
     margin-bottom: 5px;
 }
 
@@ -565,14 +787,17 @@ section {
 }
 
 .calendar-day:hover {
+
     background: #dff5e7;
 }
 
 .calendar-day.empty {
 
-    background: transparent;
+    background:
+        transparent;
 
-    cursor: default;
+    cursor:
+        default;
 }
 
 .calendar-day.past {
@@ -581,7 +806,8 @@ section {
 
     background: #eee;
 
-    cursor: not-allowed;
+    cursor:
+        not-allowed;
 }
 
 .calendar-day.booked {
@@ -590,9 +816,11 @@ section {
 
     color: #999;
 
-    text-decoration: line-through;
+    text-decoration:
+        line-through;
 
-    cursor: not-allowed;
+    cursor:
+        not-allowed;
 }
 
 .calendar-day.checkout-available {
@@ -615,6 +843,7 @@ section {
 }
 
 .calendar-day.in-range {
+
     background: #d9f5e4;
 }
 
@@ -668,6 +897,7 @@ section {
 }
 
 .legend-box.booked {
+
     background: #ddd;
 }
 
@@ -693,12 +923,14 @@ section {
 }
 
 .selection.visible {
+
     display: block;
 }
 
 .selection p {
 
-    margin: 0 0 12px;
+    margin:
+        0 0 12px;
 
     color: #555;
 
@@ -706,6 +938,7 @@ section {
 }
 
 .selection strong {
+
     color: #243238;
 }
 
@@ -730,7 +963,8 @@ section {
 
     font-size: 13px;
 
-    text-decoration: underline;
+    text-decoration:
+        underline;
 
     cursor: pointer;
 }
@@ -747,13 +981,14 @@ section {
 }
 
 .calendar-error {
+
     color: #a33;
 }
 
 
-/* =========================
+/* =========================================================
    EXPERIENCIA
-========================= */
+========================================================= */
 
 .experience {
 
@@ -764,7 +999,7 @@ section {
 
 .experience-inner {
 
-    max-width: 1100px;
+    max-width: 1000px;
 
     margin: auto;
 
@@ -773,14 +1008,15 @@ section {
 
 .experience h2 {
 
-    font-size: 40px;
+    font-size:
+        clamp(30px, 5vw, 42px);
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .experience p {
 
-    max-width: 750px;
+    max-width: 780px;
 
     margin: auto;
 
@@ -788,29 +1024,32 @@ section {
 }
 
 
-/* =========================
+/* =========================================================
    CONTACTO
-========================= */
+========================================================= */
 
 .contact {
+
     text-align: center;
 }
 
 .contact h2 {
 
-    font-size: 40px;
+    font-size:
+        clamp(30px, 5vw, 42px);
 
     margin-bottom: 15px;
 }
 
 .contact p {
+
     margin-bottom: 30px;
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer {
 
@@ -824,40 +1063,73 @@ footer {
 }
 
 footer p {
+
     opacity: .8;
 }
 
 
-/* =========================
+/* =========================================================
    MÓVIL
-========================= */
+========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
     .hero {
-        min-height: 75vh;
-    }
 
-    .hero p {
-        font-size: 18px;
+        min-height: 78vh;
+
     }
 
     .hero-subtitle {
-        font-size: 15px !important;
+
+        font-size: 16px;
+
+    }
+
+    .hero-distance {
+
+        font-size: 14px;
+
     }
 
     section {
-        padding: 60px 20px;
+
+        padding:
+            60px 20px;
+
     }
 
-    .section-title h2,
-    .experience h2,
-    .contact h2 {
-        font-size: 32px;
+    .arenal {
+
+        padding:
+            55px 20px;
+
+    }
+
+    .arenal-lead {
+
+        font-size: 18px;
+
+    }
+
+    .arenal-highlight {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .apartments {
+
+        grid-template-columns:
+            1fr;
+
     }
 
     .carousel {
+
         height: 280px;
+
     }
 
     .carousel-button {
@@ -867,29 +1139,77 @@ footer p {
         height: 38px;
 
         font-size: 23px;
+
     }
 
     .calendar {
+
         padding: 10px;
+
     }
 
     .calendar-day {
+
         font-size: 12px;
+
     }
 
     .calendar-legend {
+
         gap: 10px;
+
     }
 
-    .carousel-slide img {
+}
 
-        max-width: 100%;
 
-        max-height: 100%;
+/* =========================================================
+   MÓVIL MUY PEQUEÑO
+========================================================= */
 
-        object-fit: contain;
+@media (max-width: 380px) {
+
+    .carousel {
+
+        height: 250px;
+
     }
 
+}
+
+
+/* =========================================================
+   EVITAR IMÁGENES ROTAS
+========================================================= */
+
+.carousel-slide img {
+
+    min-width: 0;
+
+    min-height: 0;
+
+}
+
+
+/* =========================================================
+   ANIMACIÓN SUAVE
+========================================================= */
+
+.card {
+
+    transition:
+        transform .2s,
+        box-shadow .2s;
+}
+
+.card:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,.11);
 }
 
 </style>
@@ -900,9 +1220,9 @@ footer p {
 <body>
 
 
-<!-- =========================
-     PORTADA
-========================= -->
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <header class="hero">
 
@@ -912,14 +1232,28 @@ footer p {
 Apartamentos Jávea
 </h1>
 
-<p>
-Montgó · Granadella · Portitxol
+<p class="hero-main">
+
+La playa del Arenal a un paseo,
+la tranquilidad al volver a casa.
+
 </p>
 
 <p class="hero-subtitle">
-Disfruta de Jávea y de la Costa Blanca
-en nuestros apartamentos turísticos.
+
+Tres apartamentos turísticos en Jávea,
+situados entre 300 y 500 metros de la
+playa del Arenal.
+
 </p>
+
+<div class="hero-distance">
+
+🏖️ A 300–500 metros del Arenal
+
+</div>
+
+<br>
 
 <a
 class="button"
@@ -937,9 +1271,92 @@ target="_blank"
 
 
 
-<!-- =========================
+<!-- =========================================================
+     ARENAL
+========================================================= -->
+
+<section class="arenal">
+
+<div class="arenal-inner">
+
+<div class="arenal-icon">
+🏖️
+</div>
+
+<h2>
+Todo lo que necesitas, cerca
+</h2>
+
+<p class="arenal-lead">
+
+La playa del Arenal está a solo unos minutos andando.
+
+</p>
+
+<p class="arenal-text">
+
+El Arenal es la playa de arena de referencia
+de Jávea, con su paseo marítimo, restaurantes,
+terrazas, tiendas y ambiente durante todo el año.
+Nuestros apartamentos están lo suficientemente
+cerca para disfrutarlo caminando, pero alejados
+del bullicio para que puedas descansar
+tranquilamente.
+
+</p>
+
+
+<div class="arenal-highlight">
+
+<div class="arenal-box">
+
+<strong>
+300 m
+</strong>
+
+<span>
+Apartamento Montgó
+</span>
+
+</div>
+
+
+<div class="arenal-box">
+
+<strong>
+500 m
+</strong>
+
+<span>
+Apartamento Granadella
+</span>
+
+</div>
+
+
+<div class="arenal-box">
+
+<strong>
+500 m
+</strong>
+
+<span>
+Apartamento Portitxol
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
      APARTAMENTOS
-========================= -->
+========================================================= -->
 
 <section>
 
@@ -950,8 +1367,8 @@ Nuestros apartamentos
 </h2>
 
 <p>
-Elige el alojamiento perfecto
-para disfrutar de Jávea.
+Elige el alojamiento que mejor se adapte
+a tu estancia en Jávea.
 </p>
 
 </div>
@@ -960,9 +1377,9 @@ para disfrutar de Jávea.
 <div class="apartments">
 
 
-<!-- =========================
+<!-- =====================================================
      MONTGÓ
-========================= -->
+===================================================== -->
 
 <article class="card">
 
@@ -977,38 +1394,53 @@ id="track-montgo"
 >
 
 <div class="carousel-slide">
+
 <img
 src="photo_montgo.jpg"
-alt="Apartamento Montgó"
+alt="Apartamento Montgó en Jávea"
+loading="lazy"
 >
+
 </div>
 
 <div class="carousel-slide">
+
 <img
 src="photo_montgo2.jpg"
-alt="Apartamento Montgó"
+alt="Apartamento Montgó en Jávea"
+loading="lazy"
 >
+
 </div>
 
 <div class="carousel-slide">
+
 <img
 src="photo_montgo3.jpg"
-alt="Apartamento Montgó"
+alt="Apartamento Montgó en Jávea"
+loading="lazy"
 >
+
 </div>
 
 <div class="carousel-slide">
+
 <img
 src="photo_montgo4.jpg"
-alt="Apartamento Montgó"
+alt="Apartamento Montgó en Jávea"
+loading="lazy"
 >
+
 </div>
 
 <div class="carousel-slide">
+
 <img
 src="photo_montgo5.jpg"
-alt="Apartamento Montgó"
+alt="Apartamento Montgó en Jávea"
+loading="lazy"
 >
+
 </div>
 
 </div>
@@ -1036,6 +1468,7 @@ class="carousel-dots"
 id="dots-montgo"
 ></div>
 
+
 <div
 class="photo-counter"
 id="counter-montgo"
@@ -1055,12 +1488,25 @@ Montgó
 <p class="card-description">
 
 Acogedor apartamento con balcón,
-perfecto para disfrutar de Jávea
-y de su entorno. Tiene capacidad
-para hasta 3 personas y plaza de
-parking privada.
+ideal para disfrutar de Jávea en pareja
+o en familia. Capacidad para hasta
+3 personas y plaza de parking.
 
 </p>
+
+
+<div class="card-location">
+
+🏖️ A unos <strong>300 m del Arenal</strong>
+
+<br>
+
+<span>
+Playa, paseo marítimo, restaurantes
+y comercios a un paseo.
+</span>
+
+</div>
 
 
 <div class="features">
@@ -1109,9 +1555,9 @@ Cargando disponibilidad...
 
 
 
-<!-- =========================
+<!-- =====================================================
      GRANADELLA
-========================= -->
+===================================================== -->
 
 <article class="card">
 
@@ -1126,38 +1572,53 @@ id="track-granadella"
 >
 
 <div class="carousel-slide">
+
 <img
 src="photo_granadella.jpg"
-alt="Apartamento Granadella"
+alt="Apartamento Granadella en Jávea"
+loading="lazy"
 >
+
 </div>
 
 <div class="carousel-slide">
+
 <img
 src="photo_granadella2.jpg"
-alt="Apartamento Granadella"
+alt="Apartamento Granadella en Jávea"
+loading="lazy"
 >
+
 </div>
 
 <div class="carousel-slide">
+
 <img
 src="photo_granadella3.jpg"
-alt="Apartamento Granadella"
+alt="Apartamento Granadella en Jávea"
+loading="lazy"
 >
+
 </div>
 
 <div class="carousel-slide">
+
 <img
 src="photo_granadella4.jpg"
-alt="Apartamento Granadella"
+alt="Apartamento Granadella en Jávea"
+loading="lazy"
 >
+
 </div>
 
 <div class="carousel-slide">
+
 <img
 src="photo_granadella5.jpg"
-alt="Apartamento Granadella"
+alt="Apartamento Granadella en Jávea"
+loading="lazy"
 >
+
 </div>
 
 </div>
@@ -1185,6 +1646,7 @@ class="carousel-dots"
 id="dots-granadella"
 ></div>
 
+
 <div
 class="photo-counter"
 id="counter-granadella"
@@ -1203,13 +1665,26 @@ Granadella
 
 <p class="card-description">
 
-Disfruta de una estancia tranquila
-cerca de una de las zonas más
-espectaculares de Jávea. Capacidad
+Apartamento perfecto para disfrutar
+de Jávea con tranquilidad. Capacidad
 para hasta 3 personas y plaza de
 parking.
 
 </p>
+
+
+<div class="card-location">
+
+🏖️ A unos <strong>500 m del Arenal</strong>
+
+<br>
+
+<span>
+Playa, paseo marítimo, restaurantes
+y comercios a un paseo.
+</span>
+
+</div>
 
 
 <div class="features">
@@ -1227,7 +1702,7 @@ parking.
 </span>
 
 <span class="feature">
-🏖️ Jávea
+🏖️ Arenal
 </span>
 
 </div>
@@ -1258,9 +1733,9 @@ Cargando disponibilidad...
 
 
 
-<!-- =========================
+<!-- =====================================================
      PORTITXOL
-========================= -->
+===================================================== -->
 
 <article class="card">
 
@@ -1275,38 +1750,53 @@ id="track-portitxol"
 >
 
 <div class="carousel-slide">
+
 <img
 src="photo_portitxol.jpg"
-alt="Apartamento Portitxol"
+alt="Apartamento Portitxol en Jávea"
+loading="lazy"
 >
+
 </div>
 
 <div class="carousel-slide">
+
 <img
 src="photo_portitxol2.jpg"
-alt="Apartamento Portitxol"
+alt="Apartamento Portitxol en Jávea"
+loading="lazy"
 >
+
 </div>
 
 <div class="carousel-slide">
+
 <img
 src="photo_portitxol3.jpg"
-alt="Apartamento Portitxol"
+alt="Apartamento Portitxol en Jávea"
+loading="lazy"
 >
+
 </div>
 
 <div class="carousel-slide">
+
 <img
 src="photo_portitxol4.jpg"
-alt="Apartamento Portitxol"
+alt="Apartamento Portitxol en Jávea"
+loading="lazy"
 >
+
 </div>
 
 <div class="carousel-slide">
+
 <img
 src="photo_portitxol5.jpg"
-alt="Apartamento Portitxol"
+alt="Apartamento Portitxol en Jávea"
+loading="lazy"
 >
+
 </div>
 
 </div>
@@ -1334,6 +1824,7 @@ class="carousel-dots"
 id="dots-portitxol"
 ></div>
 
+
 <div
 class="photo-counter"
 id="counter-portitxol"
@@ -1352,13 +1843,26 @@ Portitxol
 
 <p class="card-description">
 
-Apartamento ideal para familias,
-con capacidad para 4 personas:
-2 adultos y 2 niños. Dispone de
-parking privado y todo lo necesario
-para disfrutar de Jávea.
+Apartamento pensado especialmente
+para familias, con capacidad para
+4 personas: 2 adultos y 2 niños.
+Dispone de parking privado.
 
 </p>
+
+
+<div class="card-location">
+
+🏖️ A unos <strong>500 m del Arenal</strong>
+
+<br>
+
+<span>
+Playa, paseo marítimo, restaurantes
+y comercios a un paseo.
+</span>
+
+</div>
 
 
 <div class="features">
@@ -1376,7 +1880,7 @@ para disfrutar de Jávea.
 </span>
 
 <span class="feature">
-🌊 Portitxol
+🌊 Jávea
 </span>
 
 </div>
@@ -1405,32 +1909,37 @@ Cargando disponibilidad...
 
 </article>
 
+
 </div>
 
 </section>
 
 
 
-<!-- =========================
+<!-- =========================================================
      EXPERIENCIA
-========================= -->
+========================================================= -->
 
 <section class="experience">
 
 <div class="experience-inner">
 
 <h2>
-Descubre Jávea
+Cerca de todo. Lejos del ruido.
 </h2>
 
 <p>
 
-Playas, calas de aguas cristalinas,
-gastronomía, naturaleza y el auténtico
-ambiente mediterráneo.
+Disfruta de la playa del Arenal,
+del paseo marítimo, de los restaurantes,
+terrazas y comercios, y vuelve después
+a un alojamiento tranquilo donde descansar.
 
-Encuentra tu alojamiento y empieza
-a disfrutar.
+Nuestros apartamentos combinan
+<strong>ubicación y tranquilidad</strong>:
+todo lo importante está cerca, pero
+no necesitas dormir en plena zona
+de actividad.
 
 </p>
 
@@ -1440,9 +1949,9 @@ a disfrutar.
 
 
 
-<!-- =========================
+<!-- =========================================================
      CONTACTO
-========================= -->
+========================================================= -->
 
 <section class="contact">
 
@@ -1452,10 +1961,12 @@ a disfrutar.
 
 <p>
 
-Selecciona tus fechas en el calendario
-o escríbenos directamente por WhatsApp.
+Consulta las fechas disponibles en el
+calendario o escríbenos directamente
+por WhatsApp.
 
 </p>
+
 
 <a
 class="button"
@@ -1471,9 +1982,9 @@ target="_blank"
 
 
 
-<!-- =========================
+<!-- =========================================================
      FOOTER
-========================= -->
+========================================================= -->
 
 <footer>
 
@@ -1487,9 +1998,10 @@ target="_blank"
 
 <script>
 
-/* =========================
+
+/* =========================================================
    CARRUSELES
-========================= */
+========================================================= */
 
 const carouselStates = {
 
@@ -1507,27 +2019,35 @@ function updateCarousel(apartment) {
     const index =
         carouselStates[apartment];
 
+
     const track =
         document.getElementById(
             "track-" + apartment
         );
+
 
     const dots =
         document.getElementById(
             "dots-" + apartment
         );
 
+
     const counter =
         document.getElementById(
             "counter-" + apartment
         );
 
+
     track.style.transform =
         "translateX(-" +
-        (index * 100) +
+        (
+            index * 100
+        ) +
         "%)";
 
+
     dots.innerHTML = "";
+
 
     for (
         let i = 0;
@@ -1540,6 +2060,7 @@ function updateCarousel(apartment) {
                 "button"
             );
 
+
         dot.className =
             "carousel-dot" +
             (
@@ -1548,10 +2069,13 @@ function updateCarousel(apartment) {
                     : ""
             );
 
+
         dot.setAttribute(
             "aria-label",
-            "Ir a foto " + (i + 1)
+            "Ir a foto " +
+            (i + 1)
         );
+
 
         dot.onclick =
             function() {
@@ -1566,12 +2090,19 @@ function updateCarousel(apartment) {
 
             };
 
-        dots.appendChild(dot);
+
+        dots.appendChild(
+            dot
+        );
 
     }
 
+
     counter.textContent =
-        (index + 1) + " / 5";
+        (
+            index + 1
+        ) +
+        " / 5";
 
 }
 
@@ -1582,21 +2113,32 @@ function moveCarousel(
 ) {
 
     let index =
-        carouselStates[apartment];
+        carouselStates[
+            apartment
+        ];
+
 
     index += direction;
 
+
     if (index < 0) {
+
         index = 4;
+
     }
 
+
     if (index > 4) {
+
         index = 0;
+
     }
+
 
     carouselStates[
         apartment
     ] = index;
+
 
     updateCarousel(
         apartment
@@ -1605,16 +2147,22 @@ function moveCarousel(
 }
 
 
-updateCarousel("montgo");
+updateCarousel(
+    "montgo"
+);
 
-updateCarousel("granadella");
+updateCarousel(
+    "granadella"
+);
 
-updateCarousel("portitxol");
+updateCarousel(
+    "portitxol"
+);
 
 
-/* =========================
-   DESLIZAR CON EL DEDO
-========================= */
+/* =========================================================
+   DESLIZAR FOTOS EN MÓVIL
+========================================================= */
 
 document
 .querySelectorAll(".carousel")
@@ -1624,6 +2172,7 @@ document
         let startX = 0;
 
         let startY = 0;
+
 
         carousel.addEventListener(
             "touchstart",
@@ -1656,17 +2205,23 @@ document
                     event.changedTouches[0]
                     .clientY;
 
+
                 const differenceX =
                     endX - startX;
+
 
                 const differenceY =
                     endY - startY;
 
+
                 if (
+
                     Math.abs(
                         differenceX
                     ) > 50
+
                     &&
+
                     Math.abs(
                         differenceX
                     )
@@ -1674,11 +2229,13 @@ document
                     Math.abs(
                         differenceY
                     )
+
                 ) {
 
                     const apartment =
                         carousel.dataset
                         .carousel;
+
 
                     if (
                         differenceX < 0
@@ -1711,9 +2268,9 @@ document
 );
 
 
-/* =========================
-   CALENDARIOS
-========================= */
+/* =========================================================
+   WORKERS CLOUDFLARE
+========================================================= */
 
 const CALENDARS = {
 
@@ -1761,6 +2318,10 @@ Object.keys(
 .forEach(
     apartment => {
 
+        const now =
+            new Date();
+
+
         calendarStates[
             apartment
         ] = {
@@ -1769,12 +2330,8 @@ Object.keys(
 
             currentMonth:
                 new Date(
-                    new Date()
-                    .getFullYear(),
-
-                    new Date()
-                    .getMonth(),
-
+                    now.getFullYear(),
+                    now.getMonth(),
                     1
                 ),
 
@@ -1788,9 +2345,9 @@ Object.keys(
 );
 
 
-/* =========================
+/* =========================================================
    FECHAS
-========================= */
+========================================================= */
 
 function parseDate(
     dateString
@@ -1799,10 +2356,21 @@ function parseDate(
     const parts =
         dateString.split("-");
 
+
     return new Date(
-        Number(parts[0]),
-        Number(parts[1]) - 1,
-        Number(parts[2])
+
+        Number(
+            parts[0]
+        ),
+
+        Number(
+            parts[1]
+        ) - 1,
+
+        Number(
+            parts[2]
+        )
+
     );
 
 }
@@ -1815,24 +2383,35 @@ function dateToString(
     const year =
         date.getFullYear();
 
+
     const month =
         String(
             date.getMonth() + 1
         )
-        .padStart(2, "0");
+        .padStart(
+            2,
+            "0"
+        );
+
 
     const day =
         String(
             date.getDate()
         )
-        .padStart(2, "0");
+        .padStart(
+            2,
+            "0"
+        );
+
 
     return (
+
         year +
         "-" +
         month +
         "-" +
         day
+
     );
 
 }
@@ -1848,16 +2427,26 @@ function isBooked(
             apartment
         ];
 
+
     const dateString =
-        dateToString(date);
+        dateToString(
+            date
+        );
+
 
     return state.events.some(
         event => {
 
             return (
-                dateString >= event.start
+
+                dateString >=
+                event.start
+
                 &&
-                dateString < event.end
+
+                dateString <
+                event.end
+
             );
 
         }
@@ -1876,15 +2465,21 @@ function isReservationStart(
             apartment
         ];
 
+
     const dateString =
-        dateToString(date);
+        dateToString(
+            date
+        );
+
 
     return state.events.some(
         event => {
 
             return (
+
                 dateString ===
                 event.start
+
             );
 
         }
@@ -1900,11 +2495,18 @@ function rangeIsAvailable(
 ) {
 
     const current =
-        new Date(start);
+        new Date(
+            start
+        );
+
 
     current.setHours(
-        0,0,0,0
+        0,
+        0,
+        0,
+        0
     );
+
 
     while (
         current < end
@@ -1921,11 +2523,13 @@ function rangeIsAvailable(
 
         }
 
+
         current.setDate(
             current.getDate() + 1
         );
 
     }
+
 
     return true;
 
@@ -1942,15 +2546,25 @@ function canUseAsCheckout(
             apartment
         ];
 
-    if (!state.checkIn) {
-        return false;
-    }
 
     if (
-        date <= state.checkIn
+        !state.checkIn
     ) {
+
         return false;
+
     }
+
+
+    if (
+        date <=
+        state.checkIn
+    ) {
+
+        return false;
+
+    }
+
 
     return rangeIsAvailable(
         apartment,
@@ -1971,25 +2585,45 @@ function isInSelectedRange(
             apartment
         ];
 
-    if (!state.checkIn) {
+
+    if (
+        !state.checkIn
+    ) {
+
         return false;
+
     }
 
-    if (!state.checkOut) {
+
+    if (
+        !state.checkOut
+    ) {
 
         return (
-            dateToString(date) ===
+
+            dateToString(
+                date
+            )
+            ===
             dateToString(
                 state.checkIn
             )
+
         );
 
     }
 
+
     return (
-        date >= state.checkIn
+
+        date >=
+        state.checkIn
+
         &&
-        date <= state.checkOut
+
+        date <=
+        state.checkOut
+
     );
 
 }
@@ -2000,12 +2634,19 @@ function formatSpanishDate(
 ) {
 
     return date.toLocaleDateString(
+
         "es-ES",
+
         {
+
             day: "2-digit",
+
             month: "2-digit",
+
             year: "numeric"
+
         }
+
     );
 
 }
@@ -2016,19 +2657,25 @@ function monthName(
 ) {
 
     return date.toLocaleDateString(
+
         "es-ES",
+
         {
+
             month: "long",
+
             year: "numeric"
+
         }
+
     );
 
 }
 
 
-/* =========================
+/* =========================================================
    RENDER CALENDARIO
-========================= */
+========================================================= */
 
 function renderCalendar(
     apartment
@@ -2039,23 +2686,28 @@ function renderCalendar(
             apartment
         ];
 
+
     const state =
         calendarStates[
             apartment
         ];
+
 
     const container =
         document.getElementById(
             config.element
         );
 
+
     const year =
         state.currentMonth
         .getFullYear();
 
+
     const month =
         state.currentMonth
         .getMonth();
+
 
     const firstDay =
         new Date(
@@ -2064,6 +2716,7 @@ function renderCalendar(
             1
         );
 
+
     const lastDay =
         new Date(
             year,
@@ -2071,13 +2724,16 @@ function renderCalendar(
             0
         );
 
+
     let startingDay =
         firstDay.getDay();
 
+
     startingDay =
         startingDay === 0
-        ? 6
-        : startingDay - 1;
+            ? 6
+            : startingDay - 1;
+
 
     let html = `
 
@@ -2105,6 +2761,7 @@ function renderCalendar(
 
         </div>
 
+
         <div class="calendar-weekdays">
 
             <div>L</div>
@@ -2116,6 +2773,7 @@ function renderCalendar(
             <div>D</div>
 
         </div>
+
 
         <div class="calendar-days">
 
@@ -2153,16 +2811,26 @@ function renderCalendar(
                 day
             );
 
+
         date.setHours(
-            0,0,0,0
+            0,
+            0,
+            0,
+            0
         );
+
 
         const today =
             new Date();
 
+
         today.setHours(
-            0,0,0,0
+            0,
+            0,
+            0,
+            0
         );
+
 
         const booked =
             isBooked(
@@ -2170,14 +2838,17 @@ function renderCalendar(
                 date
             );
 
+
         const reservationStart =
             isReservationStart(
                 apartment,
                 date
             );
 
+
         const past =
             date < today;
+
 
         const selected =
             isInSelectedRange(
@@ -2185,22 +2856,36 @@ function renderCalendar(
                 date
             );
 
+
         const possibleCheckout =
+
             state.checkIn
+
             &&
+
             !state.checkOut
+
             &&
+
             canUseAsCheckout(
                 apartment,
                 date
             );
 
+
         let classes =
             "calendar-day";
 
-        if (booked) {
-            classes += " booked";
+
+        if (
+            booked
+        ) {
+
+            classes +=
+                " booked";
+
         }
+
 
         if (
             reservationStart
@@ -2213,61 +2898,106 @@ function renderCalendar(
 
         }
 
-        if (past) {
-            classes += " past";
-        }
-
-        if (selected) {
-            classes += " selected";
-        }
 
         if (
-            state.checkIn
-            &&
-            state.checkOut
-            &&
-            date > state.checkIn
-            &&
-            date < state.checkOut
+            past
         ) {
 
-            classes += " in-range";
+            classes +=
+                " past";
 
         }
 
+
         if (
-            state.checkOut
+            selected
+        ) {
+
+            classes +=
+                " selected";
+
+        }
+
+
+        if (
+
+            state.checkIn
+
             &&
-            dateToString(date) ===
+
+            state.checkOut
+
+            &&
+
+            date >
+            state.checkIn
+
+            &&
+
+            date <
+            state.checkOut
+
+        ) {
+
+            classes +=
+                " in-range";
+
+        }
+
+
+        if (
+
+            state.checkOut
+
+            &&
+
+            dateToString(
+                date
+            )
+            ===
             dateToString(
                 state.checkOut
             )
+
         ) {
 
-            classes += " range-end";
+            classes +=
+                " range-end";
 
         }
 
-        let disabled = false;
 
-        if (past) {
+        let disabled =
+            false;
 
-            disabled = true;
+
+        if (
+            past
+        ) {
+
+            disabled =
+                true;
 
         }
+
         else if (
+
             state.checkIn
             &&
             !state.checkOut
+
         ) {
 
             if (
-                date <= state.checkIn
+                date <=
+                state.checkIn
             ) {
 
-                disabled = true;
+                disabled =
+                    true;
 
             }
+
             else if (
                 !canUseAsCheckout(
                     apartment,
@@ -2275,26 +3005,38 @@ function renderCalendar(
                 )
             ) {
 
-                disabled = true;
+                disabled =
+                    true;
 
             }
 
         }
-        else if (booked) {
 
-            disabled = true;
+        else if (
+            booked
+        ) {
+
+            disabled =
+                true;
 
         }
+
 
         html += `
 
             <button
+
                 class="${classes}"
-                ${disabled ? "disabled" : ""}
+
+                ${disabled
+                    ? "disabled"
+                    : ""}
+
                 onclick="selectDate(
                     '${apartment}',
                     '${dateToString(date)}'
                 )"
+
             >
 
                 ${day}
@@ -2310,33 +3052,43 @@ function renderCalendar(
 
         </div>
 
+
         <div class="calendar-legend">
 
             <div class="legend-item">
 
-                <span class="legend-box"></span>
+                <span
+                    class="legend-box"
+                ></span>
 
                 Disponible
 
             </div>
 
+
             <div class="legend-item">
 
-                <span class="legend-box booked"></span>
+                <span
+                    class="legend-box booked"
+                ></span>
 
                 Reservado
 
             </div>
 
+
             <div class="legend-item">
 
-                <span class="legend-box checkout"></span>
+                <span
+                    class="legend-box checkout"
+                ></span>
 
                 Salida disponible
 
             </div>
 
         </div>
+
 
         <div
             id="selection-${apartment}"
@@ -2349,6 +3101,7 @@ function renderCalendar(
     container.innerHTML =
         html;
 
+
     updateSelection(
         apartment
     );
@@ -2356,9 +3109,9 @@ function renderCalendar(
 }
 
 
-/* =========================
+/* =========================================================
    CAMBIAR MES
-========================= */
+========================================================= */
 
 function changeMonth(
     apartment,
@@ -2370,17 +3123,22 @@ function changeMonth(
             apartment
         ];
 
+
     state.currentMonth =
         new Date(
+
             state.currentMonth
             .getFullYear(),
 
             state.currentMonth
             .getMonth()
-            + direction,
+            +
+            direction,
 
             1
+
         );
+
 
     renderCalendar(
         apartment
@@ -2389,9 +3147,9 @@ function changeMonth(
 }
 
 
-/* =========================
+/* =========================================================
    SELECCIONAR FECHAS
-========================= */
+========================================================= */
 
 function selectDate(
     apartment,
@@ -2403,20 +3161,29 @@ function selectDate(
             apartment
         ];
 
+
     const selectedDate =
         parseDate(
             dateString
         );
 
+
     selectedDate.setHours(
-        0,0,0,0
+        0,
+        0,
+        0,
+        0
     );
 
 
     if (
+
         !state.checkIn
+
         ||
+
         state.checkOut
+
     ) {
 
         state.checkIn =
@@ -2425,9 +3192,11 @@ function selectDate(
         state.checkOut =
             null;
 
+
         renderCalendar(
             apartment
         );
+
 
         return;
 
@@ -2445,9 +3214,11 @@ function selectDate(
         state.checkOut =
             null;
 
+
         renderCalendar(
             apartment
         );
+
 
         return;
 
@@ -2456,15 +3227,22 @@ function selectDate(
 
     if (
         !rangeIsAvailable(
+
             apartment,
+
             state.checkIn,
+
             selectedDate
+
         )
     ) {
 
         alert(
+
             "No puedes seleccionar ese intervalo porque hay una reserva dentro de esas fechas."
+
         );
+
 
         return;
 
@@ -2474,6 +3252,7 @@ function selectDate(
     state.checkOut =
         selectedDate;
 
+
     renderCalendar(
         apartment
     );
@@ -2481,9 +3260,9 @@ function selectDate(
 }
 
 
-/* =========================
-   REINICIAR SELECCIÓN
-========================= */
+/* =========================================================
+   RESET
+========================================================= */
 
 function resetSelection(
     apartment
@@ -2494,9 +3273,14 @@ function resetSelection(
             apartment
         ];
 
-    state.checkIn = null;
 
-    state.checkOut = null;
+    state.checkIn =
+        null;
+
+
+    state.checkOut =
+        null;
+
 
     renderCalendar(
         apartment
@@ -2505,9 +3289,9 @@ function resetSelection(
 }
 
 
-/* =========================
-   WHATSAPP
-========================= */
+/* =========================================================
+   SELECCIÓN + WHATSAPP
+========================================================= */
 
 function updateSelection(
     apartment
@@ -2518,22 +3302,15 @@ function updateSelection(
             apartment
         ];
 
+
     const box =
         document.getElementById(
             "selection-" +
             apartment
         );
 
+
     if (!box) {
-        return;
-    }
-
-
-    if (!state.checkIn) {
-
-        box.classList.remove(
-            "visible"
-        );
 
         return;
 
@@ -2541,14 +3318,33 @@ function updateSelection(
 
 
     if (
+        !state.checkIn
+    ) {
+
+        box.classList.remove(
+            "visible"
+        );
+
+
+        return;
+
+    }
+
+
+    if (
+
         state.checkIn
+
         &&
+
         !state.checkOut
+
     ) {
 
         box.classList.add(
             "visible"
         );
+
 
         box.innerHTML = `
 
@@ -2564,12 +3360,14 @@ function updateSelection(
 
             </p>
 
+
             <p>
 
                 Ahora selecciona
                 la fecha de salida.
 
             </p>
+
 
             <span
                 class="selection-reset"
@@ -2581,6 +3379,7 @@ function updateSelection(
             </span>
 
         `;
+
 
         return;
 
@@ -2595,36 +3394,58 @@ function updateSelection(
     const message =
 
         "Hola, estoy interesado en reservar el apartamento "
+
         +
+
         apartment
+
         +
+
         "."
+
         +
+
         "\n\n"
+
         +
+
         "Entrada: "
+
         +
+
         formatSpanishDate(
             state.checkIn
         )
+
         +
+
         "\n"
+
         +
+
         "Salida: "
+
         +
+
         formatSpanishDate(
             state.checkOut
         )
+
         +
+
         "\n\n"
+
         +
+
         "¿Podéis confirmarme disponibilidad y precio?";
 
 
     const whatsappUrl =
 
         "https://wa.me/34634357303?text="
+
         +
+
         encodeURIComponent(
             message
         );
@@ -2680,9 +3501,9 @@ function updateSelection(
 }
 
 
-/* =========================
+/* =========================================================
    CARGAR WORKERS
-========================= */
+========================================================= */
 
 async function loadCalendar(
     apartment
@@ -2692,6 +3513,7 @@ async function loadCalendar(
         CALENDARS[
             apartment
         ];
+
 
     const container =
         document.getElementById(
@@ -2707,7 +3529,9 @@ async function loadCalendar(
             );
 
 
-        if (!response.ok) {
+        if (
+            !response.ok
+        ) {
 
             throw new Error(
                 "No se ha podido consultar la disponibilidad."
@@ -2720,11 +3544,16 @@ async function loadCalendar(
             await response.json();
 
 
-        if (data.error) {
+        if (
+            data.error
+        ) {
 
             throw new Error(
-                data.message ||
+
+                data.message
+                ||
                 "Error en el calendario."
+
             );
 
         }
@@ -2737,9 +3566,13 @@ async function loadCalendar(
             Array.isArray(
                 data.events
             )
+
             ?
+
             data.events
+
             :
+
             [];
 
 
@@ -2749,7 +3582,10 @@ async function loadCalendar(
 
 
     }
-    catch(error) {
+
+    catch (
+        error
+    ) {
 
         console.error(
             apartment,
@@ -2760,9 +3596,13 @@ async function loadCalendar(
         const message =
 
             "Hola, quiero consultar la disponibilidad del apartamento "
+
             +
+
             apartment
+
             +
+
             ".";
 
 
@@ -2799,15 +3639,21 @@ async function loadCalendar(
 }
 
 
-/* =========================
+/* =========================================================
    INICIAR CALENDARIOS
-========================= */
+========================================================= */
 
-loadCalendar("Montgó");
+loadCalendar(
+    "Montgó"
+);
 
-loadCalendar("Granadella");
+loadCalendar(
+    "Granadella"
+);
 
-loadCalendar("Portitxol");
+loadCalendar(
+    "Portitxol"
+);
 
 </script>
 
